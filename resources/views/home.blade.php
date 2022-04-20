@@ -164,18 +164,14 @@
         <div class="row">
           <div class="col-lg-8 mb-5">
             <p style="text-align: justify;">
-              Akuakultur laut (Mariculture) diharapkan dapat memenuhi permintaan produk ikan yang meningkat tidak hanya di Indonesia tetapi juga di dunia, terutama di bawah peningkatan sederhana penangkapan ikan liar.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl nulla, mattis vel lobortis in, imperdiet quis erat. Nullam commodo facilisis dui, vitae consectetur ipsum pretium in. Pellentesque dui massa, mollis non elit eu, ornare finibus sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer bibendum sem ut porta mattis. Cras fringilla cursus mauris vitae condimentum. Vivamus sollicitudin fermentum odio, ac consectetur tortor varius ac. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc non sem turpis. In enim risus, blandit in sollicitudin ut, ultrices sit amet lorem. Integer pulvinar volutpat dapibus. Aliquam erat volutpat. Nam quis accumsan nibh.
             </p>
-            <p style="text-align: justify;">
-              Indonesia adalah negara kepulauan terbesar di dunia dengan sekitar 17.508 pulau dan garis pantai 54.716 km di mana memberikan peluang besar bagi budidaya laut. Ini akan menguntungkan pulau-pulau luar dan daerah pantai terpencil dan karenanya mempersempit pendapatan dan kesenjangan regional di dalam negeri.            </p>
-            <p style="text-align: justify;">
-                Mariculture adalah komponen penting untuk produksi akuakultur di Indonesia, dengan total produksi mencapai 9.034.756 ton (US $ 1.951.097,72) pada tahun 2014 dan 579.463 orang terlibat dalam kegiatan budidaya.
-            </p>
+            
 
           </div>
           <div class="col-lg-4">
             <div class="resume-item pb-0">
-              <img src="assets/img/img2.jpg" class="img-fluid mb-3" alt="">
+              <img src="https://via.placeholder.com/600x400" class="img-fluid mb-3" alt="">
               <a type="button" class="btn" href="https://el.mict.id" target="_blank" style="background-color: #0563bb; color: #fff; width: 100%;">Kunjungi</a>
 
             </div>
@@ -194,13 +190,13 @@
   
           <div class="row">
             <div class="col-lg-4 mb-5">
-              <img src="assets/img/img2.jpg" class="img-fluid mb-3" alt="">
+              <img src="https://via.placeholder.com/600x400" class="img-fluid mb-3" alt="">
               <a type="button" class="btn" href="#" target="_blank" style="background-color: #0563bb; color: #fff; width: 100%;">Kunjungi</a>
             </div>
             <div class="col-lg-8">
               <div class="resume-item pb-0 ">
                 <p style="text-align: justify;">
-                  Akuakultur laut (Mariculture) diharapkan dapat memenuhi permintaan produk ikan yang meningkat tidak hanya di Indonesia tetapi juga di dunia, terutama di bawah peningkatan sederhana penangkapan ikan liar.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl nulla, mattis vel lobortis in, imperdiet quis erat. Nullam commodo facilisis dui, vitae consectetur ipsum pretium in. Pellentesque dui massa, mollis non elit eu, ornare finibus sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer bibendum sem ut porta mattis. Cras fringilla cursus mauris vitae condimentum. Vivamus sollicitudin fermentum odio, ac consectetur tortor varius ac. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc non sem turpis. In enim risus, blandit in sollicitudin ut, ultrices sit amet lorem. Integer pulvinar volutpat dapibus. Aliquam erat volutpat. Nam quis accumsan nibh.
                 </p>
                 <p style="text-align: justify;">
                   Indonesia adalah negara kepulauan terbesar di dunia dengan sekitar 17.508 pulau dan garis pantai 54.716 km di mana memberikan peluang besar bagi budidaya laut. Ini akan menguntungkan pulau-pulau luar dan daerah pantai terpencil dan karenanya mempersempit pendapatan dan kesenjangan regional di dalam negeri.            </p>
@@ -225,18 +221,14 @@
         <div class="row">
           <div class="col-lg-8 mb-5">
             <p style="text-align: justify;">
-              Akuakultur laut (Mariculture) diharapkan dapat memenuhi permintaan produk ikan yang meningkat tidak hanya di Indonesia tetapi juga di dunia, terutama di bawah peningkatan sederhana penangkapan ikan liar.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl nulla, mattis vel lobortis in, imperdiet quis erat. Nullam commodo facilisis dui, vitae consectetur ipsum pretium in. Pellentesque dui massa, mollis non elit eu, ornare finibus sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer bibendum sem ut porta mattis. Cras fringilla cursus mauris vitae condimentum. Vivamus sollicitudin fermentum odio, ac consectetur tortor varius ac. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc non sem turpis. In enim risus, blandit in sollicitudin ut, ultrices sit amet lorem. Integer pulvinar volutpat dapibus. Aliquam erat volutpat. Nam quis accumsan nibh.
             </p>
-            <p style="text-align: justify;">
-              Indonesia adalah negara kepulauan terbesar di dunia dengan sekitar 17.508 pulau dan garis pantai 54.716 km di mana memberikan peluang besar bagi budidaya laut. Ini akan menguntungkan pulau-pulau luar dan daerah pantai terpencil dan karenanya mempersempit pendapatan dan kesenjangan regional di dalam negeri.            </p>
-            <p style="text-align: justify;">
-                Mariculture adalah komponen penting untuk produksi akuakultur di Indonesia, dengan total produksi mencapai 9.034.756 ton (US $ 1.951.097,72) pada tahun 2014 dan 579.463 orang terlibat dalam kegiatan budidaya.
-            </p>
+            
           </div>
           
           <div class="col-lg-4 mb-10">
             <div class="resume-item pb-0">
-              <img src="assets/img/img2.jpg" class="img-fluid pb-3" alt="">
+              <img src="https://via.placeholder.com/600x400" class="img-fluid pb-3" alt="">
               <a type="button" class="btn" href="#" target="_blank" style="background-color: #0563bb; color: #fff; width: 100%;">Kunjungi</a>
             </div>
           </div>
