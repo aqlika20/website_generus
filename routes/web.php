@@ -20,3 +20,10 @@ Route::get('/', function () {
 Route::get('/tentang', function () {
     return view('about');
 });
+
+Route::prefix('/manage')->group(function(){
+    Auth::routes(['register' => false, 'reset' => false]);
+    Route::get('/', [App\Http\Controllers\Manage\DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [App\Http\Controllers\Manage\DashboardController::class, 'index'])->name('dashboard');
+});
+
