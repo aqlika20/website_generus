@@ -18,6 +18,31 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        {{-- Meta Data --}}
+        <meta name="description" content="@yield('page_description', $page_description ?? '')"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        {{-- Favicon --}}
+        <link rel="shortcut icon" href="{{ asset('media/logos/siapp.ico') }}" />
+
+        {{-- Fonts --}}
+        {{-- {{ Metronic::getGoogleFontsInclude() }} --}}
+
+        {{-- Global Theme Styles (used by all pages) --}}
+        @foreach(config('layout.resources.css') as $style)
+            <link href="{{ config('layout.self.rtl') ? asset(Metronic::rtlCssPath($style)) : asset($style) }}" rel="stylesheet" type="text/css"/>
+        @endforeach
+
+        {{-- Layout Themes (used by all pages) --}}
+        @foreach (Metronic::initThemes() as $theme)
+            <link href="{{ config('layout.self.rtl') ? asset(Metronic::rtlCssPath($theme)) : asset($theme) }}" rel="stylesheet" type="text/css"/>
+        @endforeach
+
+        {{-- Includable CSS --}}
+        <link href="assets/css/pages/wizard/wizard-2.css" rel="stylesheet" type="text/css" />
+        @yield('styles')
+
 </head>
 <body>
     <div id="app">
@@ -37,8 +62,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
+                    <!-- <ul class="navbar-nav ms-auto">
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -70,7 +94,7 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
         </nav>
@@ -79,5 +103,18 @@
             @yield('content')
         </main>
     </div>
+
+    {{-- Global Config (global config for global JS scripts) --}}
+    <script>
+        var KTAppSettings = {!! json_encode(config('layout.js'), JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES) !!};
+    </script>
+
+    {{-- Global Theme JS Bundle (used by all pages)  --}}
+    @foreach(config('layout.resources.js') as $script)
+        <script src="{{ asset($script) }}" type="text/javascript"></script>
+    @endforeach
+
+    {{-- Includable JS --}}
+    @yield('scripts')
 </body>
 </html>
