@@ -290,45 +290,47 @@
 									  </h3>
 									 </div>
 									</div>
-										<form class="form">
+										<form method="POST" action="{{ route('about.store') }}" enctype="multipart/form-data">
+											@csrf
+											@method('PATCH')
 											<div class="card-body">
 												<div class="form-group">
 													<label>Main Image</label>
 												  <div class="custom-file">
-													  <input type="file" class="custom-file-input" id="customFile"/>
-													  <label class="custom-file-label" for="customFile">Choose file</label>
+													  <input type="file" class="custom-file-input" id="main_image" name="main_image" accept=".jpg,.jpeg,.png" required/>
+													  <label class="custom-file-label" for="main_image">Choose file</label>
 												  </div>
 											   	</div>
 												<div class="form-group">
 													<label for="exampleTextarea">Main Description</label>
-													<textarea class="form-control form-control-solid" rows="3"></textarea>
+													<textarea class="form-control form-control-solid" rows="3" id="main_description" name="main_description" required></textarea>
 												</div>
-												<div class="form-group">
+												<!-- <div class="form-group">
 													<label>Slider Image</label>
-												  <div class="custom-file">
-													  <input type="file" class="custom-file-input" id="customFile"/>
-													  <label class="custom-file-label" for="customFile">Choose file</label>
-												  </div>
-											   	</div>
-												<div class="form-group">
-												  <div class="custom-file">
-													  <input type="file" class="custom-file-input" id="customFile"/>
-													  <label class="custom-file-label" for="customFile">Choose file</label>
-												  </div>
+													<div class="custom-file">
+														<input type="file" class="custom-file-input" id="slider_1" name="slider[]" accept=".jpg,.jpeg,.png" required/>
+														<label class="custom-file-label" for="customFile">Choose file</label>
+													</div>
 											   	</div>
 												<div class="form-group">
 													<div class="custom-file">
-														<input type="file" class="custom-file-input" id="customFile"/>
+														<input type="file" class="custom-file-input" id="slider_2" name="slider[]" accept=".jpg,.jpeg,.png" required/>
+														<label class="custom-file-label" for="customFile">Choose file</label>
+													</div>
+											   	</div>
+												<div class="form-group">
+													<div class="custom-file">
+														<input type="file" class="custom-file-input" id="slider_3" name="slider[]" accept=".jpg,.jpeg,.png" required/>
 														<label class="custom-file-label" for="customFile">Choose file</label>
 													</div>
 												</div>
 												<div class="form-group">
 													<label for="exampleTextarea">Description</label>
-													<textarea class="form-control form-control-solid" rows="3"></textarea>
-												</div>
+													<textarea class="form-control form-control-solid" rows="3" id="description" name="description"></textarea>
+												</div> -->
 											</div>
 											<div class="card-footer">
-												<button type="reset" class="btn btn-primary mr-2">Submit</button>
+												<button type="submit" class="btn btn-primary mr-2">Submit</button>
 											</div>
 										</form>
 									</div>

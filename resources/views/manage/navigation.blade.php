@@ -309,70 +309,67 @@
 											<div class="modal-content">
 												<div class="card card-custom gutter-b">
 													<div class="card-header">
-													 <div class="card-title">
-													  <h3 class="card-label">
-													   Content Settings
-													  </h3>
+														<div class="card-title">
+															<h3 class="card-label">
+															Content Settings
+															</h3>
 													  
-													 </div>
-													 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-														<i aria-hidden="true" class="ki ki-close"></i>
-													</button>
+														</div>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<i aria-hidden="true" class="ki ki-close"></i>
+														</button>
 													</div>
-														<form class="form">
-															<div class="card-body">
-																<div class="form-group">
-																	 <label>Name</label>
-																	<input type="text" class="form-control form-control-solid" placeholder=" "/>
+													<form method="POST" action="{{ route('navigation.store') }}" enctype="multipart/form-data">
+														@csrf
+														@method('PATCH')
+														<div class="card-body">
+															<div class="form-group">
+																<label>Name</label>
+																<input id="name" type="text" class="form-control" name="name" value="{{old('name')}}" required autocomplete="name" autofocus>
+															</div>
+															<div class="form-group">
+																<label>Insert icon code class here</label>
+																<input id="icon" type="text" name="icon" value="{{old('icon')}}" class="form-control form-control-solid" placeholder="Paste Icon Class Here" required autocomplete="name" autofocus />
+															</div>
+															<div class="form-group">
+																<!-- <a href="https://boxicons.com" target="_blank"  class="btn btn-info mr-2">Icon List</a> Or find more  -->
+																<a class="btn btn-info mr-2" href="{{ route('icon') }}" target="_blank"><ins>Icon List</ins></a>
+															</div>
+															<div class="form-group row">
+																<label class="col-3 col-form-label">Self Url</label>
+																<div class="col-9 col-form-label">
+																	<select class="form-control custom-select" name="self_url" id="self_url">
+																		<option value="">Self Url Option</option>
+																		<option value="1"@if (old("self_url") == 1) selected="selected" @endif>True</option>
+																		<option value="2"@if (old("self_url") == 2) selected="selected" @endif>False</option>
+																	</select>
 																</div>
-																<div class="form-group">
-																	<label>Insert icon class here</label>
-																   <input type="text" class="form-control form-control-solid" placeholder="Paste Icon Class Here"/>
-																</div>
-																<div class="form-group">
-																	<a href="https://boxicons.com" target="_blank"  class="btn btn-info mr-2">Icon List</a> Or find more 
-																		<a class="font-weight-bold" href="icon.html" target="_blank"><ins>here!</ins></a>
-																</div>
+															</div>
+															<div  id="otherFieldDiv">
 																<div class="form-group row">
-																	<label class="col-3 col-form-label">Self Url</label>
+																	<label class="col-3 col-form-label">Choose Id Content</label>
 																	<div class="col-9 col-form-label">
-																		<select class="custom-select form-control" id="seeAnotherField">
-																			<option selected>Self Url Option</option>
-																			<option value="1">True</option>
-																			<option value="2">False</option>
+																		<select class="form-control custom-select" id="content_id" name="content_id">
+																			<option value="">Id Content</option>
+																			@foreach ($contents as $content)
+																				<option value="{{$content->id}}" @if (old("content_id") == $content->id) selected="selected" @endif>ID : {{$content->id}} | (Name : {{$content->name}})</option>
+																			@endforeach
 																		</select>
 																	</div>
 																</div>
-																<div  id="otherFieldDiv">
-																	<div class="form-group row">
-																		<label class="col-3 col-form-label">Choose Id Content</label>
-																		<div class="col-9 col-form-label">
-																			<select class="custom-select form-control" >
-																				<option selected>Id Content</option>
-																				<option value="1">Id_1</option>
-																				<option value="2">Id_2</option>
-																				<option value="2">Id_3</option>
-																				<option value="2">Id_4</option>
-																				<option value="2">Id_5</option>
-																				<option value="2">Id_6</option>
-																				<option value="2">Id_7</option>
-
-																			</select>
-																		</div>
-																	</div>
-																</div>
-																<div  id="otherFieldDiv_2">
-																	<div class="form-group">
-																		<label>Url</label>
-																	   <input type="text" class="form-control form-control-solid" placeholder=" "/>
-																	</div>
-																</div>
-																
 															</div>
-															<div class="card-footer">
-																<button type="reset" class="btn btn-primary mr-2">Submit</button>
+															<div  id="otherFieldDiv_2">
+																<div class="form-group">
+																	<label>Url</label>
+																<input id="url" name="url" value="{{old('url')}}" type="text" class="form-control form-control-solid" autocomplete="name" autofocus/>
+																</div>
 															</div>
-														</form>
+															
+														</div>
+														<div class="card-footer">
+															<button type="submit" class="btn btn-primary mr-2">Submit</button>
+														</div>
+													</form>
 												</div>
 											</div>
 										</div>
@@ -401,37 +398,34 @@
 																</tr>
 															</thead>
 															<tbody>
-																<tr>
-																	<td>1</td>
-																	<td>Navogation_1</td>
-																	<td>Icon_1</td>
-																	<td>
-																		<div style="color: #FFA800;">Self Url Example</div>
-																	</td>
-		
-																	<td>URL Example</td>
-																	<td>
-																		<a href="navigation_edit.html"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-																		<a href="#"><i class="fa fa-trash text-danger mr-2"></i></a>	
-
-																	</td>
-																</tr>
-																<tr>
-																	<td>1</td>
-																	<td>Navogation_2</td>
-																	<td>Icon_2</td>
-																	<td>
-																		<div style="color: #FFA800;">Self Url Example</div>
-																	</td>
-		
-																	<td>URL Example</td>
-																	<td>
-																		<a href="navigation_edit.html"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-																		<a href="#"><i class="fa fa-trash text-danger mr-2"></i></a>	
-
-																	</td>
-																</tr>
-																
+																@php
+																	$num = 0
+																@endphp
+																@foreach($navigations as $navigation)
+																	<tr>
+																		<td>{{ $num+=1 }}</td>
+																		<td>{{ $navigation->name }}</td>
+																		<td>{{ $navigation->icon }}</td>
+																		<td>
+																			<div style="color: #FFA800;">{{ $navigation->self_url }}</div>
+																		</td>
+																		@if( $navigation->url == null)
+																			<td>-</td>
+																		@else
+																			<td>{{ $navigation->url }}</td>
+																		@endif
+																		<td>
+																			<form method="POST" action="{{ route('navigation.delete',[$navigation->id]) }}">
+																				@csrf 
+																				@method('DELETE')
+																				<a class="btn btn-icon btn-light btn-sm mx-1" href="{{ route('navigation.view',[$navigation->id]) }}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+																				<button type="submit" title="Delete" class="btn btn-icon btn-light btn-sm mx-1" onclick='return confirm("Apakah kamu yakin?")'>
+																				<i class='far fa-trash-alt' style="color:red"></i>
+																				</button>
+																			</form>	
+																		</td>
+																	</tr>
+																@endforeach		
 																
 															</tbody>
                                                         </table>
@@ -529,7 +523,6 @@
 			</div>
 			<!--end::Content-->
 		</div>
-		
 		<!--end::Sticky Toolbar-->
 		<!--begin::Demo Panel-->
 		
@@ -548,10 +541,33 @@
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="{{ asset('js/pages/widgets.js') }}"></script>
 		<script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}"></script>
-		<script src="{{ asset('js/hide.js') }}"></script>
+		<!-- <script src="{{ asset('js/hide.js') }}"></script> -->
 
 
 		<!--end::Page Scripts-->
 	</body>
 	<!--end::Body-->
+
+	<script>
+		$('#otherFieldDiv').hide();
+		$('#otherFieldDiv_2').hide();
+		$("#self_url").change(function() {
+			if ($(this).val() == "1") {
+			$('#otherFieldDiv').show();
+			} else {
+			$('#otherFieldDiv').hide();
+			}
+		});
+		$("#self_url").trigger("change");
+		
+		$("#self_url").change(function() {
+			if ($(this).val() == "2") {
+			$('#otherFieldDiv_2').show();
+			} else {
+			$('#otherFieldDiv_2').hide();
+			}
+		});
+	</script>
+
+	
 </html>

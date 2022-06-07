@@ -309,60 +309,61 @@
 											<div class="modal-content">
 												<div class="card card-custom gutter-b">
 													<div class="card-header">
-													 <div class="card-title">
-													  <h3 class="card-label">
-													   Add New Content
-													  </h3>
-													  
-													 </div>
-													 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-														<i aria-hidden="true" class="ki ki-close"></i>
-													</button>
+														<div class="card-title">
+															<h3 class="card-label">
+															Add New Content
+															</h3>
+														
+														</div>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<i aria-hidden="true" class="ki ki-close"></i>
+														</button>
 													</div>
-														<form class="form">
-															<div class="card-body">
-																 <div class="form-group">
-																	  <label>Name</label>
-																	  <input type="text" class="form-control form-control-solid" placeholder=""/>
-																 </div>
-																 <div class="form-group">
-																	<label>Image</label>
-																  <div class="custom-file">
-																	  <input type="file" class="custom-file-input" id="customFile"/>
-																	  <label class="custom-file-label" for="customFile">Choose file</label>
-																  </div>
-																   </div>
-																<div class="form-group">
-																	<label for="exampleTextarea">Description</label>
-																	<textarea class="form-control form-control-solid" rows="3"></textarea>
+													<form method="POST" action="{{ route('content.store') }}" enctype="multipart/form-data">
+														@csrf
+														@method('PATCH')
+														<div class="card-body">
+															<div class="form-group">
+																<label>Name</label>
+																<input id="name" type="text" class="form-control" name="name" value="{{old('name')}}" required autocomplete="name" autofocus>
+															</div>
+															<div class="form-group">
+																<label>Image</label>
+																<div class="custom-file">
+																	<input id="image" type="file" class="custom-file-input" name="image" accept=".jpg,.jpeg,.png" required/>
+																	<label class="custom-file-label" for="customFile">Choose file</label>
 																</div>
-																<div class="form-group">
-																	<label>Url</label>
-																	<input type="text" class="form-control form-control-solid" placeholder="URL"/>
-															   </div>
-															   <div class="form-group row">
-																<label class="col-3 col-form-label">Image Alignment</label>
+															</div>
+															<div class="form-group">
+																<label for="exampleTextarea">Description</label>
+																<textarea id="description" name="description" value="{{old('description')}}" class="form-control form-control-solid" rows="3" required></textarea>
+															</div>
+															<div class="form-group">
+																<label>Url</label>
+																<input id="url" name="url" type="text" value="{{old('url')}}" class="form-control form-control-solid" placeholder="URL"/>
+															</div>
+															<div class="form-group row">
+																<label class="col-3 col-form-label">Image Alignment</label>	
 																<div class="col-9 col-form-label">
 																	<div class="radio-inline">
 																		<label class="radio radio-primary">
-																			<input type="radio" name="radios11" checked="checked"/>
+																			<input type="radio" id="image_aligntment" name="image_aligntment" value="1"/>
 																			<span></span>
 																			Right
 																		</label>
 																		<label class="radio radio-primary">
-																			<input type="radio" name="radios11"  />
+																			<input type="radio" id="image_aligntment" name="image_aligntment" value="2"/>
 																			<span></span>
 																			Left
 																		</label>
-																	
 																	</div>
 																</div>
 															</div>
-															</div>
-															<div class="card-footer">
-																<button type="reset" class="btn btn-primary mr-2">Submit</button>
-															</div>
-														</form>
+														</div>
+														<div class="card-footer">
+															<button type="submit" class="btn btn-primary mr-2">Submit</button>
+														</div>
+													</form>
 												</div>
 											</div>
 										</div>
@@ -392,39 +393,29 @@
 																</tr>
 															</thead>
 															<tbody>
-																<tr>
-																	<td>1</td>
-																	<td>Content_1</td>
-																	<td>Image.jpg</td>
-																	<td>
-																		<div style="color: #FFA800;">This is Description</div>
-																	</td>
-																	<td><div style="color: #3699FF;">URL_1234567890</div></td>
-		
-																	<td>Left</td>
-																	<td>
-																		<a href="content_edit.html"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-																		<a href="content_edit.html"><i class="fa fa-trash text-danger mr-2"></i></a>	
-
-																	</td>
-																</tr>
-																<tr>
-																	<td>1</td>
-																	<td>Content_1</td>
-																	<td>Image.jpg</td>
-																	<td>
-																		<div style="color: #FFA800;">This is Description</div>
-																	</td>
-																	<td><div style="color: #3699FF;">URL_1234567890</div></td>
-		
-																	<td>Left</td>
-																	<td>
-																		<a href="content_edit.html"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-																		<a href="content_edit.html"><i class="fa fa-trash text-danger mr-2"></i></a>	
-
-																	</td>
-																</tr>
-																
+																@php
+																	$num = 0
+																@endphp
+																@foreach($contents as $content)
+																	<tr>
+																		<td>{{ $num+=1 }}</td>
+																		<td>{{ $content->name }}</td>
+																		<td>{{ $content->image }}</td>
+																		<td><div style="color: #FFA800;">{{ $content->description }}</div></td>
+																		<td><div style="color: #3699FF;">{{ $content->url }}</div></td>
+																		<td>{{ $content->image_aligntment }}</td>
+																		<td>
+																			<form method="POST" action="{{ route('content.delete',[$content->id]) }}">
+																			@csrf 
+                                               								@method('DELETE')
+																				<a class="btn btn-icon btn-light btn-sm mx-1" href="{{ route('content.view',[$content->id]) }}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+																				<button type="submit" title="Delete" class="btn btn-icon btn-light btn-sm mx-1" onclick='return confirm("Apakah kamu yakin?")'>
+																				<i class='far fa-trash-alt' style="color:red"></i>
+																				</button>
+																			</form>
+																		</td>
+																	</tr>
+																@endforeach																
 															</tbody>
                                                         </table>
 										            </div>

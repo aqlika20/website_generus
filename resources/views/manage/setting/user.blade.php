@@ -4,7 +4,7 @@
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="">
-	<meta charset="utf-8" />
+		<meta charset="utf-8" />
 		<title>SATREPS | Admin Dashboard</title>
 		<meta name="description" content="Satreps Admin Dashboard" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -319,27 +319,38 @@
 														<i aria-hidden="true" class="ki ki-close"></i>
 													</button>
 													</div>
-														<form class="form">
+														<form method="POST" action="{{ route('user.store') }}" enctype="multipart/form-data">
+															@csrf
+															@method('PATCH')
 															<div class="card-body">
 																<div class="form-group">
-																	 <label>Name</label>
-																	<input type="text" class="form-control form-control-solid" placeholder=""/>
+																	<label>Name</label>
+											  						<input id="name" name="name" type="text" class="form-control form-control-solid" value="{{old('name')}}" required autocomplete="name" autofocus/>
 																</div>
 																<div class="form-group">
 																	<label>Email</label>
-																   <input type="text" class="form-control form-control-solid" placeholder=""/>
+																	<input id="email" name="email" type="text" class="form-control form-control-solid" value="{{old('email')}}" required autocomplete="email" autofocus/>
 															  	</div>
 																<div class="form-group">
+																	<label>Role</label>
+																	<select id="roles_id" class="form-control" name="roles_id" required>
+																		<option value="">Choose</option>
+																		@foreach ($roles as $role)
+																		<option value="{{$role->id}}" @if (old("roles_id") == $role->id) selected="selected" @endif>{{$role->name}}</option>
+																		@endforeach
+																	</select>
+																</div>
+																<div class="form-group">
 																	<label>Password</label>
-																   <input type="text" class="form-control form-control-solid" placeholder=""/>
+																	<input id="password" name="password" type="password" class="form-control form-control-solid" value="{{old('password')}}" required autocomplete="password" autofocus/>
 															  	</div>
 																  <div class="form-group">
 																	<label>Confirm Password</label>
-																   <input type="text" class="form-control form-control-solid" placeholder=""/>
+																	<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" autofocus>
 															  	</div>
 															</div>
 															<div class="card-footer">
-																<button type="reset" class="btn btn-primary mr-2">Submit</button>
+																<button type="submit" class="btn btn-primary mr-2">Submit</button>
 															</div>
 														</form>
 												</div>
@@ -368,26 +379,26 @@
 																</tr>
 															</thead>
 															<tbody>
-																<tr>
-																	<td>1</td>
-																	<td>User_1</td>
-																	<td>User@user.test</td>		
-																	<td>
-																		<a href="user_edit.html"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-																		<a href="#"><i class="fa fa-trash text-danger mr-2"></i></a>	
+																@php
+																	$num = 0
+																@endphp
+																@foreach($users as $user)
+																	<tr>
+																		<td>{{ $num+=1 }}</td>
+																		<td>{{ $user->name }}</td>
+																		<td>{{ $user->email }}</td>	
+																		<td>
+																			<form method="POST" action="{{ route('user.delete',[$user->id]) }}">
+																				@csrf 
+																				@method('DELETE')
+																				<a href="{{ route('user.view',[$user->id]) }}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+																				<button type="submit" title="Delete" class="btn btn-icon btn-light btn-sm mx-1" onclick='return confirm("Apakah kamu yakin?")'>
+																				</button>
+																			</form>	
+																		</td>
+																	</tr>
+																@endforeach		
 
-																	</td>
-																</tr>
-																<tr>
-																	<td>2</td>
-																	<td>User_2</td>
-																	<td>User@user.test</td>		
-																	<td>
-																		<a href="user_edit.html"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-																		<a href="#"><i class="fa fa-trash text-danger mr-2"></i></a>	
-
-																	</td>
-																</tr>
 																
 															</tbody>
                                                         </table>

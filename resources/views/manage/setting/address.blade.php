@@ -290,19 +290,21 @@
 									  </h3>
 									 </div>
 									</div>
-										<form class="form">
+										<form method="POST" action="{{ route('address.store') }}" enctype="multipart/form-data">
+											@csrf
+											@method('PATCH')
 											<div class="card-body">
 											 	<div class="form-group">
 											  		<label>Address Title</label>
-											  		<input type="text" class="form-control form-control-solid" placeholder="Address Title"/>
+											  		<input id="title" name="title" type="text" class="form-control form-control-solid" placeholder="Address Title" value="{{old('title')}}" autocomplete="title" autofocus/>
 											 	</div>
 												<div class="form-group">
 													<label for="exampleTextarea">Address Description</label>
-													<textarea class="form-control form-control-solid" rows="3"></textarea>
+													<textarea class="form-control form-control-solid" rows="3" id="description" name="description" value="{{old('description')}}" autocomplete="description" autofocus></textarea>
 												</div>
 											</div>
 											<div class="card-footer">
-												<button type="reset" class="btn btn-primary mr-2">Submit</button>
+												<button type="submit" class="btn btn-primary mr-2">Submit</button>
 											</div>
 										</form>
 									</div>

@@ -284,24 +284,26 @@
 							<div class="container">
 								<div class="card card-custom gutter-b">
 									<div class="card-header">
-									 <div class="card-title">
-									  <h3 class="card-label">
-									   Organisation Structure Settings
-									  </h3>
-									 </div>
+										<div class="card-title">
+											<h3 class="card-label">
+											Organisation Structure Settings
+											</h3>
+										</div>
 									</div>
-										<form class="form">
+										<form method="POST" action="{{ route('organisation.store') }}" enctype="multipart/form-data">
+											@csrf
+											@method('PATCH')
 											<div class="card-body">
 											 	<div class="form-group">
 											  		<label>Add New Structure Organisation Image</label>
 													<div class="custom-file">
-														<input type="file" class="custom-file-input" id="customFile"/>
-														<label class="custom-file-label" for="customFile">Choose file</label>
+														<input type="file" class="custom-file-input" id="image" name="image" accept=".jpg,.jpeg,.png" required/>
+														<label class="custom-file-label" for="image">Choose file</label>
 													</div>
 											 	</div>
 											</div>
 											<div class="card-footer">
-												<button type="reset" class="btn btn-primary mr-2">Submit</button>
+												<button type="submit" class="btn btn-primary mr-2">Submit</button>
 											</div>
 										</form>
 									</div>

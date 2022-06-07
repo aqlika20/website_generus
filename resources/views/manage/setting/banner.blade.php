@@ -284,27 +284,29 @@
 							<div class="container">
 								<div class="card card-custom gutter-b">
 									<div class="card-header">
-									 <div class="card-title">
-									  <h3 class="card-label">
-									   Banner Settings
-									  </h3>
-									 </div>
+										<div class="card-title">
+											<h3 class="card-label">
+											Banner Settings
+											</h3>
+										</div>
 									</div>
-										<form class="form">
-											<div class="card-body">
-											 	<div class="form-group">
-											  		<label>Banner Title</label>
-											  		<input type="text" class="form-control form-control-solid" placeholder="Banner Title"/>
-											 	</div>
-												<div class="form-group">
-													<label for="exampleTextarea">Banner Description</label>
-													<textarea class="form-control form-control-solid" rows="3"></textarea>
-												</div>
+									<form method="POST" action="{{ route('banner.store') }}" enctype="multipart/form-data">
+										@csrf
+										@method('PATCH')
+										<div class="card-body">
+											<div class="form-group">
+												<label>Banner Title</label>
+												<input id="title" name="title" type="text" class="form-control form-control-solid" placeholder="Banner Title" value="{{old('title')}}" autocomplete="title" autofocus/>
 											</div>
-											<div class="card-footer">
-												<button type="reset" class="btn btn-primary mr-2">Submit</button>
+											<div class="form-group">
+												<label for="exampleTextarea">Banner Description</label>
+												<textarea id="description" name="description" class="form-control form-control-solid" rows="3" value="{{old('description')}}" autocomplete="description" autofocus></textarea>
 											</div>
-										</form>
+										</div>
+										<div class="card-footer">
+											<button type="submit" class="btn btn-primary mr-2">Submit</button>
+										</div>
+									</form>
 								</div>
 							</div>
 							<!--end::Container-->
