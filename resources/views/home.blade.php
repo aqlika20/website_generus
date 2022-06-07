@@ -22,8 +22,8 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-  <link href="{{ asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
+  <link href="plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+  <link href="plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
 		
 
   <!-- Template Main CSS File -->
@@ -58,7 +58,7 @@
       </ul> -->
       <ul>
         @foreach($navigations as $navigation)
-          <li><a href="{{$navigation->url}}" class="nav-link scrollto active"><i class="{{$navigation->icon}}"></i> <span>{{$navigation->name}}</span></a></li>
+          <li><a href="{{$navigation->url}}" class="nav-link scrollto"><i class="{{$navigation->icon}}"></i> <span>{{$navigation->name}}</span></a></li>
         @endforeach	
       </ul>
     </nav><!-- .nav-menu -->
