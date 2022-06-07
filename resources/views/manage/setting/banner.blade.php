@@ -7,26 +7,34 @@
 		<meta charset="utf-8" />
 		<title>SATREPS | Admin Dashboard</title>
 		<meta name="description" content="Satreps Admin Dashboard" />
+		<meta http-equiv=”Refresh” content=”0;URL=https://iot.mict.id/manage” />
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="canonical" href="https://keenthemes.com/metronic" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
-		<!--begin::Page Vendors Styles(used by this page)-->
-		<link href="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<!--end::Page Vendors Styles-->
-		<!--begin::Global Theme Styles(used by all pages)-->
-		<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<!--end::Global Theme Styles-->
-		<!--begin::Layout Themes(used by all pages)-->
-		<link href="{{ asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
-		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="{{ asset('media/logos') }}" />
+		<@if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+			<link href="{{ secure_asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ secure_asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ secure_asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ secure_asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ secure_asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ secure_asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ secure_asset('css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ secure_asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
+			<link rel="shortcut icon" href="{{ secure_asset('media/logos') }}" />
+		@else
+			<link href="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ asset('css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
+			<link href="{{ asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
+			<link rel="shortcut icon" href="{{ asset('media/logos') }}" />
+		@endif
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
