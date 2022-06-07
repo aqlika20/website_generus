@@ -25,7 +25,7 @@
 		<link href="css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
 		<link href="css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="media/logos/favicon.ico') }}" />
+		<link rel="shortcut icon" href="media/logos/favicon.ico" />
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -34,12 +34,12 @@
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Login-->
 			<div class="login login-4 login-signin-on d-flex flex-row-fluid" id="kt_login">
-				<div class="d-flex flex-center flex-row-fluid bgi-size-cover bgi-position-top bgi-no-repeat" style="background-image: url(' media/bg/bg-3.jpg') }} ')">
+				<div class="d-flex flex-center flex-row-fluid bgi-size-cover bgi-position-top bgi-no-repeat" style="background-image: url(' media/bg/bg-3.jpg')">
 					<div class="login-form text-center p-7 position-relative overflow-hidden">
 						<!--begin::Login Header-->
 						<div class="d-flex flex-center mb-15">
 							<a href="#">
-								<img src="media/logos/SATREPS.png') }}" class="max-h-800px" alt="" />
+								<img src="media/logos/SATREPS.png" class="max-h-800px" alt="" />
 							</a>
 						</div>
 						<!--end::Login Header-->
