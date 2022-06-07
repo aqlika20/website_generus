@@ -255,7 +255,7 @@
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{$currentUser->name}}</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Admin</span>
 									</div>
 								</div>
 								<!--end::User-->
@@ -347,7 +347,7 @@
 				<!--begin::Header-->
 				<div class="d-flex align-items-center mt-5">
 					<div class="symbol symbol-100 mr-5">
-						<div class="symbol-label" style="background-image:url('{{ asset('media/users/300_21.jpg') }}"></div>
+						<div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
 					</div>
 					<div class="d-flex flex-column">
 						  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>

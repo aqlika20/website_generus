@@ -13,20 +13,20 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Page Vendors Styles(used by this page)-->
-		<link href="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendors Styles-->
 		<!--begin::Global Theme Styles(used by all pages)-->
-		<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+		<link href="plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Theme Styles-->
 		<!--begin::Layout Themes(used by all pages)-->
-		<link href="{{ asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
-		<link href="{{ asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
+		<link href="css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+		<link href="css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+		<link href="css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+		<link href="css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="{{ asset('media/logos') }}" />
+		<link rel="shortcut icon" href="media/logos" />
 	</head>
 
 	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed  page-loading">
@@ -35,7 +35,7 @@
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
 			<a href="{{ route('home')}}">
-				<img alt="Logo" src="{{ asset('media/logos/SATREPS.svg') }}" />
+				<img alt="Logo" src="media/logos/SATREPS.svg" />
 			</a>
 			<!--end::Logo-->
 			<!--begin::Toolbar-->
@@ -13590,7 +13590,7 @@
 				<!--begin::Header-->
 				<div class="d-flex align-items-center mt-5">
 					<div class="symbol symbol-100 mr-5">
-						<div class="symbol-label" style="background-image:url('{{ asset('media/users/300_21.jpg') }}')"></div>
+						<div class="symbol-label" style="background-image:url('media/users/300_21.jpg')"></div>
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
@@ -13610,7 +13610,7 @@
 							<div class="symbol symbol-40 bg-light mr-3">
 								<div class="symbol-label">
 									<span class="svg-icon svg-icon-md svg-icon-success">
-										<!--begin::Svg Icon | path:{{ asset('media/svg/icons/General/Notification2.svg') }}-->
+										<!--begin::Svg Icon | path:media/svg/icons/General/Notification2.svg-->
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 												<rect x="0" y="0" width="24" height="24" />
@@ -13631,7 +13631,7 @@
 				<!--end::Nav-->
 				<!--begin::Separator-->
 				<div class="separator separator-dashed my-7"></div>
-				<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
+				<a href="{{ route('logout" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
 			</div>
 			<!--end::Content-->
 		</div>
@@ -13644,15 +13644,15 @@
 		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
-		<script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
-		<script src="{{ asset('plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
-		<script src="{{ asset('js/scripts.bundle.js') }}"></script>
+		<script src="plugins/global/plugins.bundle.js"></script>
+		<script src="plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="js/scripts.bundle.js"></script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Vendors(used by this page)-->
-		<script src="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
+		<script src="plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 		<!--end::Page Vendors-->
 		<!--begin::Page Scripts(used by this page)-->
-		<script src="{{ asset('js/pages/widgets.js') }}"></script>
+		<script src="js/pages/widgets.js"></script>
 		<!--end::Page Scripts-->
 	</body>
 
