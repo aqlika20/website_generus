@@ -68,14 +68,6 @@
 										</span>
 									@enderror
 								</div>
-								<div class="form-group d-flex flex-wrap justify-content-between align-items-center">
-									<div class="checkbox-inline">
-										<label class="checkbox m-0 text-muted">
-										<input  type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} />
-										<span></span>Remember me</label>
-									</div>
-									<a href="javascript:;" id="kt_login_forgot" class="text-muted text-hover-primary">Forget Password ?</a>
-								</div>
 								<button type="submit" class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-4">
                                     {{ __('Login') }}
                                 </button>
