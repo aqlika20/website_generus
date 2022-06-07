@@ -44,8 +44,8 @@ CREATE TABLE `contents` (
 --
 
 INSERT INTO `contents` (`id`, `code`, `name`, `image`, `description`, `url`, `image_aligntment`, `created_at`, `updated_at`) VALUES
-(3, 'thmlyq', 'EL-MARC', 'fiver.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl nulla, mattis vel lobortis in, imperdiet quis erat. Nullam commodo facilisis dui, vitae consectetur ipsum pretium in.', 'https://macantech.asia/', 1, '2022-06-06 00:07:58', '2022-06-07 00:39:26'),
-(4, 'nxjrqy', 'ALBOOM', 'genshin-impact-pax-east-2020.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisl nulla, mattis vel lobortis in, imperdiet quis erat. Nullam commodo facilisis dui, vitae consectetur ipsum pretium in. Pellentesque dui massa, mollis non elit eu, ornare finibus sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer bibendum sem ut porta mattis.', 'https://macantech.asia/', 2, '2022-06-06 17:46:27', '2022-06-07 00:39:57');
+(3, 'thmlyq', 'EL-MARC', 'fiver.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'https://macantech.asia/', 1, '2022-06-06 00:07:58', '2022-06-07 00:39:26'),
+(4, 'nxjrqy', 'ALBOOM', 'genshin-impact-pax-east-2020.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'https://macantech.asia/', 2, '2022-06-06 17:46:27', '2022-06-07 00:39:57');
 
 -- --------------------------------------------------------
 
@@ -237,7 +237,7 @@ CREATE TABLE `settings_about` (
 --
 
 INSERT INTO `settings_about` (`id`, `main_image`, `main_description`, `data_json`, `created_at`, `updated_at`) VALUES
-(1, 'img1.jpg', 'Akuakultur laut (Mariculture) diharapkan dapat memenuhi permintaan produk ikan yang meningkat tidak hanya di Indonesia tetapi juga di dunia, terutama di bawah peningkatan sederhana penangkapan ikan liar.', NULL, '2022-06-06 23:34:25', '2022-06-06 23:34:25');
+(1, 'img1.jpg', 'Akuakultur laut (Mariculture) diharapkan dapat memenuhi permintaan produk ikan yang meningkat tidak hanya di Indonesia tetapi juga di dunia.', NULL, '2022-06-06 23:34:25', '2022-06-06 23:34:25');
 
 -- --------------------------------------------------------
 
@@ -279,7 +279,7 @@ CREATE TABLE `settings_banner` (
 --
 
 INSERT INTO `settings_banner` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'SATREPS', 'Mariculture adalah komponen penting untuk produksi akuakultur di Indonesia dengan total produksi mencapai 9.034.756 ton (US $ 1.951.097,72) pada tahun 2014 dan 579.463 orang terlibat dalam kegiatan budidaya', '2022-06-07 00:04:42', '2022-06-06 17:18:22');
+(1, 'SATREPS', 'Mariculture adalah komponen penting untuk produksi akuakultur di Indonesia dengan total produksi mencapai 9.034.756 ton (US $ 1.951.097,72) pada tahun 2014.', '2022-06-07 00:04:42', '2022-06-06 17:18:22');
 
 -- --------------------------------------------------------
 
@@ -389,8 +389,8 @@ ALTER TABLE `oauth_refresh_tokens`
 --
 -- Indexes for table `password_resets`
 --
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
+-- ALTER TABLE `password_resets`
+  -- ADD KEY `password_resets_email_index` (`email`);
 
 --
 -- Indexes for table `roles`
