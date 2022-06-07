@@ -39,7 +39,7 @@ class ContentController extends Controller
         $currentUser = User::find(Auth::id());
         $contents = Content::All();
 
-        return view('manage.content', compact('contents'));
+        return view('manage.content', compact('contents', 'currentUser'));
     }
 
     public function store(Request $request) 
@@ -87,7 +87,7 @@ class ContentController extends Controller
         if (!$content) {
             return redirect()->route('content')->with(['error'=>'Parameter id tidak valid.']);
         }
-        return view('manage.editcontent', compact('content'));
+        return view('manage.editcontent', compact('content', 'currentUser'));
     }
 
     public function edit($id, Request $request)

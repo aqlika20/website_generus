@@ -13600,7 +13600,7 @@
 				</div>
 				<!--end::Header-->
 				<!--begin::Separator-->
-				<div class="separator separator-dashed mt-8 mb-5"></div>
+				  
 				<!--end::Separator-->
 				<!--begin::Nav-->
 				<div class="navi navi-spacer-x-0 p-0">
@@ -13631,7 +13631,7 @@
 				<!--end::Nav-->
 				<!--begin::Separator-->
 				<div class="separator separator-dashed my-7"></div>
-				<a href="login.html" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
+				<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
 			</div>
 			<!--end::Content-->
 		</div>

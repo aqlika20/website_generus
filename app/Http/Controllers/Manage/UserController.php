@@ -35,7 +35,7 @@ class UserController extends Controller
         $currentUser = User::find(Auth::id());
         $users = User::All();
         $roles = Role::all();
-        return view('manage.setting.user', compact('users', 'roles'));
+        return view('manage.setting.user', compact('users', 'roles', 'currentUser'));
     }
 
     public function view($id)
@@ -46,7 +46,7 @@ class UserController extends Controller
         if (!$user) {
             return redirect()->route('user')->with(['error'=>'Parameter id tidak valid.']);
         }
-        return view('manage.setting.edituser', compact('user', 'roles'));
+        return view('manage.setting.edituser', compact('user', 'roles', 'currentUser'));
     }
 
     public function storeUser(Request $request) 
@@ -92,22 +92,9 @@ class UserController extends Controller
 
         $validator = Validator::make($data, [
             'name' => 'required',
-            'nip' => 'required',
-            'password' => 'nullable',
+            'email' => 'required',
             'role' => 'required',
-            'group' => 'nullable'
         ]);
-
-        if ($validator->fails())
-        {
-            return redirect()->route('user')->with(['error'=>'Data tidak valid.']);
-        }
-        else if (empty(trim(Role::find($data['role']))))
-        {
-            return redirect()->route('user')->with(['error'=>'Data tidak valid.']);
-        }
-
-        
 
         $user = User::where([
             ['id', '=', $id]
@@ -117,12 +104,8 @@ class UserController extends Controller
         }
 
         $user->name = $data['name'];
-        $user->nip = $data['nip'];
+        $user->email = $data['email'];
         $user->roles_id = $data['role'];
-        $user->groups_id = $data['group'];
-        if (!empty(trim($data['password']))) {
-            $user->password = Hash::make($data['password']);
-        }
 
         $user->save();
 

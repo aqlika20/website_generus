@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Manage;
 
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Organisation;
 use App\Models\Navigation;
@@ -34,7 +35,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('manage.dashboard');
+        $currentUser = User::find(Auth::id());
+        return view('manage.dashboard', compact('currentUser'));
     }
     public function home()
     {

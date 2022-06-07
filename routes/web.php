@@ -58,12 +58,14 @@ Route::get('/user/view/{id}', [App\Http\Controllers\Manage\UserController::class
 Route::patch('/user/edit/{id}', [App\Http\Controllers\Manage\UserController::class, 'edit'])->name('user.edit');
 Route::delete('/user/delete/{id}', [App\Http\Controllers\Manage\UserController::class, 'delete'])->name('user.delete');
 
+
 Route::get('/tentang', function () {
     return view('about');
 });
 
 Route::prefix('/manage')->group(function(){
     Auth::routes(['register' => false, 'reset' => false]);
+    Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
     Route::get('/', [App\Http\Controllers\Manage\DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard', [App\Http\Controllers\Manage\DashboardController::class, 'index'])->name('home1');
 });

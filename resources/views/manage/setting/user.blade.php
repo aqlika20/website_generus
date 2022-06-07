@@ -255,7 +255,7 @@
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Admin</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{$currentUser->name}}</span>
 									</div>
 								</div>
 								<!--end::User-->
@@ -391,8 +391,9 @@
 																			<form method="POST" action="{{ route('user.delete',[$user->id]) }}">
 																				@csrf 
 																				@method('DELETE')
-																				<a href="{{ route('user.view',[$user->id]) }}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+																				<a class="btn btn-icon btn-light btn-sm mx-1" href="{{ route('user.view',[$user->id]) }}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
 																				<button type="submit" title="Delete" class="btn btn-icon btn-light btn-sm mx-1" onclick='return confirm("Apakah kamu yakin?")'>
+																					<i class='far fa-trash-alt' style="color:red"></i>
 																				</button>
 																			</form>	
 																		</td>
@@ -453,46 +454,21 @@
 						<div class="symbol-label" style="background-image:url('{{ asset('media/users/300_21.jpg') }}"></div>
 					</div>
 					<div class="d-flex flex-column">
-						<a class="font-weight-bold font-size-h5 text-dark-75">Admin Test</a>
-						<span class="navi-text text-muted text-hover-primary">admin@test.test</span>
+						  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>
+						<span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
 
 					</div>
 				</div>
 				<!--end::Header-->
 				<!--begin::Separator-->
-				<div class="separator separator-dashed mt-8 mb-5"></div>
+				  
 				<!--end::Separator-->
 				<!--begin::Nav-->
-				<div class="navi navi-spacer-x-0 p-0">
-					<!--begin::Item-->
-					<a href="profile.html" class="navi-item">
-						<div class="navi-link">
-							<div class="symbol symbol-40 bg-light mr-3">
-								<div class="symbol-label">
-									<span class="svg-icon svg-icon-md svg-icon-success">
-										<!--begin::Svg Icon | path:{{ asset('media/svg/icons/General/Notification2.svg') }}-->
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-												<rect x="0" y="0" width="24" height="24" />
-												<path d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z" fill="#000000" />
-												<circle fill="#000000" opacity="0.3" cx="18.5" cy="5.5" r="2.5" />
-											</g>
-										</svg>
-										<!--end::Svg Icon-->
-									</span>
-								</div>
-							</div>
-							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
-								
-							</div>
-						</div>
-					</a>
-				</div>
+				 
 				<!--end::Nav-->
 				<!--begin::Separator-->
 				<div class="separator separator-dashed my-7"></div>
-				<a href="login.html" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
+				<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
 			</div>
 			<!--end::Content-->
 		</div>

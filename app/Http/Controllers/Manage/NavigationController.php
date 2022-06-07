@@ -36,7 +36,7 @@ class NavigationController extends Controller
         $navigations = Navigation::All();
         $contents = Content::All();
 
-        return view('manage.navigation', compact('navigations', 'contents'));
+        return view('manage.navigation', compact('navigations', 'contents', 'currentUser'));
     }
 
     public function store(Request $request) 
@@ -86,7 +86,7 @@ class NavigationController extends Controller
         if (!$navigation) {
             return redirect()->route('navigation')->with(['error'=>'Parameter id tidak valid.']);
         }
-        return view('manage.editnavigation', compact('navigation','contents'));
+        return view('manage.editnavigation', compact('navigation','contents', 'currentUser'));
     }
 
     public function edit($id, Request $request)

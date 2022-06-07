@@ -41,12 +41,14 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view('manage.setting');
+        $currentUser = User::find(Auth::id());
+        return view('manage.setting', compact('currentUser'));
     }
 
     public function banner()
     {
-        return view('manage.setting.banner');
+        $currentUser = User::find(Auth::id());
+        return view('manage.setting.banner', compact('currentUser'));
     }
 
     public function storeBanner(Request $request) 
@@ -72,7 +74,8 @@ class SettingController extends Controller
 
     public function about()
     {
-        return view('manage.setting.about');
+        $currentUser = User::find(Auth::id());
+        return view('manage.setting.about', compact('currentUser'));
     }
 
     public function storeAbout(Request $request) 
@@ -128,7 +131,8 @@ class SettingController extends Controller
 
     public function organisation()
     {
-        return view('manage.setting.organisation');
+        $currentUser = User::find(Auth::id());
+        return view('manage.setting.organisation', compact('currentUser'));
     }
 
     public function storeOrganisation(Request $request) 
@@ -159,7 +163,8 @@ class SettingController extends Controller
 
     public function address()
     {
-        return view('manage.setting.address');
+        $currentUser = User::find(Auth::id());
+        return view('manage.setting.address', compact('currentUser'));
     }
 
     public function storeAddress(Request $request) 
