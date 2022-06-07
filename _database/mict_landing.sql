@@ -331,6 +331,20 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 --
 -- Indexes for dumped tables
 --
+ALTER TABLE contents ROW_FORMAT=DYNAMIC;
+ALTER TABLE migrations ROW_FORMAT=DYNAMIC;
+ALTER TABLE navigations ROW_FORMAT=DYNAMIC;
+ALTER TABLE oauth_access_tokens ROW_FORMAT=DYNAMIC;
+ALTER TABLE oauth_auth_codes ROW_FORMAT=DYNAMIC;
+ALTER TABLE oauth_clients ROW_FORMAT=DYNAMIC;
+ALTER TABLE oauth_personal_access_clients ROW_FORMAT=DYNAMIC;
+ALTER TABLE oauth_refresh_tokens ROW_FORMAT=DYNAMIC;
+ALTER TABLE roles ROW_FORMAT=DYNAMIC;
+ALTER TABLE settings_about ROW_FORMAT=DYNAMIC;
+ALTER TABLE settings_address ROW_FORMAT=DYNAMIC;
+ALTER TABLE settings_banner ROW_FORMAT=DYNAMIC;
+ALTER TABLE settings_organization_structure ROW_FORMAT=DYNAMIC;
+ALTER TABLE users ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `contents`
@@ -339,14 +353,12 @@ ALTER TABLE `contents`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `code` (`code`);
 
-ALTER TABLE contents ROW_FORMAT=DYNAMIC;
 --
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE migrations ROW_FORMAT=DYNAMIC;
 --
 -- Indexes for table `navigations`
 --
@@ -354,7 +366,6 @@ ALTER TABLE `navigations`
   ADD PRIMARY KEY (`id`),
   ADD KEY `FOREIGN` (`contents_id`) USING BTREE;
 
-ALTER TABLE navigations ROW_FORMAT=DYNAMIC;
 --
 -- Indexes for table `oauth_access_tokens`
 --
@@ -362,7 +373,6 @@ ALTER TABLE `oauth_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_access_tokens_user_id_index` (`user_id`);
 
-ALTER TABLE oauth_access_tokens ROW_FORMAT=DYNAMIC;
 --
 -- Indexes for table `oauth_auth_codes`
 --
@@ -370,7 +380,6 @@ ALTER TABLE `oauth_auth_codes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_auth_codes_user_id_index` (`user_id`);
 
-ALTER TABLE oauth_auth_codes ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `oauth_clients`
@@ -379,7 +388,6 @@ ALTER TABLE `oauth_clients`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_clients_user_id_index` (`user_id`);
 
-ALTER TABLE oauth_clients ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `oauth_personal_access_clients`
@@ -387,7 +395,6 @@ ALTER TABLE oauth_clients ROW_FORMAT=DYNAMIC;
 ALTER TABLE `oauth_personal_access_clients`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE oauth_personal_access_clients ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `oauth_refresh_tokens`
@@ -396,7 +403,6 @@ ALTER TABLE `oauth_refresh_tokens`
   ADD PRIMARY KEY (`id`),
   ADD KEY `oauth_refresh_tokens_access_token_id_index` (`access_token_id`);
 
-ALTER TABLE oauth_refresh_tokens ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `password_resets`
@@ -413,7 +419,6 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
-ALTER TABLE roles ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `settings_about`
@@ -421,7 +426,6 @@ ALTER TABLE roles ROW_FORMAT=DYNAMIC;
 ALTER TABLE `settings_about`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE settings_about ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `settings_address`
@@ -429,7 +433,6 @@ ALTER TABLE settings_about ROW_FORMAT=DYNAMIC;
 ALTER TABLE `settings_address`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE settings_address ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `settings_banner`
@@ -437,7 +440,6 @@ ALTER TABLE settings_address ROW_FORMAT=DYNAMIC;
 ALTER TABLE `settings_banner`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE settings_banner ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `settings_organization_structure`
@@ -445,7 +447,6 @@ ALTER TABLE settings_banner ROW_FORMAT=DYNAMIC;
 ALTER TABLE `settings_organization_structure`
   ADD PRIMARY KEY (`id`);
 
-ALTER TABLE settings_organization_structure ROW_FORMAT=DYNAMIC;
 
 --
 -- Indexes for table `users`
@@ -455,7 +456,6 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`),
   ADD KEY `users_roles_id_foreign` (`roles_id`);
 
-ALTER TABLE users ROW_FORMAT=DYNAMIC;
 
 --
 -- AUTO_INCREMENT for dumped tables
