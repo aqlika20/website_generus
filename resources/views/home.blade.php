@@ -181,15 +181,15 @@
           @elseif($content->image_aligntment == 2)
           <div class="row">
             <div class="col-lg-4 mb-5">
-              <img src="{{ asset('storage/Content/'.$content->image) }}" class="img-fluid mb-3" alt="">
-              <a type="button" class="btn" href="{{$content->url}}" target="_blank" style="background-color: #0563bb; color: #fff; width: 100%;">Kunjungi</a>
+              <div class="custom-resume-item pb-0">
+                <img src="{{ asset('storage/Content/'.$content->image) }}" class="img-fluid mb-3" alt="">
+                <a type="button" class="btn" href="{{$content->url}}" target="_blank" style="background-color: #0563bb; color: #fff; width: 100%;">Kunjungi</a>
+              </div>
             </div>
             <div class="col-lg-8">
-              <div class="resume-item pb-0 ">
-                <p style="text-align: justify;">
-                  {{$content->description}}
-                </p>
-              </div>
+              <p style="text-align: justify;">
+                {{$content->description}}
+              </p>
             </div>
           </div>
           @endif
