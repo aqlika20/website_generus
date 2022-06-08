@@ -13598,12 +13598,12 @@
 				<!--begin::Header-->
 				<div class="d-flex align-items-center mt-5">
 					<div class="symbol symbol-100 mr-5">
-						<div class="symbol-label" style="background-image:url('{{ asset('media/users/300_21.jpg') }}')"></div>
-						<i class="symbol-badge bg-success"></i>
+						<div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
 					</div>
 					<div class="d-flex flex-column">
-						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">Admin Test</a>
-						
+						  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>
+						<span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
+
 					</div>
 				</div>
 				<!--end::Header-->
@@ -13613,7 +13613,7 @@
 				<!--begin::Nav-->
 				<div class="navi navi-spacer-x-0 p-0">
 					<!--begin::Item-->
-					<a href="profile.html" class="navi-item">
+					<a href="{{ route('profile')}}" class="navi-item">
 						<div class="navi-link">
 							<div class="symbol symbol-40 bg-light mr-3">
 								<div class="symbol-label">
@@ -13639,8 +13639,8 @@
 				<!--end::Nav-->
 				<!--begin::Separator-->
 				<div class="separator separator-dashed my-7"></div>
-				<a href="login.html" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
-			</div>
+					<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
+				</div>
 			<!--end::Content-->
 		</div>
 		

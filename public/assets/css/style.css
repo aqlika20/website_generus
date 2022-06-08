@@ -469,7 +469,7 @@ section {
   position: relative;
 }
 .resume .custom-resume-item {
-  padding: 0 0 20px 20px;
+  padding: 0 20px 20px 0;
   margin-top: -2px;
   border-right: 2px solid #0563bb;
   position: relative;
@@ -507,6 +507,17 @@ section {
   height: 16px;
   border-radius: 50px;
   left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #0563bb;
+}
+.resume .custom-resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  right: -9px;
   top: 0;
   background: #fff;
   border: 2px solid #0563bb;

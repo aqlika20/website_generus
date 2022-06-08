@@ -15,9 +15,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<@if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
-			<link href="{{ secure_asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-			<link href="{{ secure_asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
@@ -25,9 +23,7 @@
 			<link href="{{ secure_asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link rel="shortcut icon" href="{{ secure_asset('media/logos') }}" />
 		@else
-			<link href="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-			<link href="{{ asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
@@ -55,9 +51,7 @@
 				</button>
 				<!--end::Aside Mobile Toggle-->
 				<!--begin::Header Menu Mobile Toggle-->
-				<button class="btn p-0 burger-icon ml-4" id="kt_header_mobile_toggle">
-					<span></span>
-				</button>
+				
 				<!--end::Header Menu Mobile Toggle-->
 				<!--begin::Topbar Mobile Toggle-->
 				<button class="btn btn-hover-text-primary p-0 ml-2" id="kt_header_mobile_topbar_toggle">
@@ -113,7 +107,7 @@
 						<div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
 							<!--begin::Menu Nav-->
 							<ul class="menu-nav">
-								<li class="menu-item" aria-haspopup="true">
+								<li class="menu-item menu-item-active" aria-haspopup="true">
 									<a href="{{ route('home')}}" class="menu-link">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Design/Layers.svg') }}-->
@@ -134,7 +128,7 @@
 									<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 								</li>
 								<li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{ route('content') }}" class="menu-link menu-toggle">
+									<a href="{{ route('content')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -165,8 +159,8 @@
 										<span class="menu-text">Navigation</span>
 									</a>	
 								</li>
-								<li class="menu-item menu-item-submenu menu-item-open" aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{ route('setting')}}" class="menu-link menu-toggle">
+								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="javascript:;" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -215,7 +209,7 @@
 													<span class="menu-text">Address</span>
 												</a>
 											</li>
-											<li class="menu-item menu-item-active" aria-haspopup="true">
+											<li class="menu-item" aria-haspopup="true">
 												<a href="{{ route('user')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
@@ -281,7 +275,7 @@
 								<!--begin::Info-->
 								<div class="d-flex align-items-center flex-wrap mr-2">
 									<!--begin::Page Title-->
-									<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">User</h5>
+									<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Profile</h5>
 									<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
 									
 								</div>
@@ -290,46 +284,100 @@
 						<div class="d-flex flex-column-fluid">
 							<!--begin::Container-->
 							<div class="container">
-								
-								<div class="card card-custom gutter-b">
-									<div class="card-header flex-wrap border-0 pt-6 pb-0">
-										<div class="card-title">
-											<h3 class="card-label">Edit User 
+								<div class="accordion accordion-solid accordion-panel accordion-svg-toggle mb-10" id="faq">
+									<!--begin::Item-->
+									
+									<!--end::Item-->
+									<!--begin::Item-->
+									<div class="card p-6">
+										<!--begin::Header-->
+										<div class="card-header" id="faqHeading2">
+											<div class="card-title font-size-h4 text-dark collapsed" data-toggle="collapse" data-target="#faq2" aria-expanded="false" aria-controls="faq2" role="button">
+												
+												<div class="card-label">Data</div>
+												<span class="svg-icon svg-icon-primary">
+													<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Navigation/Angle-double-right.svg') }}-->
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<polygon points="0 0 24 0 24 24 0 24" />
+															<path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z" fill="#000000" fill-rule="nonzero" />
+															<path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)" />
+														</g>
+													</svg>
+													<!--end::Svg Icon-->
+												</span>
+											</div>
 										</div>
-									</div>
-									<div class="card-body">
-										<!--begin: Search Form-->
-                                       
-                                        <!--end::Header-->
-                                        <!--begin::Body-->
-										<form class="form" method="POST" action="{{ route('user.edit',[$user->id]) }}">
-											@csrf
-											@method('PATCH')
-											<div class="card-body">
-												<div class="form-group">
+										<!--end::Header-->
+										<!--begin::Body-->
+										<div id="faq2" class="collapse" aria-labelledby="faqHeading2" data-parent="#faq">
+											<form method="POST" action="{{ route('profile.edit',[$currentUser->id]) }}" enctype="multipart/form-data">
+												@csrf
+												@method('PATCH')
+												<div class="form-group ml-5">
 													<label>Name</label>
-													<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
+													<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $currentUser->name }}" required autocomplete="name" autofocus>
 												</div>
-												<div class="form-group">
+												<div class="form-group ml-5">
 													<label>Email</label>
-													<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email" autofocus>
-												</div>
-												<div class="form-group">
+													<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $currentUser->email }}" required autocomplete="email" autofocus>
+												</div> 
+												<div class="form-group ml-5">
 													<label>Role</label>
-
 													<select id="role" class="form-control" name="role" required autofocus>
 														@foreach ($roles as $role)
-															<option value="{{$role->id}}" @if ($user->roles_id == $role->id) {{ 'selected' }} @endif>{{$role->name}}</option>
+															<option value="{{$role->id}}" @if ($currentUser->roles_id == $role->id) {{ 'selected' }} @endif>{{$role->name}}</option>
 														@endforeach
 													</select>
+												</div> 
+												<div class="form-group ml-5">
+													<button type="submit" class="btn btn-primary mr-2">Edit</button>
 												</div>
+											</form>
+										</div>
+										<!--end::Body-->
+									</div>
+									
+									<!--end::Item-->
+									<!--begin::Item-->
+									<div class="card p-6">
+										<!--begin::Header-->
+										<div class="card-header " id="faqHeading3">
+											<div class="card-title font-size-h4 text-dark collapsed" data-toggle="collapse" data-target="#faq3" aria-expanded="false" aria-controls="faq3" role="button">
+												<div class="card-label">Password</div>
+												<span class="svg-icon svg-icon-primary">
+													<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Navigation/Angle-double-right.svg') }}-->
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+															<polygon points="0 0 24 0 24 24 0 24" />
+															<path d="M12.2928955,6.70710318 C11.9023712,6.31657888 11.9023712,5.68341391 12.2928955,5.29288961 C12.6834198,4.90236532 13.3165848,4.90236532 13.7071091,5.29288961 L19.7071091,11.2928896 C20.085688,11.6714686 20.0989336,12.281055 19.7371564,12.675721 L14.2371564,18.675721 C13.863964,19.08284 13.2313966,19.1103429 12.8242777,18.7371505 C12.4171587,18.3639581 12.3896557,17.7313908 12.7628481,17.3242718 L17.6158645,12.0300721 L12.2928955,6.70710318 Z" fill="#000000" fill-rule="nonzero" />
+															<path d="M3.70710678,15.7071068 C3.31658249,16.0976311 2.68341751,16.0976311 2.29289322,15.7071068 C1.90236893,15.3165825 1.90236893,14.6834175 2.29289322,14.2928932 L8.29289322,8.29289322 C8.67147216,7.91431428 9.28105859,7.90106866 9.67572463,8.26284586 L15.6757246,13.7628459 C16.0828436,14.1360383 16.1103465,14.7686056 15.7371541,15.1757246 C15.3639617,15.5828436 14.7313944,15.6103465 14.3242754,15.2371541 L9.03007575,10.3841378 L3.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" transform="translate(9.000003, 11.999999) rotate(-270.000000) translate(-9.000003, -11.999999)" />
+														</g>
+													</svg>
+													<!--end::Svg Icon-->
+												</span>
 											</div>
-											<div class="card-footer">
-												<button type="submit" class="btn btn-primary">Submit</button>
-												<a href="{{ route('user') }}" class="btn btn-danger mr-2">Cancel</a>
-											</div>
-										</form>
-										<!--end: Datatable-->
+										</div>
+										<!--end::Header-->
+										<!--begin::Body-->
+										<div id="faq3" class="collapse" aria-labelledby="faqHeading3" data-parent="#faq">
+											<form method="POST" action="{{ route('profile.edit.pass',[$currentUser->id]) }}" enctype="multipart/form-data">
+												@csrf
+												@method('PATCH')
+												<div class="form-group ml-5">
+													<label>Password</label>
+													<input id="password" name="password" type="password" class="form-control form-control-solid" value="{{old('password')}}" required autocomplete="password" autofocus/>
+												</div>
+												<div class="form-group ml-5">
+													<label>Confirm Password</label>
+													<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" autofocus>
+												</div> 
+												<div class="form-group ml-5">
+													<button type="submit" class="btn btn-primary mr-2">Change</button>
+												</div>
+											</form>
+										</div>
+										<!--end::Body-->
 									</div>
 								</div>
 								
@@ -395,7 +443,7 @@
 							<div class="symbol symbol-40 bg-light mr-3">
 								<div class="symbol-label">
 									<span class="svg-icon svg-icon-md svg-icon-success">
-										<!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg-->
+										<!--begin::Svg Icon | path:{{ asset('media/svg/icons/General/Notification2.svg') }}-->
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
 											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 												<rect x="0" y="0" width="24" height="24" />
@@ -415,32 +463,17 @@
 					</a>
 				</div>
 
-<div class="separator separator-dashed my-7"></div>
+			<div class="separator separator-dashed my-7"></div>
 				<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
 			</div>
 			<!--end::Content-->
 		</div>
 		
-		<!--end::Sticky Toolbar-->
-		<!--begin::Demo Panel-->
-		
-		<!--end::Demo Panel-->
-		<!--begin::Global Config(global config for global JS scripts)-->
-		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
-		<!--end::Global Config-->
-		<!--begin::Global Theme Bundle(used by all pages)-->
-		<script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
-		<script src="{{ asset('plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
-		<script src="{{ asset('js/scripts.bundle.js') }}"></script>
-		<!--end::Global Theme Bundle-->
-		<!--begin::Page Vendors(used by this page)-->
-		<script src="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
-		<!--end::Page Vendors-->
-		<!--begin::Page Scripts(used by this page)-->
-		<script src="{{ asset('js/pages/widgets.js') }}"></script>
-		<script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}"></script>
-
-		<!--end::Page Scripts-->
 	</body>
 	<!--end::Body-->
+	
+	<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+	<script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
+	<script src="{{ asset('js/scripts.bundle.js') }}"></script>
+	<script src="{{ asset('js/pages/widgets.js') }}"></script>
 </html>

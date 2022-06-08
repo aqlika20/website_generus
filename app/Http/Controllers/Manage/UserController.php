@@ -126,7 +126,64 @@ class UserController extends Controller
 
     public function profile()
     {
-        return view('manage.setting.profile');
+        $currentUser = User::find(Auth::id());
+        $roles = Role::all();
+        // dd($currentUser);
+
+        return view('manage.setting.profile', compact('currentUser', 'roles'));
+    }
+
+    public function profileEdit($id, Request $request)
+    {
+        $data = $request->all();
+
+        $validator = Validator::make($data, [
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+        ]);
+
+        $user = User::where([
+            ['id', '=', $id]
+        ])->first();
+        if (!$user) {
+            return redirect()->route('profile')->with(['error'=>'Parameter id tidak valid.']);
+        }
+
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->roles_id = $data['role'];
+
+        $user->save();
+
+        return redirect()->route('profile')->with(['success'=>'Data diedit.']);
+    }
+
+    public function profileEditPass($id, Request $request)
+    {
+        $data = $request->all();
+
+        $validator = Validator::make($data, [
+            'password' => 'required|confirmed',
+        ]);
+
+        $user = User::where([
+            ['id', '=', $id]
+        ])->first();
+
+        if (!$user) {
+            return redirect()->route('user')->with(['error'=>'Parameter id tidak valid.']);
+        }
+
+        $data['password'] = Hash::make($data['password']);
+        $data['remember_token'] = Helper::generateRandomString('remember_token', 60);
+
+        $user->password = $data['password'];
+        $user->remember_token = $data['remember_token'];
+
+        $user->save();
+
+        return redirect()->route('profile')->with(['success'=>'Data diedit.']);
     }
 
 }

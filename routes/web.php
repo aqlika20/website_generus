@@ -53,11 +53,13 @@ Route::patch('/address/add', [App\Http\Controllers\Manage\SettingController::cla
 
 Route::get('/user', [App\Http\Controllers\Manage\UserController::class, 'index'])->name('user');
 Route::patch('/user/add', [App\Http\Controllers\Manage\UserController::class, 'storeUser'])->name('user.store');
-Route::get('/profile', [App\Http\Controllers\Manage\UserController::class, 'profile'])->name('profile');
 Route::get('/user/view/{id}', [App\Http\Controllers\Manage\UserController::class, 'view'])->name('user.view');
 Route::patch('/user/edit/{id}', [App\Http\Controllers\Manage\UserController::class, 'edit'])->name('user.edit');
 Route::delete('/user/delete/{id}', [App\Http\Controllers\Manage\UserController::class, 'delete'])->name('user.delete');
 
+Route::get('/profile', [App\Http\Controllers\Manage\UserController::class, 'profile'])->name('profile');
+Route::patch('/profile/{id}', [App\Http\Controllers\Manage\UserController::class, 'profileEdit'])->name('profile.edit');
+Route::patch('/profile/pass/{id}', [App\Http\Controllers\Manage\UserController::class, 'profileEditPass'])->name('profile.edit.pass');
 
 Route::get('/tentang', function () {
     return view('about');
