@@ -14,9 +14,7 @@
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
-
-		
-		@if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+		<@if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
 			
 			<link href="{{ secure_asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 			
@@ -37,7 +35,6 @@
 			<link href="{{ asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link rel="shortcut icon" href="{{ asset('media/logos') }}" />
 		@endif
-		
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -116,7 +113,7 @@
 						<div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
 							<!--begin::Menu Nav-->
 							<ul class="menu-nav">
-								<li class="menu-item menu-item-active" aria-haspopup="true">
+								<li class="menu-item" aria-haspopup="true">
 									<a href="{{ route('home')}}" class="menu-link">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Design/Layers.svg') }}-->
@@ -168,7 +165,7 @@
 										<span class="menu-text">Navigation</span>
 									</a>	
 								</li>
-								<li class="menu-item menu-item-submenu menu-item-open " aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item menu-item-submenu menu-item-open" aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{ route('setting')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
@@ -183,7 +180,7 @@
 										<span class="menu-text">Settings</span>
 										<i class="menu-arrow"></i>
 									</a>
-									<div class="menu-submenu">
+									<div class="menu-submenu collapse">
 										<i class="menu-arrow"></i>
 										<ul class="menu-subnav">
 											<li class="menu-item" aria-haspopup="true">
@@ -194,7 +191,7 @@
 													<span class="menu-text">Banner</span>
 												</a>
 											</li>
-											<li class="menu-item  menu-item-active" aria-haspopup="true">
+											<li class="menu-item" aria-haspopup="true">
 												<a href="{{ route('about')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
@@ -218,7 +215,7 @@
 													<span class="menu-text">Address</span>
 												</a>
 											</li>
-											<li class="menu-item" aria-haspopup="true">
+											<li class="menu-item menu-item-active" aria-haspopup="true">
 												<a href="{{ route('social')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
@@ -292,7 +289,7 @@
 								<!--begin::Info-->
 								<div class="d-flex align-items-center flex-wrap mr-2">
 									<!--begin::Page Title-->
-									<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">About</h5>
+									<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Social</h5>
 									<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
 									
 								</div>
@@ -303,56 +300,38 @@
 							<div class="container">
 								<div class="card card-custom gutter-b">
 									<div class="card-header">
-									 <div class="card-title">
-									  <h3 class="card-label">
-									   About Settings
-									  </h3>
-									 </div>
+										<div class="card-title">
+											<h3 class="card-label">
+											Social Settings
+											</h3>
+										</div>
 									</div>
-										<form method="POST" action="{{ route('about.store') }}" enctype="multipart/form-data">
-											@csrf
-											@method('PATCH')
-											<div class="card-body">
-												<div class="form-group">
-													<label>Main Image</label>
-												  <div class="custom-file">
-													  <input type="file" class="custom-file-input" id="main_image" name="main_image" accept=".jpg,.jpeg,.png" required/>
-													  <label class="custom-file-label" for="main_image">Choose file</label>
-												  </div>
-											   	</div>
-												<div class="form-group">
-													<label for="exampleTextarea">Main Description</label>
-													<textarea class="form-control form-control-solid" rows="3" id="main_description" name="main_description" required></textarea>
-												</div>
-												<!-- <div class="form-group">
-													<label>Slider Image</label>
-													<div class="custom-file">
-														<input type="file" class="custom-file-input" id="slider_1" name="slider[]" accept=".jpg,.jpeg,.png" required/>
-														<label class="custom-file-label" for="customFile">Choose file</label>
-													</div>
-											   	</div>
-												<div class="form-group">
-													<div class="custom-file">
-														<input type="file" class="custom-file-input" id="slider_2" name="slider[]" accept=".jpg,.jpeg,.png" required/>
-														<label class="custom-file-label" for="customFile">Choose file</label>
-													</div>
-											   	</div>
-												<div class="form-group">
-													<div class="custom-file">
-														<input type="file" class="custom-file-input" id="slider_3" name="slider[]" accept=".jpg,.jpeg,.png" required/>
-														<label class="custom-file-label" for="customFile">Choose file</label>
-													</div>
-												</div>
-												<div class="form-group">
-													<label for="exampleTextarea">Description</label>
-													<textarea class="form-control form-control-solid" rows="3" id="description" name="description"></textarea>
-												</div> -->
+									<form method="POST" action="{{ route('social.store') }}" enctype="multipart/form-data">
+										@csrf
+										@method('PATCH')
+										<div class="card-body">
+											<div class="form-group">
+												<label>Facebook</label>
+												<input id="facebook" name="facebook" type="text" class="form-control form-control-solid" value="{{old('facebook')}}" autocomplete="facebook" autofocus`/>
 											</div>
-											<div class="card-footer">
-												<button type="submit" class="btn btn-primary mr-2">Submit</button>
+											<div class="form-group">
+												<label>Instagram</label>
+												<input id="instagram" name="instagram" type="text" class="form-control form-control-solid" value="{{old('instagram')}}" autocomplete="instagram" autofocus/>
 											</div>
-										</form>
-									</div>
+											<div class="form-group">
+												<label>Twitter</label>
+												<input id="twitter" name="twitter" type="text" class="form-control form-control-solid" value="{{old('twitter')}}" autocomplete="twitter" autofocus/>
+											</div>
+											<div class="form-group">
+												<label>Youtube</label>
+												<input id="youtube" name="youtube" type="text" class="form-control form-control-solid" value="{{old('youtube')}}" autocomplete="youtube" autofocus/>
+											</div>
+										</div>
+										<div class="card-footer">
+											<button type="submit" class="btn btn-primary mr-2">Submit</button>
+										</div>
+									</form>
+								</div>
 							</div>
 							<!--end::Container-->
 						</div>
@@ -397,6 +376,7 @@
 					<div class="d-flex flex-column">
 						  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>
 						<span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
+
 					</div>
 				</div>
 				<!--end::Header-->

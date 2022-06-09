@@ -49,7 +49,10 @@ Route::get('/organisation', [App\Http\Controllers\Manage\SettingController::clas
 Route::patch('/organisation/add', [App\Http\Controllers\Manage\SettingController::class, 'storeOrganisation'])->name('organisation.store');
 
 Route::get('/address', [App\Http\Controllers\Manage\SettingController::class, 'address'])->name('address');
-Route::patch('/address/add', [App\Http\Controllers\Manage\SettingController::class, 'storeaddress'])->name('address.store');
+Route::patch('/address/add', [App\Http\Controllers\Manage\SettingController::class, 'storeAddress'])->name('address.store');
+
+Route::get('/social', [App\Http\Controllers\Manage\SettingController::class, 'social'])->name('social');
+Route::patch('/social/add', [App\Http\Controllers\Manage\SettingController::class, 'storeSocial'])->name('social.store');
 
 Route::get('/user', [App\Http\Controllers\Manage\UserController::class, 'index'])->name('user');
 Route::patch('/user/add', [App\Http\Controllers\Manage\UserController::class, 'storeUser'])->name('user.store');

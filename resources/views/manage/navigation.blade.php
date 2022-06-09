@@ -15,9 +15,9 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<@if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
-			<link href="{{ secure_asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
+			
 			<link href="{{ secure_asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-			<link href="{{ secure_asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
+			
 			<link href="{{ secure_asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
@@ -25,9 +25,9 @@
 			<link href="{{ secure_asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link rel="shortcut icon" href="{{ secure_asset('media/logos') }}" />
 		@else
-			<link href="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.css') }}" rel="stylesheet" type="text/css" />
+			
 			<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-			<link href="{{ asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
+			
 			<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
@@ -213,6 +213,14 @@
 														<span></span>
 													</i>
 													<span class="menu-text">Address</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
+												<a href="{{ route('social')}}" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">Social Media</span>
 												</a>
 											</li>
 											<li class="menu-item" aria-haspopup="true">
@@ -542,11 +550,11 @@
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
 		<script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
-		<script src="{{ asset('plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+		
 		<script src="{{ asset('js/scripts.bundle.js') }}"></script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Vendors(used by this page)-->
-		<script src="{{ asset('plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
+		
 		<!--end::Page Vendors-->
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="{{ asset('js/pages/widgets.js') }}"></script>

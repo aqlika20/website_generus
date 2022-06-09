@@ -206,10 +206,10 @@
       <h3>{{$address->title}}</h3>
       <p style="padding-left: 300px; padding-right: 300px;">{{$address->description}}</p>
       <div class="social-links">
-        <a href="https://facebook.com" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://instagram.com" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://twitter.com" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://youtube.com" class="youtube"><i class="bx bxl-youtube"></i></a>
+        <a href="{{$social->facebook}}" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+        <a href="{{$social->instagram}}" class="instagram" target="_blank" ><i class="bx bxl-instagram"></i></a>
+        <a href="{{$social->twitter}}" class="twitter" target="_blank" ><i class="bx bxl-twitter"></i></a>
+        <a href="{{$social->youtube}}" class="youtube" target="_blank" ><i class="bx bxl-youtube"></i></a>
       </div>
       <div class="copyright">
         &copy; 2022

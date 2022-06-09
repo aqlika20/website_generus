@@ -14,6 +14,7 @@ use App\Models\Banner;
 use App\Models\About;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Social;
 
 class HomeController extends Controller
 {
@@ -25,10 +26,11 @@ class HomeController extends Controller
         $navigations = Navigation::All();
         $address = Address::find($id);
         $banner = Banner::find($id);
+        $social = Social::find($id);
         $about = About::find($id);
         $contents = Content::All();
         $users = User::All();
 
-        return view('home', compact('navigations', 'contents', 'organisation', 'address', 'banner', 'about', 'users'));
+        return view('home', compact('navigations', 'contents', 'organisation', 'address', 'banner', 'about', 'users', 'social'));
     }
 }

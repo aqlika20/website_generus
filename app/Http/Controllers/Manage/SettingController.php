@@ -13,6 +13,7 @@ use App\Models\About;
 use App\Models\Address;
 use App\Models\Organisation;
 use App\Models\Role;
+use App\Models\Social;
 use App\Models\User;
 use App\Models\Helper;
 use Illuminate\Support\Facades\Storage;
@@ -187,5 +188,39 @@ class SettingController extends Controller
         
         return redirect()->route('address')->with(['success'=>'Address berhasil ditambahkan']);
     }
+
+    public function social()
+    {
+        $currentUser = User::find(Auth::id());
+        return view('manage.setting.social', compact('currentUser'));
+    }
+
+    public function storeSocial(Request $request) 
+    {
+        $input = $request->all();
+        $validator = Validator::make($input, [
+            'facebook' => 'required',
+            'instagram' => 'required',
+            'twitter' => 'required',
+            'youtube' => 'required'
+        ]);
+        
+        $id = 1;
+        $social = Social::where([
+            ['id', '=', $id]
+        ])->first();
+
+        $social->update([
+            'facebook' => empty($input['facebook']) ?  $social->facebook : $input['facebook'],
+            'instagram' => empty($input['instagram']) ?  $social->instagram : $input['instagram'],
+            'twitter' => empty($input['twitter']) ?  $social->twitter : $input['twitter'],
+            'youtube' => empty($input['youtube']) ?  $social->youtube : $input['youtube'],
+        ]);
+        
+        return redirect()->route('social')->with(['success'=>'Social Media berhasil ditambahkan']);
+    }
+
+
+   
 }
 

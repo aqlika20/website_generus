@@ -27,7 +27,7 @@
 		@else
 			<link href="{{ asset('css/pages/login/classic/login-4.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
-			<link href="{{ asset('plugins/custom/prismjs/prismjs.bundle.css') }}" rel="stylesheet" type="text/css" />
+			
 			<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
@@ -117,7 +117,7 @@
 		<!--end::Global Config-->
 		<!--begin::Global Theme Bundle(used by all pages)-->
 		<script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
-		<script src="{{ asset('plugins/custom/prismjs/prismjs.bundle.js') }}"></script>
+		
 		<script src="{{ asset('js/scripts.bundle.js') }}"></script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Scripts(used by this page)-->
