@@ -304,6 +304,29 @@ INSERT INTO `settings_organization_structure` (`id`, `image`, `created_at`, `upd
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `settings_social_media`
+--
+
+CREATE TABLE `settings_social_media` (
+  `id` int(20) UNSIGNED NOT NULL,
+  `facebook` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `instagram` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `twitter` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `youtube` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `settings_social_media`
+--
+
+INSERT INTO `settings_social_media` (`id`, `facebook`, `instagram`, `twitter`, `youtube`, `created_at`, `updated_at`) VALUES
+(1, 'https://www.facebook.com/', 'https://instagram.com/', 'https://twitter.com/', 'https://youtube.com/', '2022-06-08 20:55:23', '2022-06-08 21:56:03');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -344,6 +367,7 @@ ALTER TABLE settings_about ROW_FORMAT=DYNAMIC;
 ALTER TABLE settings_address ROW_FORMAT=DYNAMIC;
 ALTER TABLE settings_banner ROW_FORMAT=DYNAMIC;
 ALTER TABLE settings_organization_structure ROW_FORMAT=DYNAMIC;
+ALTER TABLE settings_social_media ROW_FORMAT=DYNAMIC;
 ALTER TABLE users ROW_FORMAT=DYNAMIC;
 
 --
@@ -447,6 +471,11 @@ ALTER TABLE `settings_banner`
 ALTER TABLE `settings_organization_structure`
   ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `settings_social_media`
+--
+ALTER TABLE `settings_social_media`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -520,6 +549,13 @@ ALTER TABLE `settings_banner`
 --
 ALTER TABLE `settings_organization_structure`
   MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `settings_social_media`
+--
+ALTER TABLE `settings_social_media`
+  MODIFY `id` int(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
 
 --
 -- AUTO_INCREMENT for table `users`
