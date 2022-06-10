@@ -313,8 +313,8 @@ CREATE TABLE `settings_social_media` (
   `instagram` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `twitter` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `youtube` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp,
+  `updated_at` timestamp
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
