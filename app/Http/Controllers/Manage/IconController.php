@@ -30,7 +30,7 @@ class IconController extends Controller
     {
         $currentUser = User::find(Auth::id());
 
-        return view('manage.icon');
+        return view('manage.icon', compact('currentUser'));
     }
 
   
