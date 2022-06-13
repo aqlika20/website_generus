@@ -44,7 +44,7 @@ class NavigationController extends Controller
         $input = $request->all();
         $content = $input['content_id'];
         $content_id = Content::find($content);
-        // dd($content_id->code);
+        // dd($content_id->id);
 
         $validator = Validator::make($input, [
             'name' => 'required',
@@ -54,7 +54,7 @@ class NavigationController extends Controller
             'content_id' => 'nullable'
         ]);
 
-        if($input['self_url'] = 1){
+        if($input['self_url'] == 1 && $content_id->code != null){
             $urlbaru = '#'.$content_id->code;
             // dd($urlbaru);
             $users = Navigation::create([
@@ -62,15 +62,14 @@ class NavigationController extends Controller
                 'icon' => $input['icon'],
                 'self_url' => $input['self_url'],
                 'url' => $urlbaru,
-                'content_id'=>$input['content_id']
+                'contents_id' => $content_id->id
             ]);
-        }elseif($input['self_url'] = 2){            
+        }elseif($input['self_url'] == 2){            
             $users = Navigation::create([
                 'name' =>$input['name'],
                 'icon' => $input['icon'],
                 'self_url' => $input['self_url'],
-                'url' => $input['url'],
-                'content_id'=>$input['content_id']
+                'url' => $input['url']
             ]);
         }
         
