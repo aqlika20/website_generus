@@ -58,7 +58,7 @@ class NavigationController extends Controller
             $urlbaru = '#'.$content_id->code;
             // dd($urlbaru);
             $users = Navigation::create([
-                'name' =>$input['name'],
+                'name' =>ucwords($data['name']),
                 'icon' => $input['icon'],
                 'self_url' => $input['self_url'],
                 'url' => $urlbaru,
@@ -66,7 +66,7 @@ class NavigationController extends Controller
             ]);
         }elseif($input['self_url'] == 2){            
             $users = Navigation::create([
-                'name' =>$input['name'],
+                'name' =>ucwords($data['name']),
                 'icon' => $input['icon'],
                 'self_url' => $input['self_url'],
                 'url' => $input['url']
@@ -111,7 +111,7 @@ class NavigationController extends Controller
             ])->first();
     
             $navigation->update([
-                'name' => strtoupper($data['name']),
+                'name' => ucwords($data['name']),
                 'icon' => $data['icon'],
                 'self_url' => $data['self_url'],
                 'url' => $urlbaru,
@@ -126,7 +126,7 @@ class NavigationController extends Controller
             ])->first();
     
             $navigation->update([
-                'name' => strtoupper($data['name']),
+                'name' => ucwords($data['name']),
                 'icon' => $data['icon'],
                 'self_url' => $data['self_url'],
                 'url' => empty($data['url']) ?  $navigation->url : $data['url'],

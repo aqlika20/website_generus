@@ -69,7 +69,7 @@ class ContentController extends Controller
         // dd($filename);
         $contents = Content::create([
             'code' =>$code,
-            'name' =>strtoupper($input['name']),
+            'name' =>ucwords($input['name']),
             'image' =>$filename,
             'description' => $input['description'],
             'url' => $input['url'],
@@ -115,7 +115,7 @@ class ContentController extends Controller
 
 
         $content->update([
-            'name' => strtoupper($data['name']),
+            'name' => ucwords($data['name']),
             'image' => empty($filename) ?  $content->image : $filename,
             'description' => empty($data['description']) ?  $content->description : $data['description'],
             'url' => $data['url'],
@@ -146,7 +146,7 @@ class ContentController extends Controller
         //     ])->first();
     
         //     $content->update([
-        //         'name' => strtoupper($data['name']),
+        //         'name' => ucwords($data['name']),
         //         'image' => $filename,
         //         'description' => empty($data['description']) ?  $content->description : $data['description'],
         //         'url' => $data['url'],
