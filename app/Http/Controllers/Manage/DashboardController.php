@@ -38,6 +38,7 @@ class DashboardController extends Controller
         $currentUser = User::find(Auth::id());
         return view('manage.dashboard', compact('currentUser'));
     }
+    
     public function home()
     {
         $organisations = Organisation::All();

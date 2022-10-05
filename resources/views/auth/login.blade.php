@@ -5,7 +5,7 @@
 	<!--begin::Head-->
 	<head><base href="">
 		<meta charset="utf-8" />
-		<title>SATREPS | Admin Dashboard</title>
+		<title>Generusbatuaji | Admin Dashboard</title>
 		<meta name="description" content="Login page example" />
 		<meta http-equiv=”Refresh” content=”0;URL=https://iot.mict.id/manage” />
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -36,6 +36,23 @@
 			<link rel="shortcut icon" href="{{ asset('media/logos/favicon.ico') }}" />
 		@endif
 
+		<style>
+			::-webkit-input-placeholder {
+			color: white !important;
+			}
+
+			:-moz-placeholder { /* Firefox 18- */
+			color: white !important;  
+			}
+
+			::-moz-placeholder {  /* Firefox 19+ */
+			color: white !important;  
+			}
+
+			:-ms-input-placeholder {  
+			color: white !important;  
+			}
+		</style>
 		
 	</head>
 	<!--end::Head-->
@@ -45,43 +62,41 @@
 		<div class="d-flex flex-column flex-root">
 			<!--begin::Login-->
 			<div class="login login-4 login-signin-on d-flex flex-row-fluid" id="kt_login">
-				<div class="d-flex flex-center flex-row-fluid bgi-size-cover bgi-position-top bgi-no-repeat" style="background-image: url(' {{ asset('media/bg/bg-3.jpg') }} ')">
+				<div class="d-flex flex-center flex-row-fluid bgi-size-cover bgi-position-top bgi-no-repeat" style="background-color: #a2cbcd">
 					<div class="login-form text-center p-7 position-relative overflow-hidden">
 						<!--begin::Login Header-->
-						<div class="d-flex flex-center mb-15">
-							<a href="#">
-								<img src="{{ asset('media/logos/SATREPS.png') }}" class="max-h-800px" alt="" />
+						<div class="d-flex flex-center mb-5">
+							<a>
+								<img src="{{ asset('media/logos/Baji.png') }}" alt="" width="300px"/>
 							</a>
 						</div>
+						<a style="color: white; font-size: 13pt; font-weight: bold;">Generasi Penerus Batu Aji</a>
 						<!--end::Login Header-->
 						<!--begin::Login Sign in form-->
 						<div class="login-signin">
-							<div class="mb-20">
-								
-							</div>
 							<form method="POST" action="{{ route('login') }}">
                         		@csrf
-								<div class="form-group mb-5">
-									<input class="form-control h-auto form-control-solid py-4 px-8 @error('email') is-invalid @enderror" id="email" type="email" placeholder="Email Address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
-									
+								<div class="form-group mt-20 mb-5 input-icon">
+									<input class="form-control h-auto form-control-solid py-6 px-15 @error('email') is-invalid @enderror" style="background-color:#a2cbcd; color:white; border-width: 2pt; border-radius: 35px" id="email" type="email" placeholder="Email Address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
+									<span><i class="flaticon-multimedia icon-md" style="color: white; padding-left: 15px"></i></span>
 									@error('email')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
 									@enderror
 								</div>
-								<div class="form-group mb-5">
-									<input class="form-control h-auto form-control-solid py-4 px-8 @error('password') is-invalid @enderror" id="password" type="password" placeholder="Password" name="password" required autocomplete="current-password"/>
-								
+								<div class="form-group mb-15 input-icon">
+									<input class="form-control h-auto form-control-solid py-6 px-15 @error('password') is-invalid @enderror" style="background-color:#a2cbcd; color:white; border-width: 2pt; border-radius: 35px" id="password" type="password" placeholder="Password" name="password" required autocomplete="current-password"/>
+									<span><i class="fas fa-unlock-alt" style="color: white; padding-left: 15px"></i></span>
 									@error('password')
 										<span class="invalid-feedback" role="alert">
 											<strong>{{ $message }}</strong>
 										</span>
 									@enderror
 								</div>
-								<button type="submit" class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-4">
-                                    {{ __('Login') }}
-                                </button>
+								<button type="submit" class="btn font-weight-bold px-9 py-4" style="background-color: #83b7b7; color:white; font-weight: bold; border-radius: 25px; width:100% !important; font-size: 15pt;">
+									{{ __('MASUK') }}
+								</button>
 							</form>
 							
 						</div>

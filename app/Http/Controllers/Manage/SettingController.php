@@ -199,10 +199,7 @@ class SettingController extends Controller
     {
         $input = $request->all();
         $validator = Validator::make($input, [
-            'facebook' => 'required',
             'instagram' => 'required',
-            'twitter' => 'required',
-            'youtube' => 'required'
         ]);
         
         $id = 1;
@@ -211,10 +208,7 @@ class SettingController extends Controller
         ])->first();
 
         $social->update([
-            'facebook' => empty($input['facebook']) ?  $social->facebook : $input['facebook'],
             'instagram' => empty($input['instagram']) ?  $social->instagram : $input['instagram'],
-            'twitter' => empty($input['twitter']) ?  $social->twitter : $input['twitter'],
-            'youtube' => empty($input['youtube']) ?  $social->youtube : $input['youtube'],
         ]);
         
         return redirect()->route('social')->with(['success'=>'Social Media berhasil ditambahkan']);

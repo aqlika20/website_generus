@@ -10,7 +10,7 @@ class Social extends Model
     protected $table = 'settings_social_media';
 
     protected $fillable = [
-        'id', 'facebook', 'instagram', 'twitter', 'youtube'
+        'id', 'instagram'
     ];
 
     protected $date = [

@@ -5,239 +5,490 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>MICT SATREPS</title>
+  <title>Generusbatuaji</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-  <link href="plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
-		
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: MyResume - v4.7.0
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Main CSS Calendar -->
+  <link rel="stylesheet" href="assets/css/evo-calendar.midnight-blue.min.css">
+  <link rel="stylesheet" href="assets/css/evo-calendar.min.css">
+  <link rel="stylesheet" href="assets/css/calendar.css">
+
+  <!-- Bootsrap CSS -->  
+  
+
 </head>
 
 <body>
-
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
 
-    <nav id="navbar" class="navbar nav-menu">
-      <!-- <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-filter"></i> <span>Tentang SATREPS</span></a></li>
-          <li><a href="#organisasi" class="nav-link scrollto"><i class="bx bx-vector"></i> <span>Struktur Organisasi</span></a></li>
-          <li><a href="#situs" class="nav-link scrollto"><i class="bx bx-map"></i> <span>Situs Uji</span></a></li>
-          <li><a href="https://mict-monitoring.macantech.asia/" target="_blank" class="nav-link scrollto"><i class="bx bx-table"></i> <span>Monitoring</span></a></li>
-          <li><a href="#el-marc" class="nav-link scrollto"><i class="bx bx-book-open"></i> <span>EL-MARC</span></a></li>
-          <li><a href="#alboom" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Alboom</span></a></li>
-          <li><a href="#algies" class="nav-link scrollto"><i class="bx bx-book-alt"></i> <span>Algies</span></a></li>
-      </ul> -->
-      <ul>
-        @foreach($navigations as $navigation)
-          <li><a href="{{$navigation->url}}" class="nav-link scrollto"><i class="{{$navigation->icon}}"></i> <span>{{$navigation->name}}</span></a></li>
-        @endforeach	
-      </ul>
-    </nav><!-- .nav-menu -->
+  <header id="header" class="header d-flex align-items-center">
 
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="{{ route('dashboard')}}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="assets/img/baji.png" alt="">
+      </a>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#berita">Berita</a></li>
+          <li><a href="#kalender">Kalender</a></li>
+          <li><a href="#pengumuman">Pengumuman</a></li>
+          <li><a href="#map">Alamat</a></li>
+
+          <li><a href="{{ route('login')}}">Login</a></li>
+          {{-- <li><a data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">HI!!!!!</a></li> --}}
+          
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+    <style>
+      .carousel-inner img{
+        height:720px ;
+      }
+      .text-content{
+        position: relative !important;
+        text-align: left !important;
+      }
+      .text-content h3{
+        font-family: var(--font-primary);
+        font-size: 50px;
+        font-weight: 700;
+        position: absolute !important;
+        top: 25% !important;
+        left: 29% !important;
+        color: #fff;
+        transform: translate(-50%, -50%) !important;
+      } 
+      .text-content h2{
+        font-family: var(--font-primary);
+        font-size: 50px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        top: 33% !important;
+        left: 30.5% !important;
+        position: absolute !important;
+        transform: translate(-50%, -50%) !important;
+        color: #fff;
+      }
+      .text-content h4{
+        font-family: var(--font-primary);
+        font-size:18px;
+        font-weight: 300;
+        top: 43% !important;
+        left:35.2% !important;
+        position: absolute !important;
+        transform: translate(-50%, -50%) !important;
+        color: #fff;
+      }
+    </style>
   </header><!-- End Header -->
+  <!-- End Header -->
+
+  
+  <!-- ======= Slider Section ======= -->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="row gy-5" data-aos="fade-in">
+        <div class="carousel-item text-content active">
+          <img src="assets/img/masjid2.png" class="d-block w-100" alt="" >
+          <h3>Selamat Datang</h3>
+          <h2>Generus Batu Aji</h2>
+          <h4>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</h4>
+        </div>
+        <div class="carousel-item text-content active">
+          <img src="assets/img/masjid2.png" class="d-block w-100" alt="" >
+          <h3>Selamat Datang</h3>
+          <h2>Generus Batu Aji</h2>
+          <h4>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</h4>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  <!-- ======= End Slider Section ======= -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center ">
-    <div class="container" data-aos="zoom-in" data-aos-delay="200">
-      <h1>{{$banner->title}}</h1>
-      <br>
-      <h4>{{$banner->description}}</h4>
-      <!-- <h4 >Mariculture adalah komponen penting untuk produksi akuakultur di Indonesia </h4>
-      <h4> dengan total produksi mencapai <span style="color: #0563bb; font-weight: 900;">9.034.756 ton (US $ 1.951.097,72)</span> pada tahun </h4>
-      <h4 >2014 dan 579.463 orang terlibat dalam kegiatan budidaya</h4> -->
-    
+  <section id="hero" class="hero" style="padding-top: 0px !important;">
+    <div class="icon-boxes position-relative">
+      <div class="container position-relative">
+        <div class="row gy-4 mt-5">
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="imgnew"><img src="assets/img/quran.png"></div>
+              <div> </div>
+              <h4 class="title"><a href="https://quran.com/id" target="_blank" class="stretched-link">Al-Qur'an</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+          
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="imgnew"><img src="assets/img/doa.png"></div>
+              <h4 class="title"><a href="{{ route('dashboard.doa')}}" class="stretched-link">Do'a-Do'a</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="imgnew"><img src="assets/img/dalil.png"></div>
+              <h4 class="title"><a href="{{ route('dashboard.dalil')}}" class="stretched-link">Dalil-Dalil</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <div class="imgnew"><img src="assets/img/dokumentasi.png"></div>
+              <h4 class="title"><a href="https://drive.google.com/drive/folders/1nCgFJJZEH-GgFsMZ5GEgQ4tabCaXOIiq?usp=sharing" target="_blank" class="stretched-link">Dokumentasi</a></h4>
+            </div>
+          </div>
+          <!--End Icon Box -->
+        </div>
+      </div>
     </div>
-  </section><!-- End Hero -->
+    </div>
+  </section>
+  <!-- End Hero Section -->
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- ======= Tentang Us Section ======= -->
+    <section id="tentang" class="about">
       <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>TENTANG SATREPS</h2>
+        <div class="section-header">
+          <h2>Tentang</h2>
+          <p>Generasi Penerus Batu Aji adalah remaja masjid LDII Baiturrohmah</p>
         </div>
 
-        <div class="row">
+        <div class="row gy-4">
           <div class="col-lg-6">
-            <img src="{{ asset('storage/Settings/about/'.$about->main_image) }}" class="img-fluid" alt="">
+            <h3>Voluptatem dignissimos provident quasi corporis</h3>
+            <img src="assets/img/gambar.png" class="img-fluid rounded-4 mb-4" alt="">
+            <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
+            <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <p style="text-align: justify;">
-              {{$about->main_description}}
-            </p>
-            <a type="button" class="btn btn-secondary" href="tentang" target="_blank">Lanjut Baca</a>
-          </div>
-          
-        </div>
-
-      </div>
-      
-      
-    </section><!-- End About Section -->
-
-    <section id="organisasi" class="portfolio section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Struktur Organisasi</h2>
-        </div>
-
-        
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-1 col-md-6 portfolio-item filter-app">
-            
-          </div>
-          
-          <div class="col-lg-10 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('storage/Settings/organisation/'.$organisation->image) }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Struktur Organisasi</h4>
-                <div class="portfolio-links">
-                  <a href="{{ asset('storage/Settings/organisation/'.$organisation->image) }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-1 col-md-6 portfolio-item filter-app">
-          
-          </div>
-
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-    
-    <section id="situs" class="testimonials section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Situs Uji</h2>
-        </div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-12">
-              <iframe src="/map" title="Situs Uji" style="width: 100%; height: 600px;"></iframe>
-            </div>
-          </div>
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    @foreach($contents as $content)
-      <section id="{{$content->code}}" class="resume">
-        <div class="container" data-aos="fade-up">
-
-          <div class="section-title">
-            <h2>{{$content->name}}</h2>
-          </div>
-          @if($content->image_aligntment == 1)
-            <div class="row">
-              <div class="col-lg-8 mb-5">
-                <p style="text-align: justify;">
-                  {{$content->description}}
-                </p>
-              </div>
-              <div class="col-lg-4">
-                <div class="resume-item pb-0">
-                  <img src="{{ asset('storage/Content/'.$content->image) }}" class="img-fluid mb-3" alt="">
-                  <a type="button" class="btn" href="{{$content->url}}" target="_blank" style="background-color: #0563bb; color: #fff; width: 100%;">Kunjungi</a>
-                </div>
-              </div>
-            </div>
-          @elseif($content->image_aligntment == 2)
-          <div class="row">
-            <div class="col-lg-4 mb-5">
-              <div class="custom-resume-item pb-0">
-                <img src="{{ asset('storage/Content/'.$content->image) }}" class="img-fluid mb-3" alt="">
-                <a type="button" class="btn" href="{{$content->url}}" target="_blank" style="background-color: #0563bb; color: #fff; width: 100%;">Kunjungi</a>
-              </div>
-            </div>
-            <div class="col-lg-8">
-              <p style="text-align: justify;">
-                {{$content->description}}
+          <div class="col-lg-6">
+            <div class="content ps-0 ps-lg-5">
+              <p class="fst-italic">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
               </p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              </ul>
+              <p> 
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+              </p>
+
+              <div class="position-relative mt-4">
+                <img src="assets/img/test.png" class="img-fluid rounded-4" alt="">
+                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+              </div>
             </div>
           </div>
-          @endif
-          
         </div>
-      </section>
-    @endforeach	
 
+      </div>
+    </section><!-- End Tentang Us Section -->
+
+
+  <!-- ======= Berita Section ======= -->
+    <section id="berita" class="blog sections-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Berita</h2>
+          <p>Berikut adalah kegiatan muda mudi Batu Aji</p>
+        </div>
+
+        <div class="row gy-4 posts-list">
+          @foreach($beritas as $berita)
+            <div class="col-xl-4 col-md-6">
+              <article>
+                <div class="post-img">
+                  <img src="{{ asset('storage/Berita/'.$berita->image) }}" alt="" class="img-fluid">
+                </div>
+
+                <h2 class="title">
+                  <a>{{ $berita->title }}</a>
+                </h2>
+
+                <div class="d-flex align-items-center">
+                  <p>"{{ $berita->description }}"</p>
+                </div>
+              </article>
+            </div><!-- End post list item -->
+          @endforeach		
+        </div><!-- End blog posts list -->
+
+        {{-- <div class="blog-pagination">
+          <ul class="justify-content-center">
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+          </ul>
+        </div> --}}
+        <!-- End blog pagination -->
+      </div>
+    </section>
+
+  <!-- ======= Calendar Section ======= -->
+    <section id="kalender" class="blog">
+      <div class="section-header">
+        <h2>Kalender</h2>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <div id="calendar"></div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="assets/js/evo-calendar.min.js"></script>
+        <script>
+          $(document).ready(function() {
+              $('#calendar').evoCalendar({
+              })
+          })
+        </script>
+      </div>
+    </section>
+  <!-- ======= End Calendar Section ======= -->
+
+    <!-- ======= Pengumuman Section ======= -->
+    <section id="pengumuman" class="services sections-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Pengumuman</h2>
+        </div>
+
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+          @foreach($pengumumans as $pengumuman)
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-megaphone"></i>
+              </div>
+              <h3 class="title">
+                <a>{{ $pengumuman->title}}</a>
+              </h3>
+              <p>{{ $pengumuman->isi }}</p>
+              {{-- <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a> --}}
+          @endforeach	
+      <!-- Button trigger modal -->
+              <br>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#readModal">
+                Read more
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">PENGAJIAN MUDA-MUDI</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      ...
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Service Item -->
+          </div>
+        </div>
+      </div>
+    </section><!-- Pengumuman Section -->
+
+    <!-- ======= Map Section ======= -->
+      <section id="map" class="services">
+        <div class="row gy-4 mb-20" data-aos="fade-up" data-aos-delay="100">
+          <div class="map">
+            <div class="section-header">
+              <h2>Alamat</h2>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3989.1439809098415!2d103.9741277!3d1.0534319!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98dbae8b92d01%3A0x529a1dda6bb66f16!2sMASJID%20BAITUR%20ROHMAH%20(LDII)!5e0!3m2!1sen!2sid!4v1663311750049!5m2!1sen!2sid" width="1300" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>  
+      </section>
+    <!-- ======= End Map Section ======= -->
+    
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <footer id="footer">
+  <footer id="footer" class="footer">
+
     <div class="container">
-      <h3>{{$address->title}}</h3>
-      <p style="padding-left: 300px; padding-right: 300px;">{{$address->description}}</p>
-      <div class="social-links">
-        <a href="{{$social->facebook}}" class="facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
-        <a href="{{$social->instagram}}" class="instagram" target="_blank" ><i class="bx bxl-instagram"></i></a>
-        <a href="{{$social->twitter}}" class="twitter" target="_blank" ><i class="bx bxl-twitter"></i></a>
-        <a href="{{$social->youtube}}" class="youtube" target="_blank" ><i class="bx bxl-youtube"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; 2022
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: [license-url] -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>Impact</span>
+          </a>
+          <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="{{ $social->instagram }}" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Klik Disini</h4>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Berita</a></li>
+            <li><a href="#">Kalender</a></li>
+            <li><a href="#">Pengumuman</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Klik Disini</h4>
+          <ul>
+            <li><a href="#">Al-Qur'an</a></li>
+            <li><a href="#">Do'a-Do'a</a></li>
+            <li><a href="#">Dalil-Dalil</a></li>
+            <li><a href="#">Dokumentasi</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Hubungi</h4>
+          <p>
+            Jl. Permata Puri, RT.03/RW.09, Buliang, <br>
+            Kec. Batu Aji, Kota Batam,<br>
+            Kepulauan Riau 29425 <br><br>
+            <strong>WhatsApp:</strong> +62 877 7526 0150<br>
+            <strong>Email:</strong>generusbatuaji@gmail.com<br>
+          </p>
+
+        </div>
+
       </div>
     </div>
+
+    <div class="container mt-4">
+      <div class="copyright">
+        &copy; Copyright <span>Generasi Penerus Batu Aji</span>
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+
   </footer><!-- End Footer -->
+  <!-- End Footer -->
+
+  {{-- <div id="kt_quick_user" class="offcanvas offcanvas-start p-10">
+    <!--begin::Header-->
+    
+    <!--end::Header-->
+    <!--begin::Content-->
+    <div class="offcanvas-content pr-5 mr-n5">
+      <!--begin::Header-->
+      <div class="d-flex align-items-center mt-5">
+        <div class="symbol symbol-100 mr-5">
+          <div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
+        </div>
+        <div class="d-flex flex-column">
+          <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>
+          <span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
+        </div>
+      </div>
+      <!--end::Nav-->
+      <!--begin::Separator-->
+      <div class="navi navi-spacer-x-0 p-0">
+        <!--begin::Item-->
+        <a href="{{ route('profile')}}" class="navi-item">
+          <div class="navi-link">
+            <div class="symbol symbol-40 bg-light mr-3">
+              <div class="symbol-label">
+                <span class="svg-icon svg-icon-md svg-icon-success">
+                  <!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg-->
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <rect x="0" y="0" width="24" height="24" />
+                      <path d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z" fill="#000000" />
+                      <circle fill="#000000" opacity="0.3" cx="18.5" cy="5.5" r="2.5" />
+                    </g>
+                  </svg>
+                  <!--end::Svg Icon-->
+                </span>
+              </div>
+            </div>
+            <div class="navi-text">
+              <div class="font-weight-bold">Profile Settings</div>
+              
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="separator separator-dashed my-7"></div>
+      <a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
+    </div>
+    <!--end::Content-->
+  </div> --}}
+
+  <a href="#" class="scroll-top d-flex align-eitems-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
 
 </body>
 

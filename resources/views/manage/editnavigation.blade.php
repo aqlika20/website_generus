@@ -5,7 +5,7 @@
 	<!--begin::Head-->
 	<head><base href="">
 		<meta charset="utf-8" />
-		<title>SATREPS | Admin Dashboard</title>
+		<title>Generusbatuaji | Admin Dashboard</title>
 		<meta name="description" content="Satreps Admin Dashboard" />
 		<meta http-equiv=”Refresh” content=”0;URL=https://iot.mict.id/manage” />
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -44,7 +44,7 @@
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
 			<a href="{{ route('home')}}">
-				<img alt="Logo" src="{{ asset('media/logos/SATREPS.svg') }}" />
+				<img alt="Logo" src="{{ asset('assets/img/baji.png') }}" width="150px" />
 			</a>
 			<!--end::Logo-->
 			<!--begin::Toolbar-->
@@ -87,7 +87,7 @@
 					<div class="brand flex-column-auto" id="kt_brand">
 						<!--begin::Logo-->
 						<a href="{{ route('home')}}" class="brand-logo">
-							<img alt="Logo" src="{{ asset('media/logos/SATREPS.svg') }}" />
+							<img alt="Logo" src="{{ asset('assets/img/baji.png') }}" width="150px" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Toggle-->
