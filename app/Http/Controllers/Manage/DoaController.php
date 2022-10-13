@@ -74,7 +74,8 @@ class DoaController extends Controller
 
         $validator = Validator::make($data, [
             'title' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg'
+            'image' => 'nullable|mimes:jpg,png,jpeg',
+            'latin' => 'required',
         ]);
 
         if(!empty($request->file('image'))){
@@ -90,10 +91,8 @@ class DoaController extends Controller
 
         $doa->update([
             'title' => ucwords($data['title']),
-            'description' => empty($data['description']) ?  $doa->description : $data['description'],
-            'link' => empty($data['link']) ?  $doa->link : $data['link'],
-            'link_name' => empty($data['link_name']) ?  $doa->link_name : $data['link_name'],
             'image' => empty($filename) ?  $doa->image : $filename,
+            'latin' => empty($data['latin']) ?  $doa->latin : $data['latin'],
         ]);
 
         return redirect()->route('doa')->with(['success'=>'Data diedit.']);

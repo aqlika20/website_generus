@@ -436,10 +436,8 @@
 																	<tr>
 																		<th title="Field #1">No</th>
 																		<th title="Field #2">Title</th>
-																		<th title="Field #3">Description</th>
-																		{{-- <th title="Field #4">Link</th>
-																		<th title="Field #5">Link Name</th> --}}
 																		<th title="Field #6">Image</th>
+																		<th title="Field #3">Description</th>
 																		<th title="Field #7">Aksi</th>
 																	</tr>
 																</thead>
@@ -451,10 +449,8 @@
 																		<tr>
 																			<td>{{ $num+=1 }}</td>
 																			<td>{{ $berita->title }}</td>
-																			<td>{{ $berita->image }}</td>
+																			<td><img src="{{ asset('storage/berita/'.$berita->image) }}" class="img-fluid mb-3" alt=""></td>
 																			<td><div style="color: #FFA800;">{{ $berita->description }}</div></td>
-																			{{-- <td><div style="color: #3699FF;">{{ $berita->url }}</div></td>
-																			<td>{{ $berita->image_aligntment }}</td> --}}
 																			<td>
 																				<form method="POST" action="{{ route('berita.delete',[$berita->id]) }}">
 																				@csrf 

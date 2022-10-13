@@ -446,7 +446,7 @@
 																		<tr>
 																			<td>{{ $num+=1 }}</td>
 																			<td>{{ $dalil->title }}</td>
-																			<td>{{ $dalil->image }}</td>
+																			<td><img src="{{ asset('storage/Dalil-Dalil/'.$dalil->image) }}" class="img-fluid mb-3" alt=""></td>
 																			<td><div style="color: #FFA800;">{{ $dalil->latin }}</div></td>
 																			<td><div style="color: #FFA800;">{{ $dalil->arti }}</div></td>
 																			<td>

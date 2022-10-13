@@ -76,7 +76,9 @@ class DalilController extends Controller
 
         $validator = Validator::make($data, [
             'title' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg'
+            'image' => 'required|mimes:jpg,png,jpeg',
+            'latin' => 'required',
+            'arti' => 'required',
         ]);
 
         if(!empty($request->file('image'))){
@@ -92,10 +94,9 @@ class DalilController extends Controller
 
         $dalil->update([
             'title' => ucwords($data['title']),
-            'description' => empty($data['description']) ?  $dalil->description : $data['description'],
-            'link' => empty($data['link']) ?  $dalil->link : $data['link'],
-            'link_name' => empty($data['link_name']) ?  $dalil->link_name : $data['link_name'],
             'image' => empty($filename) ?  $dalil->image : $filename,
+            'latin' => empty($data['latin']) ?  $dalil->latin : $data['latin'],
+            'arti' => empty($data['arti']) ?  $dalil->arti : $data['arti'],
         ]);
 
         return redirect()->route('dalil')->with(['success'=>'Data diedit.']);

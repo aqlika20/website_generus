@@ -35,6 +35,13 @@
 			<link href="{{ asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link rel="shortcut icon" href="{{ asset('media/logos') }}" />
 		@endif
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 		<style>
 			.center-modal {
@@ -353,7 +360,7 @@
 									<div class="card card-custom gutter-b">
 										<div class="card-header flex-wrap border-0 pt-6 pb-0">
 											<div class="card-title">
-												<h3 class="card-label">Berita list 
+												<h3 class="card-label">Pengumuman list 
 											</div>
 											<div class="card-toolbar">
 												<button type="button"  class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#exampleModalCenter">
@@ -367,7 +374,7 @@
 														</g>
 													</svg>
 													<!--end::Svg Icon-->
-												</span>Add Berita</a>
+												</span>Add Pengumuman</a>
 												<!--end::Button-->
 											</div>
 										</div>
@@ -378,7 +385,7 @@
 														<div class="card-header">
 															<div class="card-title">
 																<h3 class="card-label">
-																Add New Berita
+																Add New Pengumuman
 																</h3>
 															
 															</div>
@@ -386,7 +393,7 @@
 																<i aria-hidden="true" class="ki ki-close"></i>
 															</button>
 														</div>
-														<form method="POST" action="{{ route('berita.store') }}" enctype="multipart/form-data">
+														<form method="POST" action="{{ route('pengumuman.store') }}" enctype="multipart/form-data">
 															@csrf
 															@method('PATCH')
 															<div class="card-body">
@@ -396,22 +403,7 @@
 																</div>
 																<div class="form-group">
 																	<label>Description</label>
-																	<input id="description" type="text" class="form-control" name="description" value="{{old('description')}}" required autocomplete="description" autofocus>
-																</div>
-																{{-- <div class="form-group">
-																	<label>Link</label>
-																	<input id="link" type="text" class="form-control" name="link" value="{{old('link')}}" required autocomplete="link" autofocus>
-																</div>
-																<div class="form-group">
-																	<label>Link Name</label>
-																	<input id="link_name" type="text" class="form-control" name="link_name" value="{{old('link_name')}}" required autocomplete="link_name" autofocus>
-																</div> --}}
-																<div class="form-group">
-																	<label>Image</label>
-																	<div class="custom-file">
-																		<input id="image" type="file" class="custom-file-input" name="image" accept=".jpg,.jpeg,.png" required/>
-																		<label class="custom-file-label" for="customFile">Choose file</label>
-																	</div>
+																	<textarea id="isi" type="text" class="form-control" name="isi" value="{{old('isi')}}" required autocomplete="isi" autofocus></textarea>
 																</div>
 															</div>
 															<div class="card-footer">
@@ -437,9 +429,6 @@
 																		<th title="Field #1">No</th>
 																		<th title="Field #2">Title</th>
 																		<th title="Field #3">Description</th>
-																		{{-- <th title="Field #4">Link</th>
-																		<th title="Field #5">Link Name</th> --}}
-																		<th title="Field #6">Image</th>
 																		<th title="Field #7">Aksi</th>
 																	</tr>
 																</thead>
@@ -447,19 +436,16 @@
 																	@php
 																		$num = 0
 																	@endphp
-																	@foreach($beritas as $berita)
+																	@foreach($pengumumans as $pengumuman)
 																		<tr>
 																			<td>{{ $num+=1 }}</td>
-																			<td>{{ $berita->title }}</td>
-																			<td>{{ $berita->image }}</td>
-																			<td><div style="color: #FFA800;">{{ $berita->description }}</div></td>
-																			{{-- <td><div style="color: #3699FF;">{{ $berita->url }}</div></td>
-																			<td>{{ $berita->image_aligntment }}</td> --}}
+																			<td>{{ $pengumuman->title }}</td>
+																			<td><div style="color: #FFA800;">{{ $pengumuman->isi }}</div></td>
 																			<td>
-																				<form method="POST" action="{{ route('berita.delete',[$berita->id]) }}">
+																				<form method="POST" action="{{ route('pengumuman.delete',[$pengumuman->id]) }}">
 																				@csrf 
 																				@method('DELETE')
-																					<a class="btn btn-icon btn-light btn-sm mx-1" href="{{ route('berita.view',[$berita->id]) }}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+																					<a class="btn btn-icon btn-light btn-sm mx-1" href="{{ route('pengumuman.view',[$pengumuman->id]) }}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
 																					<button type="submit" title="Delete" class="btn btn-icon btn-light btn-sm mx-1" onclick='return confirm("Apakah kamu yakin?")'>
 																					<i class='far fa-trash-alt' style="color:red"></i>
 																					</button>
@@ -490,7 +476,13 @@
 						</div>
 					<!--end::Content-->
 
-
+					<script>
+						$('#isi').summernote({
+							placeholder: 'Isi Pengumuman',
+							tabsize: 2,
+							height: 100
+						});
+					</script>
 
 					<!--begin::Footer-->
 					<div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
@@ -568,16 +560,12 @@
 					</a>
 				</div>
 
-<div class="separator separator-dashed my-7"></div>
+			<div class="separator separator-dashed my-7"></div>
 				<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
 			</div>
 			<!--end::Content-->
 		</div>
 		
-		<!--end::Sticky Toolbar-->
-		<!--begin::Demo Panel-->
-		
-		<!--end::Demo Panel-->
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
 		<!--end::Global Config-->

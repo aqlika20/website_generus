@@ -10,7 +10,7 @@ class Pengumuman extends Model
     protected $table = 'pengumumans';
     
     protected $fillable = [
-        'id', 'title', 'description', 'link', 'link_name', 'image'
+        'id', 'title', 'isi'
     ];
 
     protected $date = [

@@ -19,6 +19,8 @@ use App\Models\Social;
 use App\Models\Berita;
 use App\Models\Doa;
 use App\Models\Dalil;
+use App\Models\Pengumuman;
+
 
 class HomeController extends Controller
 {
@@ -36,9 +38,10 @@ class HomeController extends Controller
         $social = Social::find($id);
         $users = User::All();
         $beritas = Berita::All();
+        $pengumumans = Pengumuman::All();
         
 
-        return view('home', compact('users','beritas','currentUser','social'));
+        return view('home', compact('users','beritas','currentUser','social','pengumumans'));
     }
 
     public function doa()

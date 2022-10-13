@@ -74,7 +74,8 @@ class BeritaController extends Controller
 
         $validator = Validator::make($data, [
             'title' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg'
+            'image' => 'nullable|mimes:jpg,png,jpeg',
+            'description' => 'required'
         ]);
 
         if(!empty($request->file('image'))){
@@ -90,10 +91,8 @@ class BeritaController extends Controller
 
         $berita->update([
             'title' => ucwords($data['title']),
-            'description' => empty($data['description']) ?  $berita->description : $data['description'],
-            'link' => empty($data['link']) ?  $berita->link : $data['link'],
-            'link_name' => empty($data['link_name']) ?  $berita->link_name : $data['link_name'],
             'image' => empty($filename) ?  $berita->image : $filename,
+            'description' => empty($data['description']) ?  $berita->description : $data['description'],
         ]);
 
         return redirect()->route('berita')->with(['success'=>'Data diedit.']);

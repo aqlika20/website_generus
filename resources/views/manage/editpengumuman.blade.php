@@ -4,8 +4,8 @@
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="">
-		<meta charset="utf-8" />
-		<title>Generusbatuaji | Admin Dashboard</title>
+	<meta charset="utf-8" />
+		<title>Generusbatuaji | Pengumuman</title>
 		<meta name="description" content="Satreps Admin Dashboard" />
 		<meta http-equiv=”Refresh” content=”0;URL=https://iot.mict.id/manage” />
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -35,6 +35,27 @@
 			<link href="{{ asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link rel="shortcut icon" href="{{ asset('media/logos') }}" />
 		@endif
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+		<style>
+			.center-modal {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				margin-left: 29%;
+				min-height: calc(100% - 1rem);
+			}
+		</style>
+
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -113,7 +134,7 @@
 						<div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
 							<!--begin::Menu Nav-->
 							<ul class="menu-nav">
-								<li class="menu-item " aria-haspopup="true">
+							<li class="menu-item " aria-haspopup="true">
 									<a href="{{ route('home')}}" class="menu-link">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Design/Layers.svg') }}-->
@@ -133,8 +154,8 @@
 									<h4 class="menu-text">Main</h4>
 									<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 								</li>
-								<li class="menu-item menu-item-active" aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{ route('content')}}" class="menu-link menu-toggle">
+								<li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="{{ route('berita')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -146,7 +167,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Content</span>
+										<span class="menu-text">Berita</span>
 									</a>	
 								</li>
 								<li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
@@ -165,7 +186,23 @@
 										<span class="menu-text">Doa</span>
 									</a>	
 								</li>
-<li	li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
+									<a href="{{ route('dalil')}}" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24"/>
+													<rect fill="#000000" x="4" y="5" width="16" height="3" rx="1.5"/>
+													<path d="M7.5,11 L16.5,11 C17.3284271,11 18,11.6715729 18,12.5 C18,13.3284271 17.3284271,14 16.5,14 L7.5,14 C6.67157288,14 6,13.3284271 6,12.5 C6,11.6715729 6.67157288,11 7.5,11 Z M10.5,17 L13.5,17 C14.3284271,17 15,17.6715729 15,18.5 C15,19.3284271 14.3284271,20 13.5,20 L10.5,20 C9.67157288,20 9,19.3284271 9,18.5 C9,17.6715729 9.67157288,17 10.5,17 Z" fill="#000000" opacity="0.3"/>
+												</g>
+											</svg>
+											<!--end::Svg Icon-->
+										</span>
+										<span class="menu-text">Dalil</span>
+									</a>	
+								</li>
+								<li	li class="menu-item menu-item-active" aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{ route('pengumuman')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
@@ -305,7 +342,7 @@
 								<!--begin::Info-->
 								<div class="d-flex align-items-center flex-wrap mr-2">
 									<!--begin::Page Title-->
-									<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Content</h5>
+									<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Pengumuman</h5>
 									<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
 									
 								</div>
@@ -318,57 +355,26 @@
 								<div class="card card-custom gutter-b">
 									<div class="card-header flex-wrap border-0 pt-6 pb-0">
 										<div class="card-title">
-											<h3 class="card-label">Edit Content 
+											<h3 class="card-label">Edit Pengumuman 
 										</div>
 									</div>
 									<div class="card-body">
-										<form method="POST" action="{{ route('content.edit',[$content->id]) }}" enctype="multipart/form-data">
+										<form method="POST" action="{{ route('pengumuman.edit',[$pengumuman->id]) }}">
 											@csrf
 											@method('PATCH')
 											<div class="card-body">
 												<div class="form-group">
-													<label>Name</label>
-													<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $content->name }}" required autocomplete="name" autofocus>
+													<label>Title</label>
+													<input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $pengumuman->title }}" required autocomplete="title" autofocus>
 												</div>
 												<div class="form-group">
-													<label>Image</label>
-													<br>
-													<img src="{{ asset('storage/Content/'.$content->image) }}" class="img-fluid mb-3" width="500" height="333" alt="">
-													<div class="custom-file">
-														<input type="file" class="custom-file-input" id="image" name="image" accept=".jpg,.jpeg,.png"/>
-														<label class="custom-file-label" for="customFile">Choose file</label>
-													</div>
-												</div>
-												<div class="form-group">
-													<label for="exampleTextarea">Description</label>
-													<textarea type="text" class="form-control form-control-solid" placeholder="Enter Your Address" id="description" name="description" rows="3" required autocomplete="description" autofocus>{{old('description', $content->description)}}</textarea>
-												</div>
-												<div class="form-group">
-													<label>Url</label>
-													<input id="url" type="text" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ $content->url }}" required autocomplete="url" autofocus/>
-												</div>
-												<div class="form-group row">
-												<label class="col-3 col-form-label">Image Alignment</label>
-												<div class="col-9 col-form-label">
-													<div class="radio-inline">
-														<label class="radio radio-primary">
-															<input type="radio" id="image_aligntment" name="image_aligntment" value="1" {{ ($content->image_aligntment=="1")? "checked" : "" }}/>
-															<span></span>
-															Right
-														</label>
-														<label class="radio radio-primary">
-															<input type="radio" id="image_aligntment" name="image_aligntment" value="2" {{ ($content->image_aligntment=="2")? "checked" : "" }}/>
-															<span></span>
-															Left
-														</label>
-													</div>
+													<label>Description</label>
+													<textarea type="text" class="form-control form-control-solid" placeholder="Enter Your Address" id="isi" name="isi" rows="3" required autocomplete="isi" autofocus>{!! $pengumuman->isi !!}</textarea>
 												</div>
 											</div>
-											
-											<input d="last_img" name="last_img" type="hidden" value="{{ $content->image }}">
 											<div class="card-footer">
 												<button type="submit" class="btn btn-primary mr-2">Submit</button>
-												<a href="{{ route('content')}}" class="btn btn-danger mr-2">Cancel</a>
+												<a href="{{ route('pengumuman')}}" class="btn btn-danger mr-2">Cancel</a>
 											</div>
 										</form>
 									</div>
@@ -380,6 +386,15 @@
 						<!--end::Entry-->
 					</div>
 					<!--end::Content-->
+
+					<script>
+						$('#isi').summernote({
+							placeholder: 'Isi Pengumuman',
+							tabsize: 2,
+							height: 100
+						});
+					</script>
+					
 					<!--begin::Footer-->
 					<div class="footer bg-white py-4 d-flex flex-lg-column" id="kt_footer">
 						<!--begin::Container-->
@@ -456,16 +471,12 @@
 					</a>
 				</div>
 
-<div class="separator separator-dashed my-7"></div>
+			<div class="separator separator-dashed my-7"></div>
 				<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
 			</div>
 			<!--end::Content-->
 		</div>
 		
-		<!--end::Sticky Toolbar-->
-		<!--begin::Demo Panel-->
-		
-		<!--end::Demo Panel-->
 		<!--begin::Global Config(global config for global JS scripts)-->
 		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
 		<!--end::Global Config-->

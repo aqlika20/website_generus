@@ -33,46 +33,7 @@
   <link rel="stylesheet" href="assets/css/evo-calendar.min.css">
   <link rel="stylesheet" href="assets/css/calendar.css">
 
-  {{-- <!-- Bootsrap CSS -->  
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bootstrap-grid.css">
-  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="css/bootstrap-reboot.css"> --}}
-
-</head>
-
-<body>
-  <!-- ======= Header ======= -->
-
-  <header id="header" class="header d-flex align-items-center">
-
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="{{ route('dashboard')}}" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <img src="assets/img/baji.png" alt="">
-      </a>
-      <nav id="navbar" class="navbar">    
-        <ul>
-          <li><a href="#hero">Beranda</a></li>
-          <li><a href="#tentang">Tentang</a></li>
-          <li><a href="#berita">Berita</a></li>
-          <li><a href="#kalender">Kalender</a></li>
-          <li><a href="#pengumuman">Pengumuman</a></li>
-          <li><a href="#map">Alamat</a></li>
-
-          <li><a href="{{ route('login')}}">Login</a></li>
-          {{-- <li><a data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">HI!!!!!</a></li> --}}
-          
-        </ul>
-      </nav><!-- .navbar -->
-
-      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-
-    </div>
-    <style>
+  <style>
       .carousel-inner img{
         height:720px ;
       }
@@ -112,6 +73,39 @@
         color: #fff;
       }
     </style>
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="{{ route('dashboard')}}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <img src="assets/img/baji.png" alt="">
+      </a>
+      <nav id="navbar" class="navbar">    
+        <ul>
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#berita">Berita</a></li>
+          <li><a href="#kalender">Kalender</a></li>
+          <li><a href="#pengumuman">Pengumuman</a></li>
+          <li><a href="#map">Alamat</a></li>
+
+          <li><a href="{{ route('login')}}">Login</a></li>
+          {{-- <li><a data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">HI!!!!!</a></li> --}}
+          
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+    
   </header><!-- End Header -->
   <!-- End Header -->
 
@@ -296,47 +290,43 @@
         </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-4 col-md-6">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-megaphone"></i>
-              </div>
-              <h3 class="title"> PENGAJIAN MUDA-MUDI</h3>
-              <p>ini text</p>
-              {{-- <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a> --}}
-      <!-- Button trigger modal -->
-              <br>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Read more
-              </button>
-              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLongTitle">PENGAJIAN MUDA-MUDI</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      ...
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
+          @foreach($pengumumans as $pengumuman)
+            <div class="col-lg-4 col-md-6">
+              <div class="service-item  position-relative">
+                <div class="icon">
+                  <i class="bi bi-megaphone"></i>
                 </div>
+                <h3 class="title">{{ $pengumuman->title }}</h3>
+                <p>
+                  {{ Str::limit($pengumuman->isi, 50, '') }} 
+                  @if (strlen($pengumuman->isi) > 50)
+                    <span id="dots-{{ $pengumuman->id }}">...</span>
+                    <span id="more-{{ $pengumuman->id }}" style="display: none;">{{ substr($pengumuman->isi, 50) }}</span>
+                  @endif
+                </p>
+                <br>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-sm" onclick="loadMore({{ $pengumuman->id }})" id="myBtn">Citeste mai mult</button>
+
               </div>
             </div>
-          </div>
+          @endforeach	
           <!-- End Service Item -->
-          </div>
         </div>
       </div>
+      <script>
+        function loadMore(id) {
+          var dots = document.getElementById("dots-" + id);
+          var moreText = document.getElementById("more-" + id);
+          if (moreText.style.display === "none") {
+            moreText.style.display = "inline";
+            dots.style.display = "none";
+          } else {
+            moreText.style.display = "none";
+            dots.style.display = "inline";
+          }
+        }
+      </script>
     </section><!-- Pengumuman Section -->
 
     <!-- ======= Map Section ======= -->
@@ -415,60 +405,6 @@
   </footer><!-- End Footer -->
   <!-- End Footer -->
 
-  {{-- <div id="kt_quick_user" class="offcanvas offcanvas-start p-10">
-    <!--begin::Header-->
-    
-    <!--end::Header-->
-    <!--begin::Content-->
-    <div class="offcanvas-content pr-5 mr-n5">
-      <!--begin::Header-->
-      <div class="d-flex align-items-center mt-5">
-        <div class="symbol symbol-100 mr-5">
-          <div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
-        </div>
-        <div class="d-flex flex-column">
-          <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>
-          <span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
-        </div>
-      </div>
-      <!--end::Nav-->
-      <!--begin::Separator-->
-      <div class="navi navi-spacer-x-0 p-0">
-        <!--begin::Item-->
-        <a href="{{ route('profile')}}" class="navi-item">
-          <div class="navi-link">
-            <div class="symbol symbol-40 bg-light mr-3">
-              <div class="symbol-label">
-                <span class="svg-icon svg-icon-md svg-icon-success">
-                  <!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg-->
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                      <rect x="0" y="0" width="24" height="24" />
-                      <path d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z" fill="#000000" />
-                      <circle fill="#000000" opacity="0.3" cx="18.5" cy="5.5" r="2.5" />
-                    </g>
-                  </svg>
-                  <!--end::Svg Icon-->
-                </span>
-              </div>
-            </div>
-            <div class="navi-text">
-              <div class="font-weight-bold">Profile Settings</div>
-              
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div class="separator separator-dashed my-7"></div>
-      <a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
-    </div>
-    <!--end::Content-->
-  </div> --}}
-
-  <a href="#" class="scroll-top d-flex align-eitems-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
