@@ -181,7 +181,7 @@
 										<span class="menu-text">Doa</span>
 									</a>	
 								</li>
-								<li class="menu-item menu-item-active" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item menu-item" aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{ route('dalil')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->

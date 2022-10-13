@@ -52,6 +52,13 @@
 			:-ms-input-placeholder {  
 			color: white !important;  
 			}
+
+			.register{
+				position: relative;
+				padding-top: 30px
+
+			}
+
 		</style>
 		
 	</head>
@@ -98,7 +105,11 @@
 									{{ __('MASUK') }}
 								</button>
 							</form>
-							
+							<div class="register">
+								<br>
+								<p>belum punya akun ? <a href="#" style="color: white" style="font-style: italic"> daftar disini! </a> </p>
+							</div>
+
 						</div>
 						<!--end::Login Sign in form-->
 						<!--begin::Login Sign up form-->

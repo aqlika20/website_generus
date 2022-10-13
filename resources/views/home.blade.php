@@ -33,8 +33,12 @@
   <link rel="stylesheet" href="assets/css/evo-calendar.min.css">
   <link rel="stylesheet" href="assets/css/calendar.css">
 
-  <!-- Bootsrap CSS -->  
-  
+  {{-- <!-- Bootsrap CSS -->  
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="css/bootstrap-reboot.css"> --}}
 
 </head>
 
@@ -49,7 +53,7 @@
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <img src="assets/img/baji.png" alt="">
       </a>
-      <nav id="navbar" class="navbar">
+      <nav id="navbar" class="navbar">    
         <ul>
           <li><a href="#hero">Beranda</a></li>
           <li><a href="#tentang">Tentang</a></li>
@@ -255,18 +259,9 @@
                   <p>"{{ $berita->description }}"</p>
                 </div>
               </article>
-            </div><!-- End post list item -->
+            </div>
           @endforeach		
-        </div><!-- End blog posts list -->
-
-        {{-- <div class="blog-pagination">
-          <ul class="justify-content-center">
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-          </ul>
-        </div> --}}
-        <!-- End blog pagination -->
+        </div>
       </div>
     </section>
 
@@ -301,26 +296,24 @@
         </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-          @foreach($pengumumans as $pengumuman)
           <div class="col-lg-4 col-md-6">
             <div class="service-item  position-relative">
               <div class="icon">
                 <i class="bi bi-megaphone"></i>
               </div>
-              <h3 class="title">
-                <a>{{ $pengumuman->title}}</a>
-              </h3>
-              <p>{{ $pengumuman->isi }}</p>
+              <h3 class="title"> PENGAJIAN MUDA-MUDI</h3>
+              <p>ini text</p>
               {{-- <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a> --}}
-          @endforeach	
       <!-- Button trigger modal -->
               <br>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#readModal">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Read more
               </button>
+              <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 
               <!-- Modal -->
-              <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">

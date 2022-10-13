@@ -39,8 +39,7 @@ class PengumumanController extends Controller
 
         $validator = Validator::make($input, [
             'title' => 'required',
-            'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg'
+            'isi' => 'required',
         ]);
 
         $file = $request->file('image');
@@ -50,8 +49,7 @@ class PengumumanController extends Controller
         // dd($filename);
         $pengumumans = Pengumuman::create([
             'title' =>ucwords($input['title']),
-            'description' => $input['description'],
-            'image' =>$filename            
+            'isi' => $input['isi'],        
         ]);
 
         return redirect()->route('pengumuman')->with(['success'=>'pengumuman Berhasil Ditambahkan!']);
@@ -74,7 +72,8 @@ class PengumumanController extends Controller
 
         $validator = Validator::make($data, [
             'title' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg'
+            'image' => 'required|mimes:jpg,png,jpeg',
+            'isi'=> 'required'
         ]);
 
         if(!empty($request->file('image'))){
