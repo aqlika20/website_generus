@@ -40,6 +40,9 @@ class HomeController extends Controller
         $beritas = Berita::All();
         $pengumumans = Pengumuman::All();
         
+        foreach($pengumumans as $pengumuman)
+            $shortPengumuman = $pengumuman->isi;
+        
 
         return view('home', compact('users','beritas','currentUser','social','pengumumans'));
     }

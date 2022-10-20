@@ -72,6 +72,18 @@
         transform: translate(-50%, -50%) !important;
         color: #fff;
       }
+      .read-more-show{
+        cursor:pointer;
+        color: #ed8323;
+      }
+      .read-more-hide{
+        cursor:pointer;
+        color: #ed8323;
+      }
+
+      .hide_content{
+        display: none;
+      }
     </style>
 </head>
 
@@ -237,10 +249,10 @@
           <p>Berikut adalah kegiatan muda mudi Batu Aji</p>
         </div>
 
-        <div class="row gy-4 posts-list">
+        <div class="row gy-4 posts-list" >
           @foreach($beritas as $berita)
             <div class="col-xl-4 col-md-6">
-              <article>
+              <article style="background-color: white;">
                 <div class="post-img">
                   <img src="{{ asset('storage/Berita/'.$berita->image) }}" alt="" class="img-fluid">
                 </div>
@@ -290,6 +302,9 @@
         </div>
 
         <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
+          @php
+            $count = 0;
+          @endphp
           @foreach($pengumumans as $pengumuman)
             <div class="col-lg-4 col-md-6">
               <div class="service-item  position-relative">
@@ -297,16 +312,20 @@
                   <i class="bi bi-megaphone"></i>
                 </div>
                 <h3 class="title">{{ $pengumuman->title }}</h3>
-                <p>
-                  {{ Str::limit($pengumuman->isi, 50, '') }} 
-                  @if (strlen($pengumuman->isi) > 50)
-                    <span id="dots-{{ $pengumuman->id }}">...</span>
-                    <span id="more-{{ $pengumuman->id }}" style="display: none;">{{ substr($pengumuman->isi, 50) }}</span>
-                  @endif
-                </p>
+                
+                <span id="dots-{{ $pengumuman->id }}">
+                  <p>
+                  {{-- {!!   Str::words($pengumuman->isi, 10, '...')   !!} --}}
+                  </p>
+                </span>
+                <span id="more-{{ $pengumuman->id }}" style="display: none;">
+                  <p>
+                    {!! $pengumuman->isi !!}
+                  </p>
+                </span>
                 <br>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary btn-sm" onclick="loadMore({{ $pengumuman->id }})" id="myBtn">Citeste mai mult</button>
+                <button type="button" class="btn btn-primary btn-sm" onclick="loadMore({{ $pengumuman->id }})" id="myBtn">Read More</button>
 
               </div>
             </div>
@@ -314,10 +333,12 @@
           <!-- End Service Item -->
         </div>
       </div>
-      <script>
+      <script type="text/javascript">
         function loadMore(id) {
+          // $(".isi").hide();
           var dots = document.getElementById("dots-" + id);
           var moreText = document.getElementById("more-" + id);
+          console.log(dots);
           if (moreText.style.display === "none") {
             moreText.style.display = "inline";
             dots.style.display = "none";

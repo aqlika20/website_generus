@@ -95,6 +95,8 @@ Route::prefix('/manage')->group(function(){
     Route::patch('/profile/{id}', [App\Http\Controllers\Manage\UserController::class, 'profileEdit'])->name('profile.edit');
     Route::patch('/profile/pass/{id}', [App\Http\Controllers\Manage\UserController::class, 'profileEditPass'])->name('profile.edit.pass');
 
+    Route::get('/register', [App\Http\Controllers\Manage\RegisterController::class, 'register'])->name('register');
+    Route::patch('/register/add', [App\Http\Controllers\Manage\RegisterController::class, 'storeRegister'])->name('register.store');
 
     Auth::routes(['register' => false, 'reset' => false]);
     Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
