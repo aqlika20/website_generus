@@ -42,7 +42,7 @@
 		<!--begin::Header Mobile-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
-			<a href="{{ route('home')}}">
+			<a href="{{ route('home.admin')}}">
 				<img alt="Logo" src="{{ asset('assets/img/baji.png') }}" width="150px" />
 			</a>
 			<!--end::Logo-->
@@ -13601,7 +13601,7 @@
 						<div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
 					</div>
 					<div class="d-flex flex-column">
-						  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>
+						  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->username}}</a>
 						<span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
 
 					</div>

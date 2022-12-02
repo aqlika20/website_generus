@@ -43,7 +43,7 @@
 		<!--begin::Header Mobile-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
-			<a href="{{ route('home')}}">
+			<a href="{{ route('home.admin')}}">
 				<img alt="Logo" src="{{ asset('assets/img/baji.png') }}" width="150px" />
 			</a>
 			<!--end::Logo-->
@@ -86,7 +86,7 @@
 					<!--begin::Brand-->
 					<div class="brand flex-column-auto" id="kt_brand">
 						<!--begin::Logo-->
-						<a href="{{ route('home')}}" class="brand-logo">
+						<a href="{{ route('home.admin')}}" class="brand-logo">
 							<img alt="Logo" src="{{ asset('assets/img/baji.png') }}" width="150px" />
 						</a>
 						<!--end::Logo-->
@@ -114,7 +114,7 @@
 							<!--begin::Menu Nav-->
 							<ul class="menu-nav">
 								<li class="menu-item" aria-haspopup="true">
-									<a href="{{ route('home')}}" class="menu-link">
+									<a href="{{ route('home.admin')}}" class="menu-link">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Design/Layers.svg') }}-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -360,6 +360,10 @@
 											  						<input id="name" name="name" type="text" class="form-control form-control-solid" value="{{old('name')}}" required autocomplete="name" autofocus/>
 																</div>
 																<div class="form-group">
+																	<label>Username</label>
+											  						<input id="username" name="username" type="text" class="form-control form-control-solid" value="{{old('username')}}" required autocomplete="username" autofocus/>
+																</div>
+																<div class="form-group">
 																	<label>Email</label>
 																	<input id="email" name="email" type="text" class="form-control form-control-solid" value="{{old('email')}}" required autocomplete="email" autofocus/>
 															  	</div>
@@ -406,8 +410,9 @@
 																<tr>
 																	<th title="Field #1">No</th>
 																	<th title="Field #2">Name</th>
-																	<th title="Field #3">Email</th>
-																	<th title="Field #8">Aksi</th>
+																	<th title="Field #3">Username</th>
+																	<th title="Field #4">Email</th>
+																	<th title="Field #5">Aksi</th>
 																</tr>
 															</thead>
 															<tbody>
@@ -418,6 +423,7 @@
 																	<tr>
 																		<td>{{ $num+=1 }}</td>
 																		<td>{{ $user->name }}</td>
+																		<td>{{ $user->username }}</td>
 																		<td>{{ $user->email }}</td>	
 																		<td>
 																			<form method="POST" action="{{ route('user.delete',[$user->id]) }}">
@@ -488,7 +494,7 @@
 						<div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
 					</div>
 					<div class="d-flex flex-column">
-						  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>
+						  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->username}}</a>
 						<span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
 
 					</div>

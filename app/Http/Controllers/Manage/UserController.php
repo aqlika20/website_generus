@@ -54,6 +54,7 @@ class UserController extends Controller
         $input = $request->all();
         $validator = Validator::make($input, [
             'name' => 'required',
+            'username' => 'required',
             'email' => 'required',
             'password' => 'required|confirmed',
             'roles_id' => 'required'
@@ -77,6 +78,7 @@ class UserController extends Controller
 
         $users = User::create([
             'name' =>$input['name'],
+            'username' =>$input['username'],
             'email' => $input['email'],
             'password' => $input['password'],
             'roles_id' => $input['roles_id'],
@@ -92,6 +94,7 @@ class UserController extends Controller
 
         $validator = Validator::make($data, [
             'name' => 'required',
+            'username' => 'required',
             'email' => 'required',
             'role' => 'required',
         ]);
@@ -104,6 +107,7 @@ class UserController extends Controller
         }
 
         $user->name = $data['name'];
+        $user->username = $data['username'];
         $user->email = $data['email'];
         $user->roles_id = $data['role'];
 
@@ -139,6 +143,7 @@ class UserController extends Controller
 
         $validator = Validator::make($data, [
             'name' => 'required',
+            'username' => 'required',
             'email' => 'required',
             'role' => 'required',
         ]);
@@ -151,6 +156,7 @@ class UserController extends Controller
         }
 
         $user->name = $data['name'];
+        $user->username = $data['username'];
         $user->email = $data['email'];
         $user->roles_id = $data['role'];
 

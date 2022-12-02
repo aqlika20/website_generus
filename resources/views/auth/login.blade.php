@@ -74,10 +74,9 @@
 						<!--begin::Login Header-->
 						<div class="d-flex flex-center mb-5">
 							<a>
-								<img src="{{ asset('media/logos/Baji.png') }}" alt="" width="300px"/>
+								<img src="{{ asset('media/logos/logo_login.png') }}" alt="" width="200px"/>
 							</a>
 						</div>
-						<a style="color: white; font-size: 13pt; font-weight: bold;">Generasi Penerus Batu Aji</a>
 						<!--end::Login Header-->
 						<!--begin::Login Sign in form-->
 						<div class="login-signin">
@@ -107,7 +106,7 @@
 							</form>
 							<div class="register">
 								<br>
-								<p>belum punya akun ? <a href="#" style="color: white" style="font-style: italic"> daftar disini! </a> </p>
+								<p>belum punya akun ? <a href="{{ route('register')}}" style="color: white" style="font-style: italic"> daftar disini! </a> </p>
 							</div>
 
 						</div>

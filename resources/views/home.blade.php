@@ -18,20 +18,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  @if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
+			
+			  <!-- Vendor CSS Files -->
+        <link href="{{ secure_asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+        <!-- Template Main CSS File -->
+        <link href="{{ secure_asset('assets/css/main.css') }}" rel="stylesheet">
 
-  <!-- Main CSS Calendar -->
-  <link rel="stylesheet" href="assets/css/evo-calendar.midnight-blue.min.css">
-  <link rel="stylesheet" href="assets/css/evo-calendar.min.css">
-  <link rel="stylesheet" href="assets/css/calendar.css">
+        <!-- Main CSS Calendar -->
+        <link rel="stylesheet" href="{{ secure_asset('assets/css/evo-calendar.midnight-blue.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('assets/css/evo-calendar.min.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('assets/css/calendar.css') }}">
+
+		@else
+        <!-- Vendor CSS Files -->
+        <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+        <!-- Template Main CSS File -->
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+
+        <!-- Main CSS Calendar -->
+        <link rel="stylesheet" href="{{ asset('assets/css/evo-calendar.midnight-blue.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/evo-calendar.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/calendar.css') }}">	
+
+		@endif
+
 
   <style>
       .carousel-inner img{
@@ -93,10 +114,10 @@
   <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="{{ route('dashboard')}}" class="logo d-flex align-items-center">
+      <a href="{{ route('index')}}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <img src="assets/img/baji.png" alt="">
+        <img src="{{ asset('media/logos/Baji.png') }}" alt="">
       </a>
       <nav id="navbar" class="navbar">    
         <ul>
@@ -107,7 +128,73 @@
           <li><a href="#pengumuman">Pengumuman</a></li>
           <li><a href="#map">Alamat</a></li>
 
-          <li><a href="{{ route('login')}}">Login</a></li>
+          @auth
+
+          <div class="topbar-item">
+            <div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">
+              <li><a>Hi, {{ $currentUser->name }}</a></li>
+            </div>
+          </div>
+
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="kt_quick_user" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!--begin::Header-->
+              <div class="d-flex align-items-center mt-5">
+                <div class="symbol symbol-100 mr-5">
+                  <div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
+                </div>
+                <div class="d-flex flex-column">
+                  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->username}}</a>
+                  <span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
+                </div>
+              </div>
+              <!--end::Nav-->
+              <!--begin::Separator-->
+              <div class="navi navi-spacer-x-0 p-0">
+                <!--begin::Item-->
+                <a href="{{ route('profile')}}" class="navi-item">
+                  <div class="navi-link">
+                    <div class="symbol symbol-40 bg-light mr-3">
+                      <div class="symbol-label">
+                        <span class="svg-icon svg-icon-md svg-icon-success">
+                          <!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg-->
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <rect x="0" y="0" width="24" height="24" />
+                              <path d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z" fill="#000000" />
+                              <circle fill="#000000" opacity="0.3" cx="18.5" cy="5.5" r="2.5" />
+                            </g>
+                          </svg>
+                          <!--end::Svg Icon-->
+                        </span>
+                      </div>
+                    </div>
+                    <div class="navi-text">
+                      <div class="font-weight-bold">Profile Settings</div>
+                      
+                    </div>
+                  </div>
+                </a>
+              </div>
+      
+              <div class="separator separator-dashed my-7"></div>
+              {{-- <a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-light-primary font-weight-bold">Sign Out</a> --}}
+              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger btn-lg btn-block">Logout</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+              </form>
+            </div>
+          </div>
+
+          @else
+            <li><a href="{{ route('login')}}">Login</a></li>
+          @endauth
+          
+          
           {{-- <li><a data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">HI!!!!!</a></li> --}}
           
         </ul>
@@ -127,26 +214,12 @@
       <div class="carousel-inner">
         <div class="row gy-5" data-aos="fade-in">
         <div class="carousel-item text-content active">
-          <img src="assets/img/masjid2.png" class="d-block w-100" alt="" >
+          <img src="{{ asset('assets/img/masjid2.png') }}" class="d-block w-100" alt="" >
           <h3>Selamat Datang</h3>
           <h2>Generus Batu Aji</h2>
           <h4>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</h4>
         </div>
-        <div class="carousel-item text-content active">
-          <img src="assets/img/masjid2.png" class="d-block w-100" alt="" >
-          <h3>Selamat Datang</h3>
-          <h2>Generus Batu Aji</h2>
-          <h4>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</h4>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    </div>
     </div>
   <!-- ======= End Slider Section ======= -->
 
@@ -158,7 +231,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
-              <div class="imgnew"><img src="assets/img/quran.png"></div>
+              <div class="imgnew"><img src="{{ asset('assets/img/quran.png') }}"></div>
               <div> </div>
               <h4 class="title"><a href="https://quran.com/id" target="_blank" class="stretched-link">Al-Qur'an</a></h4>
             </div>
@@ -167,7 +240,7 @@
           
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <div class="imgnew"><img src="assets/img/doa.png"></div>
+              <div class="imgnew"><img src="{{ asset('assets/img/doa.png') }}"></div>
               <h4 class="title"><a href="{{ route('dashboard.doa')}}" class="stretched-link">Do'a-Do'a</a></h4>
             </div>
           </div>
@@ -175,7 +248,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
-              <div class="imgnew"><img src="assets/img/dalil.png"></div>
+              <div class="imgnew"><img src="{{ asset('assets/img/dalil.png') }}"></div>
               <h4 class="title"><a href="{{ route('dashboard.dalil')}}" class="stretched-link">Dalil-Dalil</a></h4>
             </div>
           </div>
@@ -183,7 +256,7 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
-              <div class="imgnew"><img src="assets/img/dokumentasi.png"></div>
+              <div class="imgnew"><img src="{{ asset('assets/img/dokumentasi.png') }}"></div>
               <h4 class="title"><a href="https://drive.google.com/drive/folders/1nCgFJJZEH-GgFsMZ5GEgQ4tabCaXOIiq?usp=sharing" target="_blank" class="stretched-link">Dokumentasi</a></h4>
             </div>
           </div>
@@ -208,7 +281,7 @@
         <div class="row gy-4">
           <div class="col-lg-6">
             <h3>Voluptatem dignissimos provident quasi corporis</h3>
-            <img src="assets/img/gambar.png" class="img-fluid rounded-4 mb-4" alt="">
+            <img src="{{ asset('assets/img/gambar.png') }}" class="img-fluid rounded-4 mb-4" alt="">
             <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
             <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
           </div>
@@ -229,7 +302,7 @@
               </p>
 
               <div class="position-relative mt-4">
-                <img src="assets/img/test.png" class="img-fluid rounded-4" alt="">
+                <img src="{{ asset('assets/img/test.png') }}" class="img-fluid rounded-4" alt="">
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
               </div>
             </div>
@@ -282,7 +355,7 @@
         <div id="calendar"></div>
         
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-        <script src="assets/js/evo-calendar.min.js"></script>
+        <script src="{{ asset('assets/js/evo-calendar.min.js') }}"></script>
         <script>
           $(document).ready(function() {
               $('#calendar').evoCalendar({
@@ -428,16 +501,16 @@
 
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="{{ asset('assets/js/main.js') }}"></script>
 
 
 </body>

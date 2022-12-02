@@ -14,6 +14,9 @@
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
+		<!--begin::Datetimepicker-->
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+		<!--end::Datetimepicker-->
 		<@if(parse_url(url('/'), PHP_URL_SCHEME) == 'HTTPS')
 			
 			<link href="{{ secure_asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -27,6 +30,7 @@
 		@else
 			
 			<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+			
 			
 			<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/header/base/light.css') }}" rel="stylesheet" type="text/css" />
@@ -43,7 +47,7 @@
 		<!--begin::Header Mobile-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
-			<a href="{{ route('home')}}">
+			<a href="{{ route('home.admin')}}">
 				<img alt="Logo" src="{{ asset('assets/img/baji.png') }}" width="150px" />
 			</a>
 			<!--end::Logo-->
@@ -86,7 +90,7 @@
 					<!--begin::Brand-->
 					<div class="brand flex-column-auto" id="kt_brand">
 						<!--begin::Logo-->
-						<a href="{{ route('home')}}" class="brand-logo">
+						<a href="{{ route('home.admin')}}" class="brand-logo">
 							<img alt="Logo" src="{{ asset('assets/img/baji.png') }}" width="150px" />
 						</a>
 						<!--end::Logo-->
@@ -114,7 +118,7 @@
 							<!--begin::Menu Nav-->
 							<ul class="menu-nav">
 								<li class="menu-item menu-item-active" aria-haspopup="true">
-									<a href="{{ route('home')}}" class="menu-link">
+									<a href="{{ route('home.admin')}}" class="menu-link">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Design/Layers.svg') }}-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -328,20 +332,117 @@
 								</div>
 							</div>
 						</div>
-						<div class="d-flex flex-column-fluid">
-							<!--begin::Container-->
-							<div class="container">
-								<div class="card card-custom bg-primary">
-									
-									   <div class="separator separator-solid separator-white opacity-20"></div>
-									<div class="card-body text-white">
-										<h1 class="text-light font-weight-bold mt-2 mb-2 mr-5">Welcome</h1>
+						<!-- Header -->
+						<div class="row">
+							<div class="col mb-7">
+								<div class="container-fluid">
+									<div class="header-body">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="card card-stats radius shadow-2xl">
+													<!-- Card body -->
+													<div class="card-body radius shadow-2xl">
+														<div class="row">
+															<div class="col">
+																<h2 class="card-title text-uppercase text-muted mb-0">Total Generus</h2>
+																<span class="h4 font-weight-bold mb-0">{{ $generusCount }}</span>
+															</div>
+															<div class="col-auto">
+																<div
+																	class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
+																	<i class="fas fa-users-class"></i>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="card card-stats radius shadow-2xl">
+													<!-- Card body -->
+													<div class="card-body radius shadow-2xl">
+														<div class="row">
+															<div class="col">
+																<h2 class="card-title text-uppercase text-muted mb-0">Tema Pengajian</h2>
+																<span class="h4 font-weight-bold mb-0">{{ count($subjects) }}</span>
+															</div>
+															<div class="col-auto">
+																<div class="icon icon-shape bg-gradient-blue text-white rounded-circle shadow">
+																	<i class="fa fa-book-open" aria-hidden="true"></i>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
-								   </div>
+								</div>
 							</div>
-							<!--end::Container-->
 						</div>
-						<!--end::Entry-->
+						<div class="row">
+							<div class="col">
+								<div class="container-fluid mt--6 ">
+									<div class="row">
+										<div class="col col-lg-12">
+											<div class="card radius shadow-2xl">
+												<div class="card-header">
+													<div class="row align-items-center">
+														<div class="col-8">
+															<h3 class="mb-0">Pengambilan Absensi</h3>
+														</div>
+														<div class="col-4 text-right">
+															<i class="fas fa-calendar-plus"></i>
+														</div>
+													</div>
+												</div>
+												<div class="card-body radius shadow-2xl">
+													<form method="post" action="{{ route('attendance.store') }}">
+														@csrf
+														<h6 class="heading-small text-muted mb-4">Informasi Absensi</h6>
+														<div class="row">
+															<div class="col-md-12">
+																<div class="form-group">
+																	<label class="form-control-label" for="subject">Pilih Kegiatan</label>
+																	<select id="subject" name="subject_id"  class="form-control radius">
+																		<option value="">Pilih Kegiatan</option>
+																	@foreach($subjects as $subject)
+																			<option value="{{$subject->id}}">{{$subject->name}}</option>
+																		@endforeach
+																	</select>
+																	@error('subject_id')
+																	<span class="invalid-feedback" role="alert">
+																		<strong>{{ $message }}</strong>
+																	</span>
+																	@enderror
+																</div>
+															</div>
+															<div class="col-md-12">
+																<div class="form-group">
+																	<label class="form-control-label" for="input-date">Pilih Tanggal</label>
+																	<input class="form-control datepicker  @error('date') is-invalid @enderror " name="date" id="datepicker" placeholder="Select date" type="text">
+																	@error('date')
+																	<span class="invalid-feedback" role="alert">
+																		<strong>{{ $message }}</strong>
+																	</span>
+																	@enderror
+																</div>
+															</div>
+														</div>
+														<div class="pl-lg-4">
+															<div class="row">
+																<button type="submit" class="btn btn-primary btn-lg btn-block radius">Mulai Absen</button>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
@@ -380,7 +481,7 @@
 						<div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
 					</div>
 					<div class="d-flex flex-column">
-						<a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->name}}</a>
+						<a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->username}}</a>
 						<span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
 					</div>
 				</div>
@@ -414,7 +515,11 @@
 				</div>
 
 				<div class="separator separator-dashed my-7"></div>
-				<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
+				{{-- <a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-light-primary font-weight-bold">Sign Out</a> --}}
+				<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger btn-lg btn-block">Logout</a>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					@csrf
+				</form>
 			</div>
 			<!--end::Content-->
 		</div>
@@ -430,6 +535,14 @@
 		<script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
 		
 		<script src="{{ asset('js/scripts.bundle.js') }}"></script>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+		<script>
+			$( function() {
+				$( "#datepicker" ).datepicker({dateFormat: 'd MM, yy'});
+			} );
+		</script>
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Vendors(used by this page)-->
 		

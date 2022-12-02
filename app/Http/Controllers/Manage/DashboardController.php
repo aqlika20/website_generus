@@ -13,8 +13,14 @@ use App\Models\Address;
 use App\Models\Helper;
 use App\Models\Banner;
 use App\Models\About;
-use App\Models\User;
+use App\Models\UserManagement;
 use App\Models\Role;
+use App\Models\Social;
+use App\Models\Berita;
+use App\Models\Doa;
+use App\Models\Dalil;
+use App\Models\Pengumuman;
+use App\Models\Subject;
 
 class DashboardController extends Controller
 {
@@ -35,19 +41,27 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $currentUser = User::find(Auth::id());
-        return view('manage.dashboard', compact('currentUser'));
+        $currentUser = UserManagement::find(Auth::id());
+        $generusCount = UserManagement::where([
+            ['roles_id', '=', 2]
+        ])->count();
+        $subjects = Subject::all();
+// dd($subjects);
+        return view('manage.dashboard', compact('currentUser', 'generusCount', 'subjects'));
     }
     
     public function home()
     {
-        $organisations = Organisation::All();
-        $navigations = Navigation::All();
-        $contents = Content::All();
-        $address = Address::All();
-        $banners = Banner::All();
-        $abouts = About::All();
-        $users = User::All();
-        return view('home', compact('navigations', 'contents', 'organisations', 'address', 'banners', 'abouts', 'users'));
+        $id = 1;
+        $currentUser = UserManagement::find(Auth::id());
+        $social = Social::find($id);
+        $users = UserManagement::All();
+        $beritas = Berita::All();
+        $pengumumans = Pengumuman::All();
+        
+        foreach($pengumumans as $pengumuman)
+            $shortPengumuman = $pengumuman->isi;
+        
+        return view('home', compact('users','beritas','currentUser','social','pengumumans'));
     }
 }
