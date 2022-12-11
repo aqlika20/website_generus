@@ -27,6 +27,8 @@ Route::get('/tentang', function () {
     return view('about');
 });
 
+Route::get('/register', 'Manage\RegisterController@index')->name('register');
+Route::patch('/register/add', 'Manage\RegisterController@storeRegister')->name('register.store');
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
 // Route::get('/doa-doa', [App\Http\Controllers\HomeController::class, 'doa'])->name('dashboard.doa');
@@ -54,7 +56,7 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
                 Route::get('/', 'Manage\AttendanceController@index')->name('attendance');
                 Route::post('/add', 'Manage\AttendanceController@store')->name('attendance.store');
                 Route::post('/attach', 'Manage\AttendanceController@attach')->name('attendance.attach');
-                Route::get('/view/{id}', 'Manage\AttendanceController@view')->name('attendance.view');
+                Route::get('/view', 'Manage\AttendanceController@view')->name('attendance.view');
                 Route::patch('/edit/{id}', 'Manage\AttendanceController@edit')->name('attendance.edit');
                 Route::delete('/delete/{id}', 'Manage\AttendanceController@delete')->name('attendance.delete');
             });
@@ -136,10 +138,6 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
             Route::get('/profile', 'Manage\UserController@profile')->name('profile');
             Route::patch('/profile/{id}', 'Manage\UserController@profileEdit')->name('profile.edit');
             Route::patch('/profile/pass/{id}', 'Manage\UserController@profileEditPass')->name('profile.edit.pass');
-        
-            Route::get('/register', 'Manage\RegisterController@index')->name('register');
-            Route::patch('/register/add', 'Manage\RegisterController@storeRegister')->name('register.store');
-        
             // Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
             
         });

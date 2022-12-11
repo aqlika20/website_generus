@@ -17,6 +17,7 @@ use App\Models\Helper;
 use App\Models\Berita;
 use App\Models\Subject;
 use App\Models\Attendance;
+use App\Models\ViewAttendance;
 use App\Models\AttendanceStudent;
 
 class AttendanceController extends Controller
@@ -36,7 +37,30 @@ class AttendanceController extends Controller
         $attendances = Attendance::with(['subject', 'teacher'])->WhereSubject(request()->get('subject_filter'))->WhereDateIs(request()->get('date_filter'))->withCount('students')->get();
         $subjects = Subject::all();
         // dd($currentUser);
-        return view('manage.indexattendance', compact('attendances', 'subjects'));
+        return view('manage.take-attendance', compact('attendances', 'subjects'));
+    }
+
+    public function view()
+    {
+        $currentUser = UserManagement::find(Auth::id());
+        $attendances = ViewAttendance::select("*", ViewAttendance::raw("count('student_id') as jumlah_siswa"))->where([
+            ['user_id', '=', $currentUser->id]
+        ])->groupBy('attendance_id')
+        ->get();
+
+        $users = UserManagement::all();
+        foreach($users as $value){
+            $user[$value->id] = $value->name;
+        }
+
+        $subjects = Subject::all();
+        foreach($subjects as $value){
+            $subject[$value->id] = $value->name;
+        }
+
+        // dd($user);
+        // exit;   
+        return view('manage.indexabsen', compact('attendances', 'currentUser', 'user', 'subject'));
     }
 
     public function store(Request $request) 
@@ -76,6 +100,7 @@ class AttendanceController extends Controller
     public function attach(Request $request): RedirectResponse
     {
         $input = $request->all();
+        // dd($input);
         foreach ($input['status'] as $student_id => $status) {
             
             $students = UserManagement::where([
@@ -92,27 +117,15 @@ class AttendanceController extends Controller
                 else{
                     $value = null;
                 }
-                // dd($input['id']);
-    
                 $attendance = AttendanceStudent::create([
-                    'attendance_id ' =>1,
+                    'attendance_id' => $input['id'],
                     'student_id' => $student->id,
                     'status' => $value,           
                 ]);
             }
         }
 
-        return redirect()->route('attendance')->with(['success'=>'Data success.']);
-    }
-
-    public function view($id)
-    {
-        $currentUser = UserManagement::find(Auth::id());
-        $berita = Berita::find($id);
-        if (!$berita) {
-            return redirect()->route('berita')->with(['error'=>'Parameter id tidak valid.']);
-        }
-        return view('manage.editberita', compact('berita', 'currentUser'));
+        return redirect()->route('attendance.view')->with(['success'=>'Data success.']);
     }
 
     public function edit($id, Request $request)

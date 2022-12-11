@@ -5,7 +5,13 @@ namespace App\Models;
 use \Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Helper;
-
+use App\Models\UserManagement;
+use App\Models\Content;
+use App\Models\Berita;
+use App\Models\Subject;
+use App\Models\Attendance;
+use App\Models\ViewAttendance;
+use App\Models\AttendanceStudent;
 class Helper
 {
     public static function generateRandomString($type,$value){
@@ -27,4 +33,15 @@ class Helper
 
         return $result;
     }
+
+    public static function defineNameBy($type, $value){
+        switch($type){
+            case 'id':
+                $name = UserManagement::where('id', $value)->first();
+                break;
+        }
+
+        return $name;
+    }
+
 }
