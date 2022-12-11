@@ -51,13 +51,13 @@ class AttendanceController extends Controller
             'subject_id' => 'required',
             'date' => 'required'
         ]);
-
+        //Buat Absen Kosong
         $attendance = Attendance::create([
             'subject_id' => $input['subject_id'],
             'user_id' => $currentUser->id,
             'date' => $date,           
         ]);
-
+        
         $subject = Subject::findorfail($input['subject_id']);
 
         $generus = UserManagement::where([

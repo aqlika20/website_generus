@@ -43,7 +43,7 @@
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
 			<a href="{{ route('home.admin')}}">
-				<img alt="Logo" src="{{ asset('assets/img/baji.png') }}" width="150px" />
+				<img alt="Logo" src="{{ asset('media/logos/Baji.png') }}" width="150px" />
 			</a>
 			<!--end::Logo-->
 			<!--begin::Toolbar-->

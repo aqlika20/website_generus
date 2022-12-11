@@ -131,10 +131,12 @@
           @auth
 
           <div class="topbar-item">
-            <div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">
-              <li><a>Hi, {{ $currentUser->name }}</a></li>
+            <div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-4" data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">
+              <li><a class="text-light">Hi, {{ $currentUser->name }}</a></li>
             </div>
           </div>
+
+          {{-- Fitur Logout Home --}}
 
           <div class="offcanvas offcanvas-end" tabindex="-1" id="kt_quick_user" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
@@ -143,6 +145,8 @@
             </div>
             <div class="offcanvas-body">
               <!--begin::Header-->
+
+              {{-- DIGANTI NYA DARI SINI --}}
               <div class="d-flex align-items-center mt-5">
                 <div class="symbol symbol-100 mr-5">
                   <div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
@@ -210,18 +214,23 @@
 
   
   <!-- ======= Slider Section ======= -->
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="row gy-5" data-aos="fade-in">
-        <div class="carousel-item text-content active">
-          <img src="{{ asset('assets/img/masjid2.png') }}" class="d-block w-100" alt="" >
-          <h3>Selamat Datang</h3>
-          <h2>Generus Batu Aji</h2>
-          <h4>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</h4>
-        </div>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="row gy-5" data-aos="fade-in">
+      <div class="carousel-item text-content active">
+        <img src="assets/img/masjid.png" class="d-block w-100" alt="" >
+      </div>
     </div>
-    </div>
-  <!-- ======= End Slider Section ======= -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!-- ======= End Slider Section ======= -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero" style="padding-top: 0px !important;">
@@ -444,8 +453,8 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span>Impact</span>
+          <a href="#hero" class="d-flex align-items-center mb-3">
+            <img src="{{ asset('media/logos/logo_login.png') }}" alt="" width="20%">
           </a>
           <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
           <div class="social-links d-flex mt-4">

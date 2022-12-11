@@ -64,4 +64,16 @@ class DashboardController extends Controller
         
         return view('home', compact('users','beritas','currentUser','social','pengumumans'));
     }
+    public function doa()
+    {
+        $currentUser = UserManagement::find(Auth::id());
+        $doas = Doa::All();
+        return view('doa', compact('currentUser','doas'));
+    }
+    public function dalil()
+    {
+        $currentUser = UserManagement::find(Auth::id());
+        $dalils = Dalil::All();
+        return view('dalil', compact('currentUser','dalils'));
+    }
 }
