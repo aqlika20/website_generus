@@ -128,7 +128,7 @@
 									<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 								</li>
 								<li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
-									<a href="{{ route('content')}}" class="menu-link menu-toggle">
+									<a href="{{ route('attendance.view')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -140,7 +140,23 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Content</span>
+										<span class="menu-text">Absensi</span>
+									</a>	
+								</li>
+								<li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
+									<a href="{{ route('berita')}}" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24"/>
+													<path d="M5.5,4 L9.5,4 C10.3284271,4 11,4.67157288 11,5.5 L11,6.5 C11,7.32842712 10.3284271,8 9.5,8 L5.5,8 C4.67157288,8 4,7.32842712 4,6.5 L4,5.5 C4,4.67157288 4.67157288,4 5.5,4 Z M14.5,16 L18.5,16 C19.3284271,16 20,16.6715729 20,17.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,17.5 C13,16.6715729 13.6715729,16 14.5,16 Z" fill="#000000"/>
+													<path d="M5.5,10 L9.5,10 C10.3284271,10 11,10.6715729 11,11.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,11.5 C4,10.6715729 4.67157288,10 5.5,10 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,12.5 C20,13.3284271 19.3284271,14 18.5,14 L14.5,14 C13.6715729,14 13,13.3284271 13,12.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z" fill="#000000" opacity="0.3"/>
+												</g>
+											</svg>
+											<!--end::Svg Icon-->
+										</span>
+										<span class="menu-text">Berita</span>
 									</a>	
 								</li>
 								<li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
@@ -159,7 +175,23 @@
 										<span class="menu-text">Doa</span>
 									</a>	
 								</li>
-<li	li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
+								<li class="menu-item " aria-haspopup="true" data-menu-toggle="hover">
+									<a href="{{ route('dalil')}}" class="menu-link menu-toggle">
+										<span class="svg-icon menu-icon">
+											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
+											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24"/>
+													<rect fill="#000000" x="4" y="5" width="16" height="3" rx="1.5"/>
+													<path d="M7.5,11 L16.5,11 C17.3284271,11 18,11.6715729 18,12.5 C18,13.3284271 17.3284271,14 16.5,14 L7.5,14 C6.67157288,14 6,13.3284271 6,12.5 C6,11.6715729 6.67157288,11 7.5,11 Z M10.5,17 L13.5,17 C14.3284271,17 15,17.6715729 15,18.5 C15,19.3284271 14.3284271,20 13.5,20 L10.5,20 C9.67157288,20 9,19.3284271 9,18.5 C9,17.6715729 9.67157288,17 10.5,17 Z" fill="#000000" opacity="0.3"/>
+												</g>
+											</svg>
+											<!--end::Svg Icon-->
+										</span>
+										<span class="menu-text">Dalil</span>
+									</a>	
+								</li>
+								<li	li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
 									<a href="{{ route('pengumuman')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
@@ -176,7 +208,7 @@
 									</a>	
 								</li>
 								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-									<a href="javascript:;" class="menu-link menu-toggle">
+									<a href="{{ route('setting')}}" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Layout/Layout-4-blocks.svg') }}-->
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -193,6 +225,14 @@
 									<div class="menu-submenu">
 										<i class="menu-arrow"></i>
 										<ul class="menu-subnav">
+											<li class="menu-item" aria-haspopup="true">
+												<a href="{{ route('kegiatan')}}" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">Kegiatan Pengajian</span>
+												</a>
+											</li>
 											<li class="menu-item" aria-haspopup="true">
 												<a href="{{ route('banner')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
@@ -418,7 +458,7 @@
 							<!--begin::Copyright-->
 							<div class="text-dark order-2 order-md-1">
 								<span class="text-muted font-weight-bold mr-2">2022©</span>
-								<a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Generus Batu Aji</a>
+								<a class="text-dark-75 text-hover-primary">Generus Batu Aji</a>
 							</div>
 							<!--end::Copyright-->
 							<!--begin::Nav-->

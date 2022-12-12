@@ -4,13 +4,13 @@ namespace App\Models;
 
 use \Illuminate\Support\Str;
 use App\Models\User;
-use App\Models\Helper;
 use App\Models\UserManagement;
 use App\Models\Content;
 use App\Models\Berita;
 use App\Models\Subject;
 use App\Models\Attendance;
 use App\Models\ViewAttendance;
+use App\Models\Role;
 use App\Models\AttendanceStudent;
 class Helper
 {
@@ -42,6 +42,16 @@ class Helper
         }
 
         return $name;
+    }
+
+    public static function defineRoleBy($type, $value){
+        switch($type){
+            case 'id':
+                $role = Role::where('id', $value)->first();
+                break;
+        }
+
+        return $role;
     }
 
 }

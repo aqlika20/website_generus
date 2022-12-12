@@ -100,29 +100,23 @@ class AttendanceController extends Controller
     public function attach(Request $request): RedirectResponse
     {
         $input = $request->all();
-        // dd($input);
+        
         foreach ($input['status'] as $student_id => $status) {
-            
-            $students = UserManagement::where([
-                ['roles_id', '=', 2]
-            ])->get();
-
-            foreach ($students as $student){
-                
-                if ($status == "on") {
-                    $value = 1;
-                } elseif($status == "off") {
-                    $value = 0;
-                }
-                else{
-                    $value = null;
-                }
-                $attendance = AttendanceStudent::create([
-                    'attendance_id' => $input['id'],
-                    'student_id' => $student->id,
-                    'status' => $value,           
-                ]);
+                        
+            if ($status == "on") {
+                $value = 1;
+            } elseif($status == "off") {
+                $value = 0;
             }
+            else{
+                $value = null;
+            }
+
+            $attendance = AttendanceStudent::create([
+                'attendance_id' => $input['id'],
+                'student_id' => $student_id,
+                'status' => $value,           
+            ]);
         }
 
         return redirect()->route('attendance.view')->with(['success'=>'Data success.']);
@@ -162,13 +156,18 @@ class AttendanceController extends Controller
 
     public function delete($id) 
     {
-        $berita = Berita::where([
+        // dd($id);
+        $attendance = Attendance::where([
             ['id', '=', $id]
         ])->first();
-        if (!$berita) {
-            return redirect()->route('berita')->with(['error'=>'Parameter id tidak valid.']);
+        $attendancestudent = AttendanceStudent::where([
+            ['attendance_id', '=', $id]
+        ])->get();
+        if (!$attendance && !$attendancestudent) {
+            return redirect()->route('attendance.view')->with(['error'=>'Parameter id tidak valid.']);
         }
-        Berita::where('id', $id)->delete();
-        return redirect()->route('berita')->with(['success'=>'Data dihapus.']);
+        Attendance::where('id', $id)->delete();
+        AttendanceStudent::where('attendance_id', $id)->delete();
+        return redirect()->route('attendance.view')->with(['success'=>'Data dihapus.']);
     }
 }

@@ -57,7 +57,8 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
                 Route::post('/add', 'Manage\AttendanceController@store')->name('attendance.store');
                 Route::post('/attach', 'Manage\AttendanceController@attach')->name('attendance.attach');
                 Route::get('/view', 'Manage\AttendanceController@view')->name('attendance.view');
-                Route::patch('/edit/{id}', 'Manage\AttendanceController@edit')->name('attendance.edit');
+                Route::get('/edit/{id}', 'Manage\AttendanceController@edit')->name('attendance.edit');
+                Route::patch('/edited/{id}', 'Manage\AttendanceController@editstore')->name('attendance.edit.store');
                 Route::delete('/delete/{id}', 'Manage\AttendanceController@delete')->name('attendance.delete');
             });
 
@@ -133,6 +134,14 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
                 Route::get('/user/view/{id}', 'Manage\UserController@view')->name('user.view');
                 Route::patch('/user/edit/{id}', 'Manage\UserController@edit')->name('user.edit');
                 Route::delete('/user/delete/{id}', 'Manage\UserController@delete')->name('user.delete');
+
+                Route::prefix('/kegiatan')->group(function(){
+                    Route::get('/', 'Manage\KegiatanController@index')->name('kegiatan');
+                    Route::patch('/add', 'Manage\KegiatanController@store')->name('kegiatan.store');
+                    Route::get('/view/{id}', 'Manage\KegiatanController@view')->name('kegiatan.view');
+                    Route::patch('/edit/{id}', 'Manage\KegiatanController@edit')->name('kegiatan.edit');
+                    Route::delete('/delete/{id}', 'Manage\KegiatanController@delete')->name('kegiatan.delete');
+                });
             });
 
             Route::get('/profile', 'Manage\UserController@profile')->name('profile');

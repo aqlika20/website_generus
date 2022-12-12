@@ -35,7 +35,14 @@ class UserController extends Controller
         $currentUser = User::find(Auth::id());
         $users = User::All();
         $roles = Role::all();
-        return view('manage.setting.user', compact('users', 'roles', 'currentUser'));
+
+        $jabatans = Role::all();
+        foreach($jabatans as $value){
+            $jabatan[$value->id] = $value->name;
+        }
+        // dd($role);
+
+        return view('manage.setting.user', compact('users', 'roles', 'currentUser', 'jabatan'));
     }
 
     public function view($id)

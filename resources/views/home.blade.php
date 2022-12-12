@@ -463,7 +463,6 @@
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Klik Disini</h4>
           <ul>
             <li><a href="#">Beranda</a></li>
             <li><a href="#">Berita</a></li>
@@ -473,7 +472,6 @@
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Klik Disini</h4>
           <ul>
             <li><a href="#">Al-Qur'an</a></li>
             <li><a href="#">Do'a-Do'a</a></li>
@@ -489,7 +487,7 @@
             Kec. Batu Aji, Kota Batam,<br>
             Kepulauan Riau 29425 <br><br>
             <strong>WhatsApp:</strong> +62 877 7526 0150<br>
-            <strong>Email:</strong>generusbatuaji@gmail.com<br>
+            <strong>Email:</strong> generusbatuaji@gmail.com<br>
           </p>
 
         </div>

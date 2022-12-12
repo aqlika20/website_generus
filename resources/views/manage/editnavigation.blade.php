@@ -184,6 +184,14 @@
 										<i class="menu-arrow"></i>
 										<ul class="menu-subnav">
 											<li class="menu-item" aria-haspopup="true">
+												<a href="{{ route('kegiatan')}}" class="menu-link">
+													<i class="menu-bullet menu-bullet-dot">
+														<span></span>
+													</i>
+													<span class="menu-text">Kegiatan Pengajian</span>
+												</a>
+											</li>
+											<li class="menu-item" aria-haspopup="true">
 												<a href="{{ route('banner')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
 														<span></span>
@@ -377,7 +385,7 @@
 							<!--begin::Copyright-->
 							<div class="text-dark order-2 order-md-1">
 								<span class="text-muted font-weight-bold mr-2">2022©</span>
-								<a href="http://keenthemes.com/metronic" target="_blank" class="text-dark-75 text-hover-primary">Generus Batu Aji</a>
+								<a class="text-dark-75 text-hover-primary">Generus Batu Aji</a>
 							</div>
 							<!--end::Copyright-->
 							<!--begin::Nav-->
