@@ -22,7 +22,7 @@
 			<link href="{{ secure_asset('assets/css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('assets/css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('assets/css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
-			<link rel="shortcut icon" href="{{ secure_asset('assets/media/logos/favicon.ico') }}" />
+			<link rel="shortcut icon" href="{{ secure_asset('assets/img/favicon.ico') }}" />
 
 		@else
 			<link href="{{ asset('css/pages/login/classic/login-4.css') }}" rel="stylesheet" type="text/css" />
@@ -33,7 +33,7 @@
 			<link href="{{ asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
-			<link rel="shortcut icon" href="{{ asset('media/logos/favicon.ico') }}" />
+			<link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" />
 		@endif
 
 		<style>

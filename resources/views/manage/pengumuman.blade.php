@@ -23,7 +23,7 @@
 			<link href="{{ secure_asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ secure_asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
-			<link rel="shortcut icon" href="{{ secure_asset('media/logos') }}" />
+			<link rel="shortcut icon" href="{{ secure_asset('assets/img/favicon.ico') }}" />
 		@else
 			
 			<link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -33,7 +33,7 @@
 			<link href="{{ asset('css/themes/layout/header/menu/light.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/brand/dark.css') }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset('css/themes/layout/aside/dark.css') }}" rel="stylesheet" type="text/css" />
-			<link rel="shortcut icon" href="{{ asset('media/logos') }}" />
+			<link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico') }}" />
 		@endif
 		
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
