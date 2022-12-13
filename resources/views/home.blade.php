@@ -124,7 +124,7 @@
           <li><a href="#hero">Beranda</a></li>
           <li><a href="#tentang">Tentang</a></li>
           <li><a href="#berita">Berita</a></li>
-          <li><a href="#kalender">Kalender</a></li>
+          {{-- <li><a href="#kalender">Kalender</a></li> --}}
           <li><a href="#pengumuman">Pengumuman</a></li>
           <li><a href="#map">Alamat</a></li>
 
@@ -214,21 +214,38 @@
 
   
   <!-- ======= Slider Section ======= -->
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-controls">
+      <ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+      </ol>
+      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
     <div class="carousel-inner">
-      <div class="row gy-5" data-aos="fade-in">
-      <div class="carousel-item text-content active">
-        <img src="assets/img/masjid.png" class="d-block w-100" alt="" >
+      <div class="carousel-item active" style="background-image:url('assets/img/masjid2.png')">
+          <div class="container">
+          <h1>Selamat Datang</h1>
+          <h2>Generus Batu Aji</h2>
+          <p>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
+          </div>
+      </div>
+      <div class="carousel-item active" style="background-image:url('assets/img/masjid2.png')">
+        <div class="container">
+          <h1>Selamat Datang</h1>
+          <h2>Generus Batu Aji</h2>
+          <p>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
+        </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
 <!-- ======= End Slider Section ======= -->
 
@@ -353,7 +370,7 @@
       </div>
     </section>
 
-  <!-- ======= Calendar Section ======= -->
+  {{-- <!-- ======= Calendar Section ======= -->
     <section id="kalender" class="blog">
       <div class="section-header">
         <h2>Kalender</h2>
@@ -373,7 +390,7 @@
         </script>
       </div>
     </section>
-  <!-- ======= End Calendar Section ======= -->
+  <!-- ======= End Calendar Section ======= --> --}}
 
     <!-- ======= Pengumuman Section ======= -->
     <section id="pengumuman" class="services sections-bg">
@@ -456,9 +473,10 @@
           <a href="#hero" class="d-flex align-items-center mb-3">
             <img src="{{ asset('media/logos/logo_login.png') }}" alt="" width="20%">
           </a>
-          <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
           <div class="social-links d-flex mt-4">
-            <a href="{{ $social->instagram }}" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+            <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p><br>
+            <a href="{{ $social->instagram }}" class="instagram" target="_blank">
+              <i class="bi bi-instagram"></i></a>
           </div>
         </div>
 

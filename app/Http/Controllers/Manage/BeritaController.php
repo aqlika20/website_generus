@@ -42,7 +42,7 @@ class BeritaController extends Controller
             'description' => 'required',
             'image' => 'required|mimes:jpg,png,jpeg'
         ]);
-
+        // coding untuk upload file
         $file = $request->file('image');
         $filename = $file->getClientOriginalName();
         Storage::putFileAs($this->berita_folder, $file, $filename);

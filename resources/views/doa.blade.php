@@ -50,7 +50,7 @@
           <li><a href="{{ route('index')}}#hero">Beranda</a></li>
           <li><a href="{{ route('index')}}#tentang">Tentang</a></li>
           <li><a href="{{ route('index')}}#berita">Berita</a></li>
-          <li><a href="{{ route('index')}}#kalender">Kalender</a></li>
+          {{-- <li><a href="{{ route('index')}}#kalender">Kalender</a></li> --}}
           <li><a href="{{ route('index')}}#pengumuman">Pengumuman</a></li>
           <li><a href="{{ route('index')}}#map">Alamat</a></li>
           @auth
@@ -177,8 +177,8 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-info">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span>Impact</span>
+          <a href="#hero" class="d-flex align-items-center mb-3">
+            <img src="{{ asset('media/logos/logo_login.png') }}" alt="" width="20%">
           </a>
           <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
           <div class="social-links d-flex mt-4">
