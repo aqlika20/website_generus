@@ -44,9 +44,11 @@ class AttendanceController extends Controller
     {
         $currentUser = UserManagement::find(Auth::id());
         $attendances = ViewAttendance::select("*", ViewAttendance::raw("count('student_id') as jumlah_siswa"))->where([
-            ['user_id', '=', $currentUser->id]
+            ['user_id', '=', $currentUser->id],
+            ['status', '=', 1]
         ])->groupBy('attendance_id')
         ->get();
+        // dd($attendances);
 
         $users = UserManagement::all();
         foreach($users as $value){
@@ -58,9 +60,17 @@ class AttendanceController extends Controller
             $subject[$value->id] = $value->name;
         }
 
-        // dd($user);
+        foreach($attendances as $value){
+            $attendance = $value->attendance_id;
+        }
+        // dd($attendance);
+        $attendanceCount = AttendanceStudent::where([
+            ['attendance_id', '=', $attendance],
+            ['status', '=', 1]
+        ])->count();
+        // dd($attendanceCount);
         // exit;   
-        return view('manage.indexabsen', compact('attendances', 'currentUser', 'user', 'subject'));
+        return view('manage.indexabsen', compact('attendances', 'attendanceCount', 'currentUser', 'user', 'subject'));
     }
 
     public function store(Request $request) 
@@ -122,35 +132,96 @@ class AttendanceController extends Controller
         return redirect()->route('attendance.view')->with(['success'=>'Data success.']);
     }
 
-    public function edit($id, Request $request)
+    public function edit($id)
+    {
+        // dd($id);
+        $currentUser = UserManagement::find(Auth::id());
+        $subject = Attendance::where([
+            ['id', '=', $id]
+        ])->first();
+
+        $generuses = AttendanceStudent::where([
+            ['attendance_id', '=', $id]
+        ])->get();
+
+        $generusCount = UserManagement::where([
+            ['roles_id', '=', 2]
+        ])->count();
+
+        $kegiatans = Subject::all();
+        foreach($kegiatans as $value){
+            $kegiatan[$value->id] = $value->name;
+        }
+
+        $students = UserManagement::all();
+        foreach($students as $value){
+            $student[$value->id] = $value->name;
+        }
+
+        return view('manage.edit-attendance', compact('currentUser', 'kegiatan', 'subject', 'student', 'generuses', 'generusCount'));
+    }
+
+    public function detail($id)
+    {
+        // dd($id);
+        $currentUser = UserManagement::find(Auth::id());
+        $subject = Attendance::where([
+            ['id', '=', $id]
+        ])->first();
+
+        $generuses = AttendanceStudent::where([
+            ['attendance_id', '=', $id]
+        ])->get();
+
+        $generusCount = UserManagement::where([
+            ['roles_id', '=', 2]
+        ])->count();
+
+        $kegiatans = Subject::all();
+        foreach($kegiatans as $value){
+            $kegiatan[$value->id] = $value->name;
+        }
+
+        $students = UserManagement::all();
+        foreach($students as $value){
+            $student[$value->id] = $value->name;
+        }
+
+        return view('manage.detail-attendance', compact('currentUser', 'kegiatan', 'subject', 'student', 'generuses', 'generusCount'));
+    }
+
+    public function update($id, Request $request)
     {
         $data = $request->all();
         // dd($data);
 
         $validator = Validator::make($data, [
-            'title' => 'required',
-            'image' => 'nullable|mimes:jpg,png,jpeg',
-            'description' => 'required'
+            'students' => 'required',
+            'status' => 'required'
         ]);
 
-        if(!empty($request->file('image'))){
-            $file = $request->file('image');
-            $filename = $file->getClientOriginalName();
-            Storage::putFileAs($this->berita_folder, $file, $filename);
+        foreach ($data['status'] as $student_id => $status) {
+            // dd($student_id);
+            
+            if ($status == "on") {
+                $value = 1;
+            } elseif($status == "off") {
+                $value = 0;
+            }
+            else{
+                $value = null;
+            }
+
+            $generus = AttendanceStudent::where([
+                ['id', '=', $student_id]
+            ])->first();
+
+            $generus->update([
+                'status' => $value,
+            ]);
         }
 
-        $berita = Berita::where([
-            ['id', '=', $id]
-        ])->first();
-
-
-        $berita->update([
-            'title' => ucwords($data['title']),
-            'image' => empty($filename) ?  $berita->image : $filename,
-            'description' => empty($data['description']) ?  $berita->description : $data['description'],
-        ]);
-
-        return redirect()->route('berita')->with(['success'=>'Data diedit.']);
+        return redirect()->route('attendance.view')->with(['success'=>'Data diedit.']);
 
     }
 

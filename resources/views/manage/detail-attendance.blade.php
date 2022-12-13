@@ -356,10 +356,8 @@
 					<!--end::Header-->
 
 
-					
 					<!--begin::Content-->
 						<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-							<!--begin::Subheader-->
 							<div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
 								<div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
 									<!--begin::Info-->
@@ -371,87 +369,64 @@
 									</div>
 								</div>
 							</div>
-							<div class="d-flex flex-column-fluid">
-								<!--begin::Container-->
-								<div class="container">
-									
-									<div class="card card-custom gutter-b">
-										<div class="card-header flex-wrap border-0 pt-6 pb-0">
-											<div class="card-title">
-												<h3 class="card-label">Absensi List 
-											</div>
-											<div class="card-toolbar">
-												<a type="button"  class="btn btn-primary font-weight-bolder" href="{{ route('home.admin')}}">
-												<span class="svg-icon svg-icon-md">
-													<!--begin::Svg Icon | path:{{ asset('media/svg/icons/Design/Flatten.svg') }}-->
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-														<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-															<rect x="0" y="0" width="24" height="24" />
-															<circle fill="#000000" cx="9" cy="15" r="6" />
-															<path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
-														</g>
-													</svg>
-													<!--end::Svg Icon-->
-												</span>Add Absen</a>
-												<!--end::Button-->
-											</div>
-										</div>
-										
-										<div class="card-body">
-											<div class="card-body pt-2 pb-0 mt-n3">
-												<div class="tab-content mt-5" id="myTabTables11">
-													<!--begin::Tap pane-->
-													<div class="tab-pane fade show active" id="kt_tab_pane_11_1" role="tabpanel" aria-labelledby="kt_tab_pane_11_1">
-														<!--begin::Table-->
-														<!-- Light table -->
-														<div class="table-responsive">
-															<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
-																<thead>
-																	<tr>
-																		<th>#</th>
-																		<th>Nama Kegiatan</th>
-																		<th>Peng-Absen</th>
-																		<th>Generus yang Hadir</th>
-																		<th>Tanggal</th>
-																		<th>Action</th>
-																	</tr>
-																</thead>
-																<tbody class="list">
-																@foreach ($attendances as $attendance)
-																	<tr>
-																		<td>{{ $loop->iteration }}</td>
-																		<td>{{ $subject[$attendance->subject_id] }}</td>
-																		<td>{{ $user[$attendance->user_id] }}</td>
-																		<td>{{ $attendance->jumlah_siswa }}</td>
-																		<td>{{ date('d-m-Y', strtotime($attendance->date)) }}</td>
-																		<td>
-																			<form method="POST" action="{{ route('attendance.delete',[$attendance->id]) }}">
-																			@csrf 
-																			@method('DELETE')
-																				<a class="btn btn-icon btn-light btn-sm mx-1" href="{{ route('attendance.detail',[$attendance->id]) }}"><i class="fa fa-eye text-primary"></i></a>
-																				<a class="btn btn-icon btn-light btn-sm mx-1" href="{{ route('attendance.edit',[$attendance->id]) }}"><i class="fa fa-pencil-alt text-success"></i></a>
-																				<button type="submit" title="Delete" class="btn btn-icon btn-light btn-sm mx-1" onclick='return confirm("Apakah kamu yakin?")'>
-																				<i class='far fa-trash-alt' style="color:red"></i>
-																				</button>
-																			</form>
-																		</td>
-																	</tr>
-																@endforeach
-																</tbody>
-															</table>
-														</div>
+							<!-- Page content -->
+							<div class="container-fluid mt-4">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="card">
+											<div class="card-body text-center bg-white-100 radius shadow-2xl">
+												<h2 class="mt-4">Absensi : {{ $kegiatan[$subject->subject_id] }}</h2>
+												<h3>Tanggal : {{ Carbon\Carbon::parse($subject->date)->format('d M, Y') }}</h3>
+												<p class="text-bold">Jumlah Generus : {{ $generusCount }} Orang<i class="fas fa-users-class text-blue"></i></p>
+												<hr>
+												<div class="text-left">
+													<h2 class="mb-3 text-bold">List Generus</h2>
+													<div class="table-responsive">
+														<table class="table table-flush">
+															<thead class="thead-light">
+															<tr>
+																<th scope="col" class="sort" data-sort="no">No.</th>
+																<th scope="col" class="sort" data-sort="name">Name</th>
+																<th scope="col" class="sort" data-sort="action">Attendant</th>
+															</tr>
+															</thead>
+															<tbody class="list">
+															@foreach ($generuses as $generus)
+																<tr>
+																	<td>{{ $loop->iteration }}</td>
+																	<td class="text-capitalize">
+																		{{ $student[$generus->student_id] }}
+																	</td>
+																	<td class="">
+																		<div class="custom-control custom-radio d-inline mr-2">
+																			<input type="radio" id="radio-{{ $generus->id }}-on"
+																				name="status[{{ $generus->id }}]" value="on"
+																				class="custom-control-input" {{ $generus->status == 1 ? 'checked' : '' }} disabled>
+																			<label class="custom-control-label"
+																				for="radio-{{ $generus->id }}-on">Present</label>
+																		</div>
+																		<div class="custom-control custom-radio d-inline">
+																			<input type="radio" id="radio-{{ $generus->id }}-off"
+																				name="status[{{ $generus->id }}]" value="off"
+																				class="custom-control-input" {{ $generus->status == 0 ? 'checked' : '' }} disabled>
+																			<label class="custom-control-label"
+																				for="radio-{{ $generus->id }}-off">Absent</label>
+																		</div>
+																	</td>
+																</tr>
+															@endforeach
+															</tbody>
+														</table>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								
 								</div>
-								<!--end::Container-->
 							</div>
-							<!--end::Entry-->
 						</div>
 					<!--end::Content-->
+
 
 
 					<!--begin::Footer-->

@@ -58,7 +58,8 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
                 Route::post('/attach', 'Manage\AttendanceController@attach')->name('attendance.attach');
                 Route::get('/view', 'Manage\AttendanceController@view')->name('attendance.view');
                 Route::get('/edit/{id}', 'Manage\AttendanceController@edit')->name('attendance.edit');
-                Route::patch('/edited/{id}', 'Manage\AttendanceController@editstore')->name('attendance.edit.store');
+                Route::get('/detail/{id}', 'Manage\AttendanceController@detail')->name('attendance.detail');
+                Route::put('/edited/{id}', 'Manage\AttendanceController@update')->name('attendance.edit.store');
                 Route::delete('/delete/{id}', 'Manage\AttendanceController@delete')->name('attendance.delete');
             });
 
