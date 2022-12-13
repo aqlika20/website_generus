@@ -17,6 +17,7 @@ Route::get('/', 'GuestController@index')->name('index');
 Route::get('/set', 'HomeController@index')->name('index');
 
 Route::get('/doa-doa', 'Manage\DashboardController@doa')->name('dashboard.doa');
+Route::get('/doa-doa/search','Manage\DashboardController@search')->name('search.doa');
 Route::get('/dalil-dalil', 'Manage\DashboardController@dalil')->name('dashboard.dalil');
 
 Route::get('/map', function () {

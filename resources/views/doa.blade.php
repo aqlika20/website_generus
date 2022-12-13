@@ -28,11 +28,10 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- Main CSS Calendar -->
-  <link rel="stylesheet" href="css/evo-calendar.midnight-blue.min.css">
-  <link rel="stylesheet" href="css/evo-calendar.min.css">
-  <link rel="stylesheet" href="css/calendar.css">
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -135,10 +134,28 @@
   <!-- ======= Hero Section ======= -->
   <section class="about" style="background: #f0ffff;">
     <div class="container" data-aos="fade-up">
-      <div class="col-md-3" style="background: #a2cbcd; text-align: center;">
-        <p style="color: #f0ffff; font-size: 50px; font-weight: bold;">Do'a - Do'a</p>
+      <div class="row">
+        <div class="col" style="background: #a2cbcd; text-align: center;">
+          <p style="color: #f0ffff; font-size: 50px; font-weight: bold;">Do'a - Do'a</p>
+        </div>
+        <div class="col">
+          <form class="form-inline">
+            <div class="row text-end" style="padding-top: 30px; padding-bottom: 30px;">
+              <div class="col">
+                <input class="form-control mr-sm-2" style="width: 300px; margin-left: 40%;" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
+              </div>
+              <!-- <div class="col-2">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </div> -->
+            </div>
+          </form>
+        </div>
       </div>
+      <tbody>
 
+      </tbody>
+      <br>
+<p>batas</p>
       @foreach($doas as $doa)
         <div class="row gy-4" style="margin-top: 50px;">
           <div class="col">
@@ -219,6 +236,44 @@
 
   <div id="preloader"></div>
 
+ 
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      fetch_customer_data();
+      function fetch_customer_data(query = ''){
+        $.ajax({
+          url : '/doa-doa/search',
+          type : 'GET',
+          data:{query:query},
+          success:function(data){
+            $('tbody').html(data.table_data);
+          }
+        });
+      }
+      $(document).on('keyup', '#search', function(){
+        var query = $(this).val();
+        fetch_customer_data(query);
+      });
+    });
+    // $('#search').on('keyup',function(){
+    //   $value=$(this).val();
+    //   $.ajax({
+    //     method : 'GET',
+    //     url : '{{ route('search.doa') }}',
+    //     data:{'search':$value},
+    //     success:function(data){
+    //       $('tbody').html(data);
+    //     }
+    //   });
+    // })
+  </script>
+  <script type="text/javascript">
+    $.ajaxSetup({ headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    } });
+  </script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>

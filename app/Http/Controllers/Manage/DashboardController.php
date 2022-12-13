@@ -76,4 +76,58 @@ class DashboardController extends Controller
         $dalils = Dalil::All();
         return view('dalil', compact('currentUser','dalils'));
     }
+
+    public function search(Request $request)
+    {
+        dd($request);
+        if($request->ajax())
+        {
+            $query = $request->get('query');
+            if($query != '')
+            {
+                $data = Doa::where('title','LIKE','%'.$query."%")->get();
+            } else {
+                $data = "tidak ditemukan";
+            }
+            $total_row = $data->count();
+            if($total_row > 0)
+            {
+                foreach($data as $row)
+                {
+                    $output.='<tr>'.
+                    '<td>'.$row->id.'</td>'.
+                    '<td>'.$row->title.'</td>'.
+                    '<td>'.$row->description.'</td>'.
+                    '</tr>';
+                }
+            } else {
+                $output = '
+                <tr>
+                    <td align="center" colspan="5">No Data Found</td>
+                </tr>
+                ';
+            }
+            $data = array(
+                'table_data'    => $output,
+                'total_data'    => $total_data
+            );
+
+            echo json_encode($data);
+
+            
+            // $output="";
+            // $doas= Doa::where('title','LIKE','%'.$request->search."%")->get();
+            // if($doas)
+            // {
+            //     foreach ($doas as $key => $doa) {
+            //         $output.='<tr>'.
+            //         '<td>'.$doa->id.'</td>'.
+            //         '<td>'.$doa->title.'</td>'.
+            //         '<td>'.$doa->description.'</td>'.
+            //         '</tr>';
+            //         }
+            //     return Response($output);
+            // }
+        }
+    }
 }

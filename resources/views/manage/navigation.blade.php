@@ -545,7 +545,11 @@
 				</div>
 
 			<div class="separator separator-dashed my-7"></div>
-				<a href="{{ route('logout') }}" type="button" class="btn btn-danger btn-lg btn-block">Logout</a>
+				{{-- <a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-light-primary font-weight-bold">Sign Out</a> --}}
+				<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger btn-lg btn-block">Logout</a>
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					@csrf
+				</form>
 			</div>
 			<!--end::Content-->
 		</div>
