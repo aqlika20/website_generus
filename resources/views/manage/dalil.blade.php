@@ -419,7 +419,7 @@
 																	<input id="title" type="text" class="form-control" name="title" value="{{old('title')}}" required autocomplete="title" autofocus>
 																</div>
 																<div class="form-group">
-																	<label>Image Do'a-Do'a</label>
+																	<label>Image Dalil-Dalil</label>
 																	<div class="custom-file">
 																		<input id="image" type="file" class="custom-file-input" name="image" accept=".jpg,.jpeg,.png" required/>
 																		<label class="custom-file-label" for="customFile">Choose file</label>

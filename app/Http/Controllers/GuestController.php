@@ -33,7 +33,11 @@ class GuestController extends Controller
         $users = UserManagement::All();
         $beritas = Berita::All();
         $pengumumans = Pengumuman::All();
-        
+
+        foreach($users as $user)
+        printf($user->name);
+    
+
         foreach($pengumumans as $pengumuman)
             $shortPengumuman = $pengumuman->isi;
         
