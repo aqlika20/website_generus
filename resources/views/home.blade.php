@@ -29,6 +29,7 @@
 
         <!-- Template Main CSS File -->
         <link href="{{ secure_asset('assets/css/main.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- Main CSS Calendar -->
         <link rel="stylesheet" href="{{ secure_asset('assets/css/evo-calendar.midnight-blue.min.css') }}">
@@ -45,16 +46,25 @@
 
         <!-- Template Main CSS File -->
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- Main CSS Calendar -->
         <link rel="stylesheet" href="{{ asset('assets/css/evo-calendar.midnight-blue.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/evo-calendar.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/calendar.css') }}">	
+        
 
 		@endif
-
-
-  <style>
+<style>
+  .symbol {
+        display: inline-block;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        position: relative;
+        border-radius: 0.42rem;
+      }
+</style>
+  {{-- <style>
       .carousel-inner img{
         height:720px ;
       }
@@ -105,7 +115,7 @@
       .hide_content{
         display: none;
       }
-    </style>
+    </style> --}}
 </head>
 
 <body>
@@ -131,7 +141,7 @@
           @auth
 
           <div class="topbar-item">
-            <div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-4" data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">
+            <div class="btn border-0 btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-4" data-bs-toggle="offcanvas" data-bs-target="#kt_quick_user">
               <li><a class="text-light">Hi, {{ $currentUser->name }}</a></li>
             </div>
           </div>
@@ -140,37 +150,37 @@
 
           <div class="offcanvas offcanvas-end" tabindex="-1" id="kt_quick_user" aria-labelledby="offcanvasRightLabel">
             <div class="offcanvas-header">
-              <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+              <h5 id="offcanvasRightLabel"></h5>
               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-              <!--begin::Header-->
+              <!--begin::Header-->  
 
               {{-- DIGANTI NYA DARI SINI --}}
-              <div class="d-flex align-items-center mt-5">
-                <div class="symbol symbol-100 mr-5">
-                  <div class="symbol-label"><i class="far fa-user" style="font-size: 50px;"></i></div>
+              <div style="display: flex; align-items: center;">
+                <div class="symbol" style="height: 100%; widht: 100%; margin-right: 1.25rem;">
+                  <div class="symbol-label"><i class="far fa-user" style="color: grey; font-size: 50px;"></i></div>
                 </div>
                 <div class="d-flex flex-column">
-                  <a class="font-weight-bold font-size-h5 text-dark-75">{{$currentUser->username}}</a>
+                  <a class="font-weight-bold font-size-h5 text-dark-75" style="color: black;">{{$currentUser->name}}</a>
                   <span class="navi-text text-muted text-hover-primary">{{$currentUser->email}}</span>
                 </div>
               </div>
               <!--end::Nav-->
               <!--begin::Separator-->
-              <div class="navi navi-spacer-x-0 p-0">
+              {{-- <div class="navi navi-spacer-x-0 p-0">
                 <!--begin::Item-->
                 <a href="{{ route('profile')}}" class="navi-item">
                   <div class="navi-link">
-                    <div class="symbol symbol-40 bg-light mr-3">
+                    <div class="symbol symbol-40 bg-light">
                       <div class="symbol-label">
-                        <span class="svg-icon svg-icon-md svg-icon-success">
+                        <span class="svg-icon svg-icon-md">
                           <!--begin::Svg Icon | path:assets/media/svg/icons/General/Notification2.svg-->
                           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                               <rect x="0" y="0" width="24" height="24" />
-                              <path d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z" fill="#000000" />
-                              <circle fill="#000000" opacity="0.3" cx="18.5" cy="5.5" r="2.5" />
+                              <path d="M13.2070325,4 C13.0721672,4.47683179 13,4.97998812 13,5.5 C13,8.53756612 15.4624339,11 18.5,11 C19.0200119,11 19.5231682,10.9278328 20,10.7929675 L20,17 C20,18.6568542 18.6568542,20 17,20 L7,20 C5.34314575,20 4,18.6568542 4,17 L4,7 C4,5.34314575 5.34314575,4 7,4 L13.2070325,4 Z" fill="green" />
+                              <circle fill="green" opacity="0.3" cx="18.5" cy="5.5" r="2.5" />
                             </g>
                           </svg>
                           <!--end::Svg Icon-->
@@ -178,16 +188,17 @@
                       </div>
                     </div>
                     <div class="navi-text">
-                      <div class="font-weight-bold">Profile Settings</div>
+                      <div class="font-weight-bold" style="color: black;">Profile Settings</div>
                       
                     </div>
                   </div>
                 </a>
-              </div>
+              </div> --}}
       
               <div class="separator separator-dashed my-7"></div>
-              {{-- <a href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-light-primary font-weight-bold">Sign Out</a> --}}
-              <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger btn-lg btn-block">Logout</a>
+              <div class="btn btn-danger" style=" margin-top :50px; text-align: center; width: 100%; font-family: 'Poppins', sans-serif; font-weight: bold;" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{ route('logout') }}" >
+                Logout
+              </div>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
               </form>
@@ -473,8 +484,8 @@
           <a href="#hero" class="d-flex align-items-center mb-3">
             <img src="{{ asset('media/logos/logo_login.png') }}" alt="" width="20%">
           </a>
-          <div class="social-links d-flex mt-4">
-            <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p><br>
+            <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <div class="social-links d-flex mt-4">
             <a href="{{ $social->instagram }}" class="instagram" target="_blank">
               <i class="bi bi-instagram"></i></a>
           </div>

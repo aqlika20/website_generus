@@ -66,15 +66,19 @@ class DashboardController extends Controller
     }
     public function doa()
     {
+        $id = 1;
         $currentUser = UserManagement::find(Auth::id());
         $doas = Doa::All();
-        return view('doa', compact('currentUser','doas'));
+        $social = Social::find($id);
+        return view('doa', compact('currentUser','doas','social'));
     }
     public function dalil()
     {
+        $id = 1;
         $currentUser = UserManagement::find(Auth::id());
         $dalils = Dalil::All();
-        return view('dalil', compact('currentUser','dalils'));
+        $social = Social::find($id);
+        return view('dalil', compact('currentUser','dalils','social'));
     }
 
     public function search(Request $request)

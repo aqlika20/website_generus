@@ -35,7 +35,7 @@ class KegiatanController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'title' => 'required',
+            'name' => 'required',
             'description' => 'required'
         ]);
 
@@ -61,10 +61,10 @@ class KegiatanController extends Controller
     public function edit($id, Request $request)
     {
         $data = $request->all();
-        // dd($data);
+        // dd($data['name']);
 
         $validator = Validator::make($data, [
-            'title' => 'required',
+            'name' => 'required',
             'description' => 'required'
         ]);
 
@@ -73,7 +73,7 @@ class KegiatanController extends Controller
         ])->first();
 
         $kegiatan->update([
-            'title' => ucwords($data['title']),
+            'name' => ucwords($data['name']),
             'description' => empty($data['description']) ?  $kegiatan->description : $data['description'],
         ]);
 

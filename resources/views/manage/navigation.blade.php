@@ -191,38 +191,7 @@
 													<span class="menu-text">Kegiatan Pengajian</span>
 												</a>
 											</li>
-											<li class="menu-item" aria-haspopup="true">
-												<a href="{{ route('banner')}}" class="menu-link">
-													<i class="menu-bullet menu-bullet-dot">
-														<span></span>
-													</i>
-													<span class="menu-text">Banner</span>
-												</a>
-											</li>
-											<li class="menu-item" aria-haspopup="true">
-												<a href="{{ route('about')}}" class="menu-link">
-													<i class="menu-bullet menu-bullet-dot">
-														<span></span>
-													</i>
-													<span class="menu-text">About</span>
-												</a>
-											</li>
-											<li class="menu-item" aria-haspopup="true">
-												<a href="{{ route('organisation')}}" class="menu-link">
-													<i class="menu-bullet menu-bullet-dot">
-														<span></span>
-													</i>
-													<span class="menu-text">Organisation Structure</span>
-												</a>
-											</li>
-											<li class="menu-item" aria-haspopup="true">
-												<a href="{{ route('address')}}" class="menu-link">
-													<i class="menu-bullet menu-bullet-dot">
-														<span></span>
-													</i>
-													<span class="menu-text">Address</span>
-												</a>
-											</li>
+
 											<li class="menu-item" aria-haspopup="true">
 												<a href="{{ route('social')}}" class="menu-link">
 													<i class="menu-bullet menu-bullet-dot">
