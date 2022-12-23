@@ -209,7 +209,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -325,7 +325,7 @@
 													</g>
 												</svg>
 												<!--end::Svg Icon-->
-											</span>Add User</a>
+											</span>Tambah User</a>
 											<!--end::Button-->
 										</div>
 									</div>
@@ -336,7 +336,7 @@
 													<div class="card-header">
 													 <div class="card-title">
 													  <h3 class="card-label">
-													   Add User
+													   Tambah User
 													  </h3>
 													  
 													 </div>
@@ -349,11 +349,11 @@
 															@method('PATCH')
 															<div class="card-body">
 																<div class="form-group">
-																	<label>Name</label>
+																	<label>Nama</label>
 											  						<input id="name" name="name" type="text" class="form-control form-control-solid" value="{{old('name')}}" required autocomplete="name" autofocus/>
 																</div>
 																<div class="form-group">
-																	<label>Username</label>
+																	<label>Nama Pengguna</label>
 											  						<input id="username" name="username" type="text" class="form-control form-control-solid" value="{{old('username')}}" required autocomplete="username" autofocus/>
 																</div>
 																<div class="form-group">
@@ -402,8 +402,8 @@
 															<thead>
 																<tr>
 																	<th title="Field #1">No</th>
-																	<th title="Field #2">Name</th>
-																	<th title="Field #3">Username</th>
+																	<th title="Field #2">Nama</th>
+																	<th title="Field #3">Nama Pengguna</th>
 																	<th title="Field #4">Email</th>
 																	<th title="Field #5">Role</th>
 																	<th title="Field #6">Aksi</th>
@@ -522,7 +522,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

@@ -248,7 +248,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -353,7 +353,7 @@
 									<div class="card card-custom gutter-b">
 										<div class="card-header flex-wrap border-0 pt-6 pb-0">
 											<div class="card-title">
-												<h3 class="card-label">Pengumuman list 
+												<h3 class="card-label">Daftar Pengumuman 
 											</div>
 											<div class="card-toolbar">
 												<button type="button"  class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#exampleModalCenter">
@@ -367,7 +367,7 @@
 														</g>
 													</svg>
 													<!--end::Svg Icon-->
-												</span>Add Pengumuman</a>
+												</span>Tambah Pengumuman</a>
 												<!--end::Button-->
 											</div>
 										</div>
@@ -378,7 +378,7 @@
 														<div class="card-header">
 															<div class="card-title">
 																<h3 class="card-label">
-																Add New Pengumuman
+																Tambah Pengumuman Baru
 																</h3>
 															
 															</div>
@@ -391,11 +391,11 @@
 															@method('PATCH')
 															<div class="card-body">
 																<div class="form-group">
-																	<label>Title</label>
+																	<label>Judul</label>
 																	<input id="title" type="text" class="form-control" name="title" value="{{old('title')}}" required autocomplete="title" autofocus>
 																</div>
 																<div class="form-group">
-																	<label>Description</label>
+																	<label>Deskripsi</label>
 																	<textarea id="isi" type="text" class="form-control" name="isi" value="{{old('isi')}}" required autocomplete="isi" autofocus></textarea>
 																</div>
 															</div>
@@ -420,8 +420,8 @@
 																<thead>
 																	<tr>
 																		<th title="Field #1">No</th>
-																		<th title="Field #2">Title</th>
-																		<th title="Field #3">Description</th>
+																		<th title="Field #2">Judul</th>
+																		<th title="Field #3">Deskripsi</th>
 																		<th title="Field #7">Aksi</th>
 																	</tr>
 																</thead>
@@ -546,7 +546,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

@@ -241,7 +241,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -356,7 +356,7 @@
 															<tr>
 																<th scope="col" class="sort" data-sort="no">No.</th>
 																<th scope="col" class="sort" data-sort="name">Name</th>
-																<th scope="col" class="sort" data-sort="action">Attendant</th>
+																<th scope="col" class="sort" data-sort="action">Kehadiran</th>
 															</tr>
 															</thead>
 															<tbody class="list">
@@ -372,14 +372,14 @@
 																				name="status[{{ $generus->id }}]" value="on"
 																				class="custom-control-input" {{ $generus->status == 1 ? 'checked' : '' }} disabled>
 																			<label class="custom-control-label"
-																				for="radio-{{ $generus->id }}-on">Present</label>
+																				for="radio-{{ $generus->id }}-on">Hadir</label>
 																		</div>
 																		<div class="custom-control custom-radio d-inline">
 																			<input type="radio" id="radio-{{ $generus->id }}-off"
 																				name="status[{{ $generus->id }}]" value="off"
 																				class="custom-control-input" {{ $generus->status == 0 ? 'checked' : '' }} disabled>
 																			<label class="custom-control-label"
-																				for="radio-{{ $generus->id }}-off">Absent</label>
+																				for="radio-{{ $generus->id }}-off">Tidak Hadir</label>
 																		</div>
 																	</td>
 																</tr>
@@ -467,7 +467,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

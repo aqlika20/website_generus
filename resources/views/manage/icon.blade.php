@@ -13631,7 +13631,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 							</div>
 						</div>
 					</a>

@@ -209,7 +209,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -440,7 +440,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

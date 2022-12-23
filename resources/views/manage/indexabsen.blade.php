@@ -241,7 +241,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -347,7 +347,7 @@
 									<div class="card card-custom gutter-b">
 										<div class="card-header flex-wrap border-0 pt-6 pb-0">
 											<div class="card-title">
-												<h3 class="card-label">Absensi List 
+												<h3 class="card-label">Daftar Absensi 
 											</div>
 											<div class="card-toolbar">
 												<a type="button"  class="btn btn-primary font-weight-bolder" href="{{ route('home.admin')}}">
@@ -377,12 +377,12 @@
 															<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
 																<thead>
 																	<tr>
-																		<th>#</th>
+																		<th>No</th>
 																		<th>Nama Kegiatan</th>
 																		<th>Peng-Absen</th>
 																		<th>Generus yang Hadir</th>
 																		<th>Tanggal</th>
-																		<th>Action</th>
+																		<th>Aksi</th>
 																	</tr>
 																</thead>
 																<tbody class="list">
@@ -492,7 +492,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

@@ -241,7 +241,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -346,7 +346,7 @@
 									<div class="card card-custom gutter-b">
 										<div class="card-header flex-wrap border-0 pt-6 pb-0">
 											<div class="card-title">
-												<h3 class="card-label">Berita list 
+												<h3 class="card-label">Daftar Berita
 											</div>
 											<div class="card-toolbar">
 												<button type="button"  class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#exampleModalCenter">
@@ -360,7 +360,7 @@
 														</g>
 													</svg>
 													<!--end::Svg Icon-->
-												</span>Add Berita</a>
+												</span>Tambah Berita</a>
 												<!--end::Button-->
 											</div>
 										</div>
@@ -371,7 +371,7 @@
 														<div class="card-header">
 															<div class="card-title">
 																<h3 class="card-label">
-																Add New Berita
+																Tambah Berita Baru
 																</h3>
 															
 															</div>
@@ -384,11 +384,11 @@
 															@method('PATCH')
 															<div class="card-body">
 																<div class="form-group">
-																	<label>Title</label>
+																	<label>Judul</label>
 																	<input id="title" type="text" class="form-control" name="title" value="{{old('title')}}" required autocomplete="title" autofocus>
 																</div>
 																<div class="form-group">
-																	<label>Description</label>
+																	<label>Deskripsi</label>
 																	<input id="description" type="text" class="form-control" name="description" value="{{old('description')}}" required autocomplete="description" autofocus>
 																</div>
 																{{-- <div class="form-group">
@@ -400,10 +400,10 @@
 																	<input id="link_name" type="text" class="form-control" name="link_name" value="{{old('link_name')}}" required autocomplete="link_name" autofocus>
 																</div> --}}
 																<div class="form-group">
-																	<label>Image</label>
+																	<label>Gambar</label>
 																	<div class="custom-file">
 																		<input id="image" type="file" class="custom-file-input" name="image" accept=".jpg,.jpeg,.png" required/>
-																		<label class="custom-file-label" for="customFile">Choose file</label>
+																		<label class="custom-file-label" for="customFile">Pilih Gambar</label>
 																	</div>
 																</div>
 															</div>
@@ -428,9 +428,9 @@
 																<thead>
 																	<tr>
 																		<th title="Field #1">No</th>
-																		<th title="Field #2">Title</th>
-																		<th title="Field #6">Image</th>
-																		<th title="Field #3">Description</th>
+																		<th title="Field #2">Judul</th>
+																		<th title="Field #6">Gambar</th>
+																		<th title="Field #3">Deskripsi</th>
 																		<th title="Field #7">Aksi</th>
 																	</tr>
 																</thead>
@@ -550,7 +550,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

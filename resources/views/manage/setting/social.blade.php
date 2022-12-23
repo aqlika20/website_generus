@@ -225,7 +225,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu collapse">
@@ -327,7 +327,7 @@
 									<div class="card-header">
 										<div class="card-title">
 											<h3 class="card-label">
-											Social Settings
+											Pengaturan Social Media
 											</h3>
 										</div>
 									</div>
@@ -336,7 +336,7 @@
 										@method('PATCH')
 										<div class="card-body">
 											<div class="form-group">
-												<label>Instagram</label>
+												<label>Link Instagram</label>
 												<input id="instagram" name="instagram" type="text" class="form-control form-control-solid" value="{{old('instagram')}}" autocomplete="instagram" autofocus/>
 											</div>
 										</div>
@@ -420,7 +420,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

@@ -241,7 +241,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -370,11 +370,11 @@
 																	<td class="">
 																		<div class="custom-control custom-radio d-inline">
 																			<input type="radio" id="radio-{{ $student->id }}-on" name="status[{{ $student->id }}]" value="on" class="custom-control-input" required>
-																			<label class="custom-control-label" for="radio-{{ $student->id }}-on">Present</label>
+																			<label class="custom-control-label" for="radio-{{ $student->id }}-on">Hadir</label>
 																		</div>
 																		<div class="custom-control custom-radio d-inline">
 																			<input type="radio" id="radio-{{ $student->id }}-off" name="status[{{ $student->id }}]" value="off" class="custom-control-input" required>
-																			<label class="custom-control-label" for="radio-{{ $student->id }}-off">Absent</label>
+																			<label class="custom-control-label" for="radio-{{ $student->id }}-off">Tidak Hadir</label>
 																		</div>
 																	</td>
 																</tr>
@@ -466,7 +466,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

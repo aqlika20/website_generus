@@ -209,7 +209,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -316,7 +316,6 @@
 									</div>
 									<div class="card-body">
 										<!--begin: Search Form-->
-                                       
                                         <!--end::Header-->
                                         <!--begin::Body-->
 										<form class="form" method="POST" action="{{ route('user.edit',[$user->id]) }}">
@@ -324,7 +323,7 @@
 											@method('PATCH')
 											<div class="card-body">
 												<div class="form-group">
-													<label>Name</label>
+													<label>Nama</label>
 													<input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus>
 												</div>
 												<div class="form-group">
@@ -425,7 +424,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

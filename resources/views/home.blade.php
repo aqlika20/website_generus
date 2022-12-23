@@ -188,7 +188,7 @@
                       </div>
                     </div>
                     <div class="navi-text">
-                      <div class="font-weight-bold" style="color: black;">Profile Settings</div>
+                      <div class="font-weight-bold" style="color: black;">Pengaturan Akun</div>
                       
                     </div>
                   </div>
@@ -312,35 +312,46 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Tentang</h2>
-          <p>Generasi Penerus Batu Aji adalah remaja masjid LDII Baiturrohmah</p>
+          <p>Generasi Penerus Batu Aji adalah remaja masjid LDII binaan masjid Baiturrohmah</p>
         </div>
 
         <div class="row gy-4">
           <div class="col-lg-6">
-            <h3>Voluptatem dignissimos provident quasi corporis</h3>
-            <img src="{{ asset('assets/img/gambar.png') }}" class="img-fluid rounded-4 mb-4" alt="">
-            <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
-            <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
+            <h3>Generus yang Alim, Faqih, ber-Akhlaqul Karimah, dan Mandiri.</h3>
+            <img src="{{ asset('assets/img/mumi.jpg') }}" class="img-fluid rounded-4 mb-4" alt="">
+            <p>Muda-Mudi Generasi Penerus Batu Aji adalah Muda-Mudi yang memiliki tujuan memiliki Tri sukses pembinaan generus yaitu: Alim Faqih, Akhlaqul Kharimah, dan Mandiri.</p>
+            <div class="content ps-0 ps-lg-2">
+            <ul>
+              <li><i class="#"></i> Alim dan Faham Agama (Faqih)</li>
+              <p>Mengerti dan memahami kedudukan dirinya sebagai hamba Allah SWT. Melaksanakan kewajiban yang tidak bisa di wakilkan kepada siapapun dan ditunda sesaat pun, yaitu beribadah kepada Allah.
+                <br><br>Mengerti dan memahami bahwa amalan ibadah yang berdasarkan Alquran dan Alhadist yang tidak di campuri dengan bid’ah, khurofat, syirik, tahayyul serta murni niatnya yaitu mengharapkan rahmat Allah dan terhindar dari siksa Allah.
+                <br><br>Mengerti dan memahami peraturan Allah dan Rosul berupa perintah, larangan, halal haram, dosa pahala, surga dan neraka.
+              </p>
+            </ul>
+            </div>
           </div>
           <div class="col-lg-6">
             <div class="content ps-0 ps-lg-5">
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
               <ul>
+                <li><i class="#"></i>Memiliki Akhlaqul Karimah (berkelakuan baik / budiluhur)</li>
+                <p>Generasi Penerus agar memiliki karakter, sopan santun, tata krama, dan budi pekerti yang luhur yang menjadi ciri khas bangsa ini. Dengan demikian generasi Indonesia dapat mengamalkan nilai-nilai yang terkadung dalam Pancasila, sila ke-2, kemanusiaan yang adil dan beradab.
+                  <br>
+                </p>
+                <li><i class="#"></i> Mempunyai ketrampilan untuk hidup mandiri</li>
+                <p>Menumbuhkan Generasi Penerus yang dapat hidup denga mandiri, tidak tergantung pada orang lain. 
+
+                </p>
+              </ul>
+
+              {{-- <ul>
                 <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
                 <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
                 <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-              </ul>
-              <p> 
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </p>
+              </ul> --}}
 
               <div class="position-relative mt-4">
-                <img src="{{ asset('assets/img/test.png') }}" class="img-fluid rounded-4" alt="">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
+                <img src="{{ asset('assets/img/healing.jpg') }}" class="img-fluid rounded-4" alt="">
+                {{-- <a href="#" class="glightbox play-btn"></a> --}}
               </div>
             </div>
           </div>
@@ -356,7 +367,7 @@
 
         <div class="section-header">
           <h2>Berita</h2>
-          <p>Berikut adalah kegiatan muda mudi Batu Aji</p>
+          <p>Berikut adalah Berita Kegiatan Muda-Mudi Generus Batu Aji</p>
         </div>
 
         <div class="row gy-4 posts-list" >
@@ -484,7 +495,8 @@
           <a href="#hero" class="d-flex align-items-center mb-3">
             <img src="{{ asset('media/logos/logo_login.png') }}" alt="" width="20%">
           </a>
-            <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <p>Muda-Mudi Generasi Penerus Batu Aji adalah Muda-Mudi yang memiliki tujuan memiliki Tri sukses pembinaan generus yaitu: Alim Faqih,
+              <br>Akhlaqul Kharimah, dan Mandiri.</p>
             <div class="social-links d-flex mt-4">
             <a href="{{ $social->instagram }}" class="instagram" target="_blank">
               <i class="bi bi-instagram"></i></a>

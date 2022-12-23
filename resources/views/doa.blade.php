@@ -115,7 +115,7 @@
                       </div>
                     </div>
                     <div class="navi-text">
-                      <div class="font-weight-bold" style="color: black;">Profile Settings</div>
+                      <div class="font-weight-bold" style="color: black;">Pengaturan Akun</div>
                       
                     </div>
                   </div>
@@ -179,7 +179,8 @@
           <a href="#hero" class="d-flex align-items-center mb-3">
             <img src="{{ asset('media/logos/logo_login.png') }}" alt="" width="20%">
           </a>
-            <p>lorem Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <p>Muda-Mudi Generasi Penerus Batu Aji adalah Muda-Mudi yang memiliki tujuan memiliki Tri sukses pembinaan generus yaitu: Alim Faqih,
+              <br>Akhlaqul Kharimah, dan Mandiri.</p>
             <div class="social-links d-flex mt-4">
             <a href="{{ $social->instagram }}" class="instagram" target="_blank">
               <i class="bi bi-instagram"></i></a>

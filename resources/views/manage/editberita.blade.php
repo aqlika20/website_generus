@@ -225,7 +225,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -336,20 +336,20 @@
 											@method('PATCH')
 											<div class="card-body">
 												<div class="form-group">
-													<label>Title</label>
+													<label>Judul</label>
 													<input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ $berita->title }}" required autocomplete="title" autofocus>
 												</div>
 												<div class="form-group">
-													<label>Image</label>
+													<label>Gambar</label>
 													<br>
 													<img src="{{ asset('storage/Berita/'.$berita->image) }}" class="img-fluid mb-3" width="500" height="333" alt="">
 													<div class="custom-file">
 														<input type="file" class="custom-file-input" id="image" name="image" accept=".jpg,.jpeg,.png"/>
-														<label class="custom-file-label" for="customFile">Choose file</label>
+														<label class="custom-file-label" for="customFile">Pilih Gambar</label>
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="exampleTextarea">Description</label>
+													<label for="exampleTextarea">Deskripsi</label>
 													<textarea type="text" class="form-control form-control-solid" placeholder="Enter Your Address" id="description" name="description" rows="3" required autocomplete="description" autofocus>{{old('description', $berita->description)}}</textarea>
 												</div>
 											</div>
@@ -438,7 +438,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

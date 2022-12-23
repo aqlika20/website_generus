@@ -241,7 +241,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -346,7 +346,7 @@
 									<div class="card card-custom gutter-b">
 										<div class="card-header flex-wrap border-0 pt-6 pb-0">
 											<div class="card-title">
-												<h3 class="card-label">Kegiatan Pengajian List 
+												<h3 class="card-label">Daftar Kegiatan Pengajian
 											</div>
 											<div class="card-toolbar">
 												<button type="button"  class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#exampleModalCenter">
@@ -360,7 +360,7 @@
 														</g>
 													</svg>
 													<!--end::Svg Icon-->
-												</span>Add Kegiatan Pengajian</a>
+												</span>Tambah Kegiatan Pengajian</a>
 												<!--end::Button-->
 											</div>
 										</div>
@@ -371,7 +371,7 @@
 														<div class="card-header">
 															<div class="card-title">
 																<h3 class="card-label">
-																Add New Kegiatan Pengajian
+																Tambah Kegiatan Pengajian
 																</h3>
 															
 															</div>
@@ -533,7 +533,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>

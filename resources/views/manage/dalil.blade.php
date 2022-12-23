@@ -241,7 +241,7 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Settings</span>
+										<span class="menu-text">Pengaturan</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
@@ -346,7 +346,7 @@
 									<div class="card card-custom gutter-b">
 										<div class="card-header flex-wrap border-0 pt-6 pb-0">
 											<div class="card-title">
-												<h3 class="card-label">Dalil list 
+												<h3 class="card-label">Daftar Dalil
 											</div>
 											<div class="card-toolbar">
 												<button type="button"  class="btn btn-primary font-weight-bolder" data-toggle="modal" data-target="#exampleModalCenter">
@@ -360,7 +360,7 @@
 														</g>
 													</svg>
 													<!--end::Svg Icon-->
-												</span>Add Dalil</a>
+												</span>Tambah Dalil</a>
 												<!--end::Button-->
 											</div>
 										</div>
@@ -371,7 +371,7 @@
 														<div class="card-header">
 															<div class="card-title">
 																<h3 class="card-label">
-																Add New Dalil
+																Tambah Dalil Baru
 																</h3>
 															
 															</div>
@@ -384,11 +384,11 @@
 															@method('PATCH')
 															<div class="card-body">
 																<div class="form-group">
-																	<label>Title</label>
+																	<label>Judul</label>
 																	<input id="title" type="text" class="form-control" name="title" value="{{old('title')}}" required autocomplete="title" autofocus>
 																</div>
 																<div class="form-group">
-																	<label>Image Dalil-Dalil</label>
+																	<label>Gambar Dalil-Dalil</label>
 																	<div class="custom-file">
 																		<input id="image" type="file" class="custom-file-input" name="image" accept=".jpg,.jpeg,.png" required/>
 																		<label class="custom-file-label" for="customFile">Choose file</label>
@@ -424,8 +424,8 @@
 																<thead>
 																	<tr>
 																		<th title="Field #1">No</th>
-																		<th title="Field #2">Title</th>
-																		<th title="Field #6">Image</th>
+																		<th title="Field #2">Judul</th>
+																		<th title="Field #6">Gambar</th>
 																		<th title="Field #3">Latin</th>
 																		<th title="Field #3">Arti</th>
 																		<th title="Field #7">Aksi</th>
@@ -548,7 +548,7 @@
 								</div>
 							</div>
 							<div class="navi-text">
-								<div class="font-weight-bold">Profile Settings</div>
+								<div class="font-weight-bold">Pengaturan Akun</div>
 								
 							</div>
 						</div>
