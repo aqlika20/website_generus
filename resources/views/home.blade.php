@@ -244,17 +244,17 @@
     <div class="carousel-inner">
       <div class="carousel-item active" style="background-image:url('assets/img/masjid2.png')">
           <div class="container">
-          <h1>Selamat Datang</h1>
-          <h2>Generus Batu Aji</h2>
-          <p>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
+          <h1 class="wel">Selamat Datang</h1>
+          <h2 class="gen">Generus Batu Aji</h2>
+          <p class="webb">Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
           </div>
       </div>
       <div class="carousel-item active" style="background-image:url('assets/img/masjid2.png')">
         <div class="container">
-          <h1>Selamat Datang</h1>
-          <h2>Generus Batu Aji</h2>
-          <p>Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
-        </div>
+          <h1 class="wel">Selamat Datang</h1>
+          <h2 class="gen">Generus Batu Aji</h2>
+          <p class="webb">Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
+          </div>
       </div>
     </div>
   </div>
@@ -339,7 +339,6 @@
                 </p>
                 <li><i class="#"></i> Mempunyai ketrampilan untuk hidup mandiri</li>
                 <p>Menumbuhkan Generasi Penerus yang dapat hidup denga mandiri, tidak tergantung pada orang lain. 
-
                 </p>
               </ul>
 

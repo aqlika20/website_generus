@@ -176,6 +176,36 @@ section {
   }
 }
 
+@media screen and (max-width: 650px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+  .wel{
+    font-family: var(--font-primary) !important;
+    font-size: 50px !important;
+    font-weight: 900 !important;
+    color: #fff !important;
+    margin: 0 0 4px !important;
+  }
+  
+  .gen{
+    font-family: var(--font-primary) !important;
+    font-size: 35px !important;
+    font-weight: 750 !important;
+    color: #fff !important; 
+    margin: 0 0 20px !important;
+  }
+  
+  .webb{
+    font-size: 15px !important;
+    color: #fff !important;
+    margin: 0 !important;
+    word-wrap: break-word !important;
+    font-family: var(--font-primary) !important;
+  }
+
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -752,23 +782,23 @@ section {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
 } */
-.carousel-item .container h1{
+.wel{
   font-family: var(--font-primary);
-  font-size: 50px;
+  font-size: 55px;
   font-weight: 900;
   color: #fff;
   margin: 0 0 4px;
 }
 
-.carousel-item .container h2{
+.gen{
   font-family: var(--font-primary);
-  font-size: 35px;
+  font-size: 40px;
   font-weight: 750;
   color: #fff;
   margin: 0 0 20px;
 }
 
-.carousel-item .container p {
+.webb{
   font-size: 15px;
   color: #fff;
   margin: 0;
