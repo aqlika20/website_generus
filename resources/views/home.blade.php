@@ -246,14 +246,16 @@
           <div class="container">
           <h1 class="wel">Selamat Datang</h1>
           <h2 class="gen">Generus Batu Aji</h2>
-          <p class="webb">Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
+          <p class="web">Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
+          {{-- <p class="webb">Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p> --}}
           </div>
       </div>
       <div class="carousel-item active" style="background-image:url('assets/img/masjid2.png')">
         <div class="container">
           <h1 class="wel">Selamat Datang</h1>
           <h2 class="gen">Generus Batu Aji</h2>
-          <p class="webb">Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
+          <p class="web">Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p>
+          {{-- <p class="webb">Website ini dibuat untuk kelancaran Muda-Mudi Generasi Penerus Batu Aji</p> --}}
           </div>
       </div>
     </div>

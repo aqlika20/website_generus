@@ -170,19 +170,14 @@ section {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
-  [data-aos-delay] {
-    transition-delay: 0 !important;
-  }
-}
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 990px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
   .wel{
     font-family: var(--font-primary) !important;
-    font-size: 50px !important;
+    font-size: 47px !important;
     font-weight: 900 !important;
     color: #fff !important;
     margin: 0 0 4px !important;
@@ -190,21 +185,132 @@ section {
   
   .gen{
     font-family: var(--font-primary) !important;
-    font-size: 35px !important;
+    font-size: 32px !important;
+    font-weight: 750 !important;
+    color: #fff !important; 
+    margin: 0 0 20px !important;
+  }
+  .web{
+    font-size: 16px !important;
+    color: #fff !important;
+    margin: 10px 0 0 !important;
+    word-wrap: break-word !important;
+    font-family: var(--font-primary) !important;
+  }
+
+
+}
+
+@media screen and (max-width: 767px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+  .wel{
+    font-family: var(--font-primary) !important;
+    font-size: 45px !important;
+    font-weight: 900 !important;
+    color: #fff !important;
+    margin: 0 0 4px !important;
+  }
+  
+  .gen{
+    font-family: var(--font-primary) !important;
+    font-size: 30px !important;
     font-weight: 750 !important;
     color: #fff !important; 
     margin: 0 0 20px !important;
   }
   
-  .webb{
-    font-size: 15px !important;
+  .web{
+    font-size: 16px !important;
+    width:70% ;
     color: #fff !important;
-    margin: 0 !important;
+    margin: 10px 0 0 !important;
     word-wrap: break-word !important;
     font-family: var(--font-primary) !important;
+
   }
 
 }
+
+@media screen and (max-width: 550px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+  .wel{
+    font-family: var(--font-primary) !important;
+    width:100% ;
+    font-size: 40px !important;
+    font-weight: 900 !important;
+    color: #fff !important;
+    margin: 0 0 4px !important;
+    text-indent: 45px !important;
+
+  }
+  
+  .gen{
+    font-family: var(--font-primary) !important;
+    width:50% ;
+    font-size: 28px !important;
+    font-weight: 750 !important;
+    color: #fff !important; 
+    margin: 0 0 20px !important;
+    text-align: center;
+
+  }
+  
+  .web{
+    font-size: 15px !important;
+    width:65% ;
+    color: #fff !important;
+    margin: 10px 0 0 !important;
+    word-wrap: break-word !important;
+    font-family: var(--font-primary) !important;
+    text-align: center;
+
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+  .wel{
+    font-family: var(--font-primary) !important;
+    width:80% ;
+    font-size: 33px !important;
+    font-weight: 900 !important;
+    color: #fff !important;
+    margin: 0 0 4px !important;
+
+  }
+  
+  .gen{
+    font-family: var(--font-primary) !important;
+    width:80% ;
+    font-size: 25px !important;
+    font-weight: 750 !important;
+    color: #fff !important; 
+    margin: 0 0 20px !important;
+    text-indent: 25px !important;
+
+  }
+  
+  .web{
+    font-size: 13px !important;
+    width:65% ;
+    color: #fff !important;
+    margin: 10px 0 0 !important;
+    word-wrap: break-word !important;
+    font-family: var(--font-primary) !important;
+    text-align: center;
+
+  }
+
+}
+
+
 
 /*--------------------------------------------------------------
 # Header
@@ -767,7 +873,7 @@ section {
 }
 .carousel-item .container{
   position: absolute;
-  left: 20%;
+  left: 15%;
   top: 30%;
   transform: translate(-50% -50%);
   text-align: left;
@@ -798,8 +904,8 @@ section {
   margin: 0 0 20px;
 }
 
-.webb{
-  font-size: 15px;
+.web{
+  font-size: 18px;
   color: #fff;
   margin: 0;
   font-family: var(--font-primary);
