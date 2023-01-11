@@ -20,6 +20,7 @@ Route::get('/doa-doa', 'Manage\DashboardController@doa')->name('dashboard.doa');
 Route::get('/doa-doa/search','Manage\DashboardController@search')->name('search.doa');
 Route::get('/dalil-dalil', 'Manage\DashboardController@dalil')->name('dashboard.dalil');
 
+
 Route::get('/map', function () {
     return view('map');
 });
@@ -31,25 +32,12 @@ Route::get('/tentang', function () {
 Route::get('/register', 'Manage\RegisterController@index')->name('register');
 Route::patch('/register/add', 'Manage\RegisterController@storeRegister')->name('register.store');
 
-// Route::get('/', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
-// Route::get('/doa-doa', [App\Http\Controllers\HomeController::class, 'doa'])->name('dashboard.doa');
-// Route::get('/dalil-dalil', [App\Http\Controllers\HomeController::class, 'dalil'])->name('dashboard.dalil');
 
-// Route::prefix('/profile')->group(function(){
-//     Route::get('/', 'ProfileController@index')->name('profile.index');
-//     Route::patch('/edit', 'ProfileController@edit')->name('profile.edit');
-//     Route::patch('/change-password', 'ProfileController@change_password')->name('profile.change-password');
-// });
-
-
-
-// PIC
+// Admin
 Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
-    Route::prefix('/pic')->group(function(){
+    Route::prefix('/admin')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'Manage\DashboardController@index')->name('home.admin');
-
-            // Route::get('/', 'PIC\HomeController@index')->name('pic.home.index');
         });
 
         Route::prefix('/manage')->group(function(){
@@ -159,6 +147,10 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
 Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
     Route::prefix('/home')->group(function(){
         Route::get('/', 'Manage\DashboardController@home')->name('home.user');
+    });
+    Route::prefix('/profile')->group(function(){
+        Route::get('/', 'ProfileController@index')->name('profile');
+        Route::patch('/profile/{id}', 'ProfileController@profileEdit')->name('profile.edit');
     });
 
 }); 
